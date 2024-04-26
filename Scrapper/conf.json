@@ -3,7 +3,7 @@
     "Version": "1.0",
     "Description": "Smart RU",
     "Author": "Adlen CHERIF",
-    "Source": "https://github.com",
+    "Source": "https://github.com/cherifad/SmartRU",
     "AppConfig": {
         "AppId": "smart-ru",
         "BaseUrl": "https://www.crous-lyon.fr/se-restaurer/ou-manger/"
