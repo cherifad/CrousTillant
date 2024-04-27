@@ -6,6 +6,7 @@
     "Source": "https://github.com/cherifad/SmartRU",
     "AppConfig": {
         "AppId": "smart-ru",
-        "BaseUrl": "https://www.crous-lyon.fr/se-restaurer/ou-manger/"
+        "BaseUrl": "https://www.crous-lyon.fr/se-restaurer/ou-manger/",
+        "DbPath": "smart-ru.db"
     }
 }

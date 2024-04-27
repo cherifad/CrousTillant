@@ -19,14 +19,15 @@ firefox_headers = {
 def getMenu(url, headers):
     response = requests.get(url, headers=headers)
     soup = bs(response.text, 'html.parser')
-    date = soup.find("time", class_="menu_date_title").text
-    print(parse_date(date.replace("Menu du ", "").strip()))
 
     returnMeals: list[Meal] = []
 
     meals = soup.find_all("div", class_="meal")
     # print(meals)
     for meal in meals:
+        # get parent div
+        parent = meal.find_parent("div")
+        date = parent.find("time", class_="menu_date_title").text
         newMeal = Meal(parse_date(date.replace("Menu du ", "").strip()), "", [], MealType.BREAKFAST)
         mealType = meal.find("div", class_="meal_title").text
         if "Petit déjeuner" in mealType:
@@ -52,15 +53,22 @@ def getMenu(url, headers):
             returnMeals.append(newMeal.toJsonObject())
 
             print(f"found {len(newMeal.foodItems)} items for {mealType.name} : {newMeal.title}")
-            print(f"List of items:" + '\n'.join([str(foodItem) for foodItem in newMeal.foodItems]) + '\n\n')
+            print(f"List of items for date {newMeal.date}\n" + '\n'.join([str(foodItem) for foodItem in newMeal.foodItems]) + '\n\n')
         
 
     return returnMeals
 
+def getRestaurants(url, headers):
+    response = requests.get(url, headers=headers)
+    soup = bs(response.text, 'html.parser')
+    items = soup.find("section", class_="vc_restaurants").find_all("li")
+    print(items)
+
+    return items
+
 def dbConnection():
     conn = sql.connect('Database\data.db')
     cursor = conn.cursor()
-    cursor.execute('CREATE TABLE IF NOT EXISTS meals (date TEXT, title TEXT, foodItems TEXT, mealType TEXT)')
     return conn, cursor
 
 if __name__ == '__main__':
