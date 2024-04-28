@@ -1,0 +1,23 @@
+# Ignore common Python files and directories
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+
+# Ignore virtual environment files
+venv/
+env/
+.env
+
+# Ignore development and debugging files
+.vscode/
+.idea/
+*.bak
+*.swp
+*.swo
+*.log
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/

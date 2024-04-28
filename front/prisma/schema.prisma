@@ -23,11 +23,31 @@ model Meal {
 model Restaurant {
   id         Int      @id @default(autoincrement())
   name       String
+  place      String
+  schedule   String
   url        String
   cp         String
   address    String
   city       String
   phone      String
-  updated_at DateTime
+  img        String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
   meals      Meal[]
+}
+
+model GlobalStats {
+  id               Int      @id @default(autoincrement())
+  date             DateTime
+  totalRestaurants Int
+  totalMeals       Int
+}
+
+model Announcement {
+  id         Int      @id @default(autoincrement())
+  title      String
+  content    String
+  img        String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
 }

@@ -1,5 +1,6 @@
 from collections.abc import Iterable
 from enum import Enum
+from .restaurant import Restaurant
 
 class MealType(Enum):
     BREAKFAST = 1
@@ -14,18 +15,19 @@ class FoodItem:
     def __str__(self):
         return f'{self.name} - {self.price}'
     
-    def __dict__(self):
+    def toJsonObject(self):
         return {
             'name': self.name,
             'price': self.price
         }
     
 class Meal:
-    def __init__(self, date, title, foodItems: list[FoodItem], mealType: MealType):
+    def __init__(self, date, title, foodItems: list[FoodItem], mealType: MealType, restaurantId):
         self.title = title
         self.foodItems = foodItems
         self.mealType = mealType
         self.date = date
+        self.restaurantId = restaurantId
 
     def __str__(self):
         return f'{self.title}' + '\n' + '\n'.join([f'{foodItem.name} - {foodItem.price}' for foodItem in self.foodItems])
@@ -37,7 +39,8 @@ class Meal:
         return {
             'date': self.date,
             'title': self.title,
-            'foodItems': [foodItem.__dict__ for foodItem in self.foodItems],
-            'mealType': self.mealType.name
+            'foodItems': [foodItem.toJsonObject() for foodItem in self.foodItems],
+            'mealType': self.mealType.name,
+            'restaurantId': self.restaurantId
         }
 
