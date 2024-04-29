@@ -38,17 +38,51 @@ async function main() {
   // }).then((meals) => {
   //   console.log(meals)
   // })
-  prisma.announcement
-    .create({
-      data: {
-        title: "New Announcement",
-        content: "This is a new announcement",
-        img: ""
-      },
-    })
-    .then((announcement) => {
-      console.log(announcement);
-    });
+
+  // model Restaurant {
+  //   id         Int      @id @default(autoincrement())
+  //   name       String
+  //   place      String
+  //   schedule   String
+  //   url        String
+  //   cp         String
+  //   address    String
+  //   city       String
+  //   phone      String
+  //   img        String
+  //   created_at DateTime @default(now())
+  //   updated_at DateTime @updatedAt
+  //   meals      Meal[]
+  // }
+
+  // for (const restaurant of data) {
+  //   await prisma.restaurant.create({
+  //     data: {
+  //       name: restaurant.name,
+  //       place: restaurant.place,
+  //       schedule: restaurant.schedule,
+  //       url: restaurant.url,
+  //       cp: restaurant.cp,
+  //       address: restaurant.address,
+  //       city: restaurant.city,
+  //       phone: restaurant.phone,
+  //       img: restaurant.img
+  //     }
+  //   })
+  // }
+
+
+  // prisma.announcement
+  //   .create({
+  //     data: {
+  //       title: "New Announcement",
+  //       content: "This is a new announcement",
+  //       img: ""
+  //     },
+  //   })
+  //   .then((announcement) => {
+  //     console.log(announcement);
+  //   });
 }
 
 main()

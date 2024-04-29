@@ -25,6 +25,9 @@ COPY . .
 # Generate the prisma client
 RUN npx prisma generate
 
+# Copy dev.db to the build folder, overwrite the existing one
+COPY ./prisma/dev.db ./node_modules/.prisma/client/dev.db
+
 # Next.js collects completely anonymous telemetry data about general usage.
 # Learn more here: https://nextjs.org/telemetry
 # Uncomment the following line in case you want to disable telemetry during the build.
