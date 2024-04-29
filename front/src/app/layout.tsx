@@ -15,7 +15,7 @@ const fontSans = FontSans({
 });
 
 export const metadata: Metadata = {
-  title: "Smart RU",
+  title: "Crous'tillant",
   description: "Le menu du RU, plus simplement.",
 };
 
