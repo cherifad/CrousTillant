@@ -39,7 +39,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <main className="p-4 lg:p-24 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
+          <main className="p-4 pb-14 lg:p-24 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
             <Header />
             {children}
           </main>

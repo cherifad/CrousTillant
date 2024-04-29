@@ -29,7 +29,11 @@ type DatePickerProps = {
   current?: Date;
 };
 
-export default function DatePicker({ onDateChange, maxDate, current }: DatePickerProps) {
+export default function DatePicker({
+  onDateChange,
+  maxDate,
+  current,
+}: DatePickerProps) {
   const [open, setOpen] = React.useState(false);
   const [date, setDate] = React.useState<Date | undefined>(new Date());
   const isDesktop = useMediaQuery("(min-width: 768px)");
@@ -70,7 +74,11 @@ export default function DatePicker({ onDateChange, maxDate, current }: DatePicke
   return (
     <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild className="mt-4 md:mt-8">
-        <Button variant="outline">Changer la date</Button>
+        <Button variant="outline">
+          {current
+            ? `Date actuelle : ${current?.toLocaleDateString()}`
+            : "Choisir une date"}
+        </Button>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader className="text-left">
@@ -81,7 +89,7 @@ export default function DatePicker({ onDateChange, maxDate, current }: DatePicke
         </DrawerHeader>
         <DatePickerSection
           className="px-4"
-          onDateChange={handleDateChange}  
+          onDateChange={handleDateChange}
           onClose={() => setOpen(false)}
           maxDate={maxDate}
         />
@@ -91,11 +99,6 @@ export default function DatePicker({ onDateChange, maxDate, current }: DatePicke
           </DrawerClose>
         </DrawerFooter>
       </DrawerContent>
-      {current && (
-        <Button className="ml-2">
-          Date actuelle : {current?.toLocaleDateString()}
-        </Button>
-      )}
     </Drawer>
   );
 }

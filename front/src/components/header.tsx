@@ -15,8 +15,8 @@ export default function Header() {
     <header className="flex justify-between items-center">
       <nav>
         <ul
-          className={`flex h-9 items-center space-x-1 border bg-background p-1 shadow-sm rounded-none border-b border-none px-2 lg:px-4 ${
-            isDesktop ? "" : "gap-2"
+          className={`flex h-9 items-center space-x-1 bg-background p-1 shadow-sm rounded-none border-none px-2 lg:px-4 ${
+            isDesktop ? "border border-b" : "gap-2"
           }`}
         >
           <li>

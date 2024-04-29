@@ -2,7 +2,7 @@ import { Github, Bug } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="absolute bottom-0 right-0 w-full flex flex-col md:flex-row h-9 items-center justify-between space-x-1 border bg-background p-1 mb-2 shadow-sm rounded-none border-t border-none px-2 lg:px-4">
+    <footer className="absolute bottom-4 right-0 w-full flex flex-col md:flex-row h-9 items-center justify-between space-x-1 bg-background p-1 mb-2 shadow-sm rounded-none px-2 lg:px-4">
       <div>
         <p>{new Date().getFullYear()} Made with ❤️ by <a href="https://cherifad.github.io" className="hover:underline" target="_blank" rel="noreferrer">Adlen Cherif</a></p>
       </div>
