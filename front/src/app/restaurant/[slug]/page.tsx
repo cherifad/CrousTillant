@@ -23,6 +23,11 @@ export default function SingleRestaurant() {
   const [isFavorite, setIsFavorite] = useState<boolean>(false);
   const [selectedDate, setSelectedDate] = useState<Date>(new Date());
   const [selectedDateMeals, setSelectedDateMeals] = useState<Meal[]>([]);
+  const [selectedDateBreakfast, setSelectedDateBreakfast] = useState<Meal[]>(
+    []
+  );
+  const [selectedDateLunch, setSelectedDateLunch] = useState<Meal[]>([]);
+  const [selectedDateDinner, setSelectedDateDinner] = useState<Meal[]>([]);
   const [maxAvailableDate, setMaxAvailableDate] = useState<Date | undefined>();
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
 
@@ -52,7 +57,7 @@ export default function SingleRestaurant() {
     setIsFavorite(favorites.includes(parseInt(restaurantId)));
 
     setLoading(false);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const removeFavorite = () => {
@@ -104,10 +109,25 @@ export default function SingleRestaurant() {
     }
   };
 
+  const splitMeals = (meals: Meal[] = []) => {
+    const breakfast = meals.filter((meal) => meal.meal_type === "BREAKFAST");
+    const lunch = meals.filter((meal) => meal.meal_type === "LUNCH");
+    const dinner = meals.filter((meal) => meal.meal_type === "DINNER");
+
+    setSelectedDateBreakfast(breakfast);
+    setSelectedDateLunch(lunch);
+    setSelectedDateDinner(dinner);
+  };
+
   useEffect(() => {
     getMealsForDate(meals);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedDate]);
+
+  useEffect(() => {
+    splitMeals(selectedDateMeals);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedDateMeals]);
 
   return (
     <div>
@@ -170,16 +190,49 @@ export default function SingleRestaurant() {
                     month: "long",
                   })}
                 </legend>
-                <div>
+                <div className="flex flex-col gap-4">
                   {selectedDateMeals.length === 0 ? (
                     <p className="text-center">
                       Aucun menu disponible pour cette date 🥲
                     </p>
                   ) : (
                     <>
-                      {selectedDateMeals.map((meal) => (
-                        <MealCard key={meal.id} meal={meal} />
-                      ))}
+                      {selectedDateBreakfast.length > 0 && (
+                        <Card>
+                          <CardHeader>
+                            <CardTitle>🥞 Petit-déjeuner</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            {selectedDateBreakfast.map((meal) => (
+                              <MealCard key={meal.id} meal={meal} />
+                            ))}
+                          </CardContent>
+                        </Card>
+                      )}
+                      {selectedDateLunch.length > 0 && (
+                        <Card>
+                          <CardHeader>
+                            <CardTitle>🍽 Déjeuner</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            {selectedDateLunch.map((meal) => (
+                              <MealCard key={meal.id} meal={meal} />
+                            ))}
+                          </CardContent>
+                        </Card>
+                      )}
+                      {selectedDateDinner.length > 0 && (
+                        <Card>
+                          <CardHeader>
+                            <CardTitle>🍲 Dîner</CardTitle>
+                          </CardHeader>
+                          <CardContent>
+                            {selectedDateDinner.map((meal) => (
+                              <MealCard key={meal.id} meal={meal} />
+                            ))}
+                          </CardContent>
+                        </Card>
+                      )}
                     </>
                   )}
                 </div>
