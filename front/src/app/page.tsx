@@ -20,6 +20,7 @@ import {
   getStarredFav,
   getFavAsHomePage,
   slugify,
+  toggleDisplayGrid,
 } from "@/lib/utils";
 import { useSearchParams, redirect } from "next/navigation";
 
@@ -83,7 +84,7 @@ export default function Home() {
             <Button
               size="icon"
               className="rounded-r-none"
-              onClick={() => setDisplay("list")}
+              onClick={() => toggleDisplayGrid(display, setDisplay)}
               variant={display === "list" ? "default" : "outline"}
             >
               <AlignLeft className="h-4 w-4" />
@@ -91,7 +92,7 @@ export default function Home() {
             <Button
               size="icon"
               className="rounded-l-none"
-              onClick={() => setDisplay("grid")}
+              onClick={() => toggleDisplayGrid(display, setDisplay)}
               variant={display === "grid" ? "default" : "outline"}
             >
               <Grid2X2 className="h-4 w-4" />
@@ -101,7 +102,7 @@ export default function Home() {
       </div>
       <div>
         {favorites.length > 0 && (
-          <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8 relative">
+          <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8 relative pt-7">
             <legend className="-ml-1 px-1 text-sm font-medium">
               {favorites.length} restaurants en favoris
             </legend>
@@ -136,7 +137,7 @@ export default function Home() {
               })}
             </div>
             <Badge
-              className="absolute top-0 right-1 cursor-pointer"
+              className="absolute top-0 right-1 cursor-pointer select-none"
               onClick={() => setHideFavorites(!hideFavorites)}
             >
               {hideFavorites ? "Afficher" : "Masquer"} les favoris

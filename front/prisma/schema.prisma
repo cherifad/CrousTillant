@@ -31,6 +31,8 @@ model Restaurant {
   city       String
   phone      String
   img        String
+  lat        Float?
+  lng        Float?
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
   meals      Meal[]

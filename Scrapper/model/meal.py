@@ -22,12 +22,13 @@ class FoodItem:
         }
     
 class Meal:
-    def __init__(self, date, title, foodItems: list[FoodItem], mealType: MealType, restaurantId):
+    def __init__(self, date, title, foodItems: list[FoodItem], mealType: MealType, restaurantId, toUpdate=False):
         self.title = title
         self.foodItems = foodItems
         self.mealType = mealType
         self.date = date
         self.restaurantId = restaurantId
+        self.toUpdate = toUpdate
 
     def __str__(self):
         return f'{self.title}' + '\n' + '\n'.join([f'{foodItem.name} - {foodItem.price}' for foodItem in self.foodItems])
@@ -41,6 +42,7 @@ class Meal:
             'title': self.title,
             'foodItems': [foodItem.toJsonObject() for foodItem in self.foodItems],
             'mealType': self.mealType.name,
-            'restaurantId': self.restaurantId
+            'restaurantId': self.restaurantId,
+            'toUpdate': self.toUpdate
         }
 

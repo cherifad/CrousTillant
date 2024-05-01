@@ -47,7 +47,11 @@ export default function DatePicker({
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild className="mt-4 md:mt-8">
-          <Button variant="outline">Changer la date</Button>
+          <Button variant="outline">
+            {current
+              ? `Date actuelle : ${current?.toLocaleDateString()}`
+              : "Choisir une date"}
+          </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
@@ -62,11 +66,6 @@ export default function DatePicker({
             maxDate={maxDate}
           />
         </DialogContent>
-        {current && (
-          <Button className="ml-2">
-            Date actuelle : {current?.toLocaleDateString()}
-          </Button>
-        )}
       </Dialog>
     );
   }

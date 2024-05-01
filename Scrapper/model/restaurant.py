@@ -1,5 +1,5 @@
 class Restaurant:
-    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, meals):
+    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, meals, lat=None, lon=None):
         self.id = id
         self.name = name
         self.place = place
@@ -11,6 +11,8 @@ class Restaurant:
         self.phone = phone
         self.img = img
         self.meals = meals
+        self.lat = lat
+        self.lon = lon
 
     def __str__(self):
         return f'{self.name} - {self.url} - {self.cp} - {self.address} - {self.city} - {self.phone}'
@@ -30,5 +32,7 @@ class Restaurant:
             'city': self.city,
             'phone': self.phone,
             'img': self.img,
-            'meals': [meal.toJsonObject() for meal in self.meals]
+            'meals': [meal.toJsonObject() for meal in self.meals],
+            'lat': self.lat,
+            'lon': self.lon
         }

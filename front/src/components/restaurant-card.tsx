@@ -64,6 +64,14 @@ export default function RestaurantCard({
       onFavoriteChange(id, name, true);
     }
   };
+
+  const imageLoader = ({ src, width, quality }: any) => {
+    if (src.length === 0) {
+      return "/img/default.jpeg";
+    }
+    return `${src}?w=${width}&q=${quality || 75}`;
+  };
+
   return (
     <Card className="relative">
       <Button
@@ -78,12 +86,29 @@ export default function RestaurantCard({
         )}
       </Button>
       <CardHeader>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle className="pr-6">{name}</CardTitle>
         <CardDescription>{place}</CardDescription>
       </CardHeader>
       {display === "grid" && (
         <CardContent>
-          <Image src="/img/default.jpeg" alt={name} width={400} height={400} />
+          <div className="w-full h-[200px] relative overflow-hidden rounded-lg">
+            {img.length === 0 ? (
+              <Image
+                src="/img/default.jpeg"
+                alt={name + " image"}
+                fill={true}
+                style={{objectFit:"cover"}}
+              />
+            ) : (
+              <Image
+                loader={imageLoader}
+                src={img}
+                alt={name + " image"}
+                fill={true}
+                style={{objectFit:"cover"}}
+              />
+            )}
+          </div>
           <p className="mt-4">{schedule}</p>
           <p className="mt-2">
             {address} - {cp} {city}

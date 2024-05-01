@@ -4,8 +4,9 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/components/theme-switcher";
-import { Settings, Home, Info, Mail } from "lucide-react";
+import { Settings, Home, Info, Mail, ArrowUp } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
+import Image from "next/image";
 
 export default function Header() {
   const pathname = usePathname();
@@ -79,7 +80,20 @@ export default function Header() {
           </li>
         </ul>
       </nav>
-      <ModeToggle />
+      <div className="flex gap-2">
+        <Button size="icon" variant="outline" asChild>
+          <a href="https://www.unrwa.org/" target="_blank" rel="noreferrer">
+            <Image
+              src="/img/Flag_of_Palestine_png.png"
+              alt="Next.js logo"
+              width={20}
+              height={20}
+              className="inline"
+            />
+          </a>
+        </Button>
+        <ModeToggle />
+      </div>
     </header>
   );
 }
