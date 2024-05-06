@@ -1,0 +1,1462 @@
+[
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-14 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-15 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 6,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-14 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    },
+    {
+        "date": "2024-05-15 00:00:00",
+        "title": "Vente A Emporter",
+        "foodItems": [
+            {
+                "name": "Salades",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs traditionnels",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs suédois",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwichs gourmands",
+                "price": 0
+            },
+            {
+                "name": "Pan Bagnat",
+                "price": 0
+            },
+            {
+                "name": "Wraps",
+                "price": 0
+            },
+            {
+                "name": "Panini",
+                "price": 0
+            },
+            {
+                "name": "Pasta Box",
+                "price": 0
+            },
+            {
+                "name": "Donuts",
+                "price": 0
+            },
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownies",
+                "price": 0
+            },
+            {
+                "name": "Pâtisseries traditionnelles",
+                "price": 0
+            },
+            {
+                "name": "Yaourts",
+                "price": 0
+            },
+            {
+                "name": "Boissons",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 7,
+        "toUpdate": false
+    }
+]

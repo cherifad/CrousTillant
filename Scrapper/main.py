@@ -5,10 +5,10 @@ import json
 from bs4 import BeautifulSoup as bs
 from model.config import Config
 from model.meal import Meal, MealType, FoodItem
-from utils import parse_date, insert_meals, insert_restaurants, extract_cp_city_coord
+from utils import parse_date, insert_meals, insert_restaurants, extract_cp_city_coord, get_restaurants
 import sqlite3 as sql
 from model.restaurant import Restaurant
-from jsondiff import diff
+from deepdiff import DeepDiff
 
 firefox_headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0',
@@ -26,39 +26,47 @@ def getMenu(url, restaurantId, headers):
 
     returnMeals: list[Meal] = []
 
-    meals = soup.find_all("div", class_="meal")
-    # print(meals)
-    for meal in meals:
-        # get parent div
-        parent = meal.find_parent("div")
-        date = parent.find("time", class_="menu_date_title").text
-        newMeal = Meal(parse_date(date.replace("Menu du ", "").strip()), "", [], MealType.BREAKFAST, restaurantId)
-        mealType = meal.find("div", class_="meal_title").text
-        if "petit déjeuner" in mealType.lower():
-            mealType = MealType.BREAKFAST
-        elif "déjeuner" in mealType.lower():
-            mealType = MealType.LUNCH
-        elif "dîner" in mealType.lower():
-            mealType = MealType.DINNER
-        else:
-            continue
-        newMeal.mealType = mealType
+    print(f"[{datetime.datetime.now()}] Gathering meals from {url}...")
 
-        foods = meal.find("ul", class_="meal_foodies").find_all("li", recursive=False)
-        # print(foods)
+    try:
+        meals = soup.find_all("div", class_="meal")
+        # print(meals)
+        for meal in meals:
+            # get parent div
+            parent = meal.find_parent("div")
+            date = parent.find("time", class_="menu_date_title").text
+            newMeal = Meal(parse_date(date.replace("Menu du ", "").strip()), "", [], MealType.BREAKFAST, restaurantId)
+            mealType = meal.find("div", class_="meal_title").text
+            if "petit déjeuner" in mealType.lower():
+                mealType = MealType.BREAKFAST
+            elif "déjeuner" in mealType.lower():
+                mealType = MealType.LUNCH
+            elif "dîner" in mealType.lower():
+                mealType = MealType.DINNER
+            else:
+                continue
+            newMeal.mealType = mealType
 
-        for food in foods:
-            title = food.contents[0].text
-            newMeal.title = title
-            newMeal.foodItems = []
-            items = food.find_all("li")
-            for item in items:
-                name = item.text.strip()
-                newMeal.foodItems.append(FoodItem(name, 0))
-            returnMeals.append(newMeal.toJsonObject())
+            foods = meal.find("ul", class_="meal_foodies").find_all("li", recursive=False)
+            # print(foods)
+
+            for food in foods:
+                title = food.contents[0].text
+                newMeal.title = title
+                newMeal.foodItems = []
+                items = food.find_all("li")
+                for item in items:
+                    name = item.text.strip()
+                    newMeal.foodItems.append(FoodItem(name, 0))
+                returnMeals.append(newMeal.toJsonObject())
+    except Exception as e:
+        print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. {e}")
+    
+    print(f"[{datetime.datetime.now()}] Meals gathered successfully from {url}.")
     return returnMeals
 
-def getRestaurants(url, crous_name, headers):
+
+def getRestaurants(url, crous_name, crous_id, headers):
     """
     Retrieves restaurant information from a given URL.
 
@@ -82,7 +90,7 @@ def getRestaurants(url, crous_name, headers):
     i = 0
     
     for item in items:
-        restaurant = Restaurant(id=len(restaurants) + 1, name=item.find("div", class_="restaurant_title").text, place="", url="", cp="", address="", city="", phone="", meals=[], img="", schedule="")
+        restaurant = Restaurant(id=len(restaurants) + 1, name=item.find("div", class_="restaurant_title").text, place="", url="", cp="", address="", city="", phone="", meals=[], img="", schedule="", crous_id=crous_id, lat=None, lon=None)
         
         print(f"[{datetime.datetime.now()}] Gathering restaurant information from {restaurant.name} {i + 1}/{len(items)}")
 
@@ -107,7 +115,8 @@ def getRestaurants(url, crous_name, headers):
     with open(f'./json/{crous_name}/restaurants_{crous_name}.json', 'w', encoding='utf-8') as f:
         json.dump(restaurants, f, indent=4, ensure_ascii=False)
 
-    print(restaurants)
+    # insert restaurants into the database
+    insert_restaurants(restaurants)
 
     return restaurants
 
@@ -164,7 +173,7 @@ def getRestaurantDetails(url, headers, restaurant: Restaurant):
 
     return restaurant
 
-def getAllMeals(restaurants, crous_name):
+def getAllMeals(restaurants: list[Restaurant], crous_name: str):
     """
     Retrieves all meals from the given list of restaurants.
 
@@ -177,11 +186,11 @@ def getAllMeals(restaurants, crous_name):
     allMeals = []
     i = 0
     for restaurant in restaurants:
-        meals = getMenu(restaurant['url'], restaurant['id'], firefox_headers)
+        meals = getMenu(restaurant.url, restaurant.id, firefox_headers)
         for meal in meals:
             allMeals.append(meal)
         i += 1
-        print(f"[{datetime.datetime.now()}] Fetched meals from {restaurant['name']} {i}/{len(restaurants)} ==> found {len(meals)} meals")
+        print(f"[{datetime.datetime.now()}] Fetched meals from {restaurant.name} {i}/{len(restaurants)} ==> found {len(meals)} meals")
 
     if len(allMeals) > 0:
         with open(f'./json/{crous_name}/meals_new.json', 'w', encoding='utf-8') as f:
@@ -195,121 +204,133 @@ def getAllMeals(restaurants, crous_name):
 
 def compareAndInsertMeals(crous_name):
     """
-    Compare and insert meals into the database.
+    Compare meals between 'meals_old.json' and 'meals_new.json', and insert any new meals into the database.
+    If 'meals_old.json' doesn't exist, it directly inserts all meals from 'meals_new.json' into the database.
 
-    This function compares the meals stored in two JSON files, 'meals_old.json' and 'meals_new.json',
-    and inserts any new meals into the database. It also removes meals that are older than the current date.
+    Args:
+        crous_name (str): Name of the crous.
 
     Returns:
         None
     """
     print(f"[{datetime.datetime.now()}] Comparing and inserting meals...")
-    # get the file called meals_old.json
-    with open(f'./json/{crous_name}/meals_old.json', 'r', encoding='utf-8') as f:
-        oldMeals = json.load(f)
 
-    print(f"[{datetime.datetime.now()}] Meals in the old file: {len(oldMeals)}")
+    # Check if 'meals_old.json' exists
+    old_meals_file = f'./json/{crous_name}/meals_old.json'
+    if os.path.exists(old_meals_file):
+        # Load old meals from file
+        with open(old_meals_file, 'r', encoding='utf-8') as f:
+            oldMeals = json.load(f)
+        print(f"[{datetime.datetime.now()}] Meals in the old file: {len(oldMeals)}")
+    else:
+        print(f"[{datetime.datetime.now()}] 'meals_old.json' file does not exist. Creating it...")
+        # Create 'meals_old.json' and initialize it with an empty list
+        with open(old_meals_file, 'w', encoding='utf-8') as f:
+            f.write("[]")
+        oldMeals = []
 
-    # get the file called meals_new.json
+    # Load new meals from file
     with open(f'./json/{crous_name}/meals_new.json', 'r', encoding='utf-8') as f:
         newMeals = json.load(f)
-
     print(f"[{datetime.datetime.now()}] Meals in the new file: {len(newMeals)}")
 
-    hasChanged = False
-
-    print(f"[{datetime.datetime.now()}] Removing old meals that are older than today...")
-    # delete all meals older than today in oldMeals
-    for meal in oldMeals:
-        if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') < datetime.datetime.now():
-            oldMeals.remove(meal)
-    
-    print(f"[{datetime.datetime.now()}] Removing new meals that are older than today...")
-    # delete all meals older than today in newMeals
-    for meal in newMeals:
-        if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') < datetime.datetime.now():
-            newMeals.remove(meal)
+    # Remove old meals older than today's date
+    today = datetime.datetime.now()
+    oldMeals = [meal for meal in oldMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') >= today]
+    print(f"[{datetime.datetime.now()}] Removing old meals older than today...")
 
     print(f"[{datetime.datetime.now()}] Comparing {len(oldMeals)} old meals with {len(newMeals)} new meals...")
     
     diff = compare_json_objects(oldMeals, newMeals)
 
     if diff:
-        print(f"[{datetime.datetime.now()}] Found {len(diff.insert)} differences between the old and new meals.")
-        hasChanged = True
-        # if in the diff there are meals that have the same date, title and restaurantId, then set toUpdate to True
+        print(f"[{datetime.datetime.now()}] Found {len(diff)} differences between the old and new meals.")
+        # Set 'toUpdate' to True for meals with differences
         for d in diff:
             for meal in newMeals:
                 if d['date'] == meal['date'] and d['title'] == meal['title'] and d['restaurantId'] == meal['restaurantId']:
-                    print(f"[{datetime.datetime.now()}] Meal {meal['title']} from {meal['date']} has changed.")
                     meal['toUpdate'] = True
 
-    if hasChanged:
-        insert_meals(newMeals)
-        print(f"[{datetime.datetime.now()}] Meals inserted successfully.")
-    else:
-        print(f"[{datetime.datetime.now()}] No new meals to insert.")
+    # Insert all new meals into the database
+    insert_meals(newMeals)
+    print(f"[{datetime.datetime.now()}] Meals inserted successfully.")
 
-    # write the new meals in the old meals file
-    # with open('meals_old.json', 'w', encoding='utf-8') as f:
-    #     json.dump(newMeals, f, indent=4, ensure_ascii=False)
+    # Write the updated meals to 'meals_old.json'
+    with open(old_meals_file, 'w', encoding='utf-8') as f:
+        json.dump(newMeals, f, indent=4, ensure_ascii=False)
 
 def compare_json_objects(obj1, obj2):
-    differences = diff(obj1, obj2)
-    if differences:
-        print(type(differences))
-        print(list(differences.keys()))
-        print(differences[list(differences.keys())[0]])
-        return differences
-    else:
-        return None
+    # Find the differences between the arrays of JSON objects
+    diff = DeepDiff(obj1, obj2, ignore_order=True)
+    print(diff)
+    input()
+    different_objects = []
+    # Check if there are any differences in the items
+    if 'iterable_item_added' in diff:
+        for item in diff['iterable_item_added']:
+            different_objects.append(item['value'])
+
+    return different_objects
 
 if __name__ == '__main__':
-    # clear the console
-    os.system('cls' if os.name == 'nt' else 'clear')
-    
-    config = Config.loadConfig()
-    if config is None:
-        exit(1)
-    print(f"[{datetime.datetime.now()}] Loaded configuration: {config}")
 
     try:
+        # clear the console
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+        config = Config.loadConfig()
+        if config is None:
+            raise Exception("Failed to load the configuration file.")
+
+        print(f"[{datetime.datetime.now()}] Loaded configuration: {config}")
+
         # look for required folders and files: json folder and error.log file
         if not os.path.exists('json'):
             raise Exception("The 'json' folder does not exist.")
         if not os.path.exists('error.log'):
+            print(f"[{datetime.datetime.now()}] 'error.log' file does not exist. Creating it...")
             with open('error.log', 'w') as f:
-                f.write(f"[{datetime.datetime.now()}] Error log file created.\n")
+                f.write(f"[{datetime.datetime.now()}] Created 'error.log' file.\n")
 
-        print(f"[{datetime.datetime.now()}] Starting the scrapping process...")
+        # get the crous name from the config
+        for supported_crous in config.supportedCrous:
+            print(f"[{datetime.datetime.now()}] Starting the scrapping process...")
+            # if a folder with the crous name does not exist, create it and fetch the data, fetch the date if the folder exists but is empty
+            if not os.path.exists(f'./json/{supported_crous.folder_name}') or len(os.listdir(f'./json/{supported_crous.folder_name}')) == 0:
+                if not os.path.exists(f'./json/{supported_crous.folder_name}'):
+                    os.makedirs(f'./json/{supported_crous.folder_name}')
+                    print(f"[{datetime.datetime.now()}] Created folder for {supported_crous} in the 'json' directory.")
 
-        ####################### Meals scrapping #######################
-        # print(f"[{datetime.datetime.now()}] Scrapping meals...")
 
-        # with open('restaurants.json', 'r', encoding='utf-8') as f:
-        #     restaurants = json.load(f)
+                #################### Restaurants scrapping ####################
+                # get the restaurants from the crous website
+                # print(f"[{datetime.datetime.now()}] Starting the restaurants scrapping process for {supported_crous.name}...")
+                # getRestaurants(supported_crous.url, supported_crous.folder_name, supported_crous.id, firefox_headers)
+                # print(f"[{datetime.datetime.now()}] Restaurants scrapping process completed successfully for {supported_crous.name}.")
+                #################### Restaurants scrapping ####################\
 
-        # # getAllMeals(restaurants[:2])
+            ####################### Meals scrapping #######################
+            # get all the meals from the restaurants
+            print(f"[{datetime.datetime.now()}] Scrapping meals from {supported_crous.name}...")
+            # restaurants = get_restaurants(supported_crous.id) # json.load(open(f'./json/{supported_crous.folder_name}/restaurants_{supported_crous.folder_name}.json'))
+            # getAllMeals(restaurants, supported_crous.folder_name)
 
-        # compareAndInsertMeals()
-
-        # print(f"[{datetime.datetime.now()}] Scrapping meals completed successfully.")
-        ####################### Meals scrapping #######################
-
-        #################### Restaurants scrapping ####################
-        # print(f"[{datetime.datetime.now()}] Starting the restaurants scrapping process...")
-        # getRestaurants("https://www.crous-grenoble.fr/se-restaurer/ou-manger/", "crous_grenoble", firefox_headers)
-
-        # print(f"[{datetime.datetime.now()}] Restaurants scrapping process completed successfully.")
-        #################### Restaurants scrapping ####################
+            # compare and insert the meals into the database
+            compareAndInsertMeals(supported_crous.folder_name)
+            print(f"[{datetime.datetime.now()}] Scrapping meals completed successfully for {supported_crous.name}.")
+            ####################### Meals scrapping #######################
 
         print(f"[{datetime.datetime.now()}] Scrapping process completed successfully.")
     except Exception as e:
         print(f'[ERROR] [{datetime.datetime.now()}] An error occurred during the scrapping process. {e}')
+
         #append the error to the log file
-        with open('error.log', 'a') as f:
-            f.write(f'[ERROR] [{datetime.datetime.now()}] {e}\n')
+        if os.path.exists('json'):
+            with open('error.log', 'a') as f:
+                f.write(f'[ERROR] [{datetime.datetime.now()}] {e}\n')
+
         print(f"[{datetime.datetime.now()}] Scrapping process failed: {e}")
+
         exit(1)
 
     
