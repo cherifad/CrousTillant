@@ -1,281 +1,5 @@
 [
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-02 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "Classiques (saucisson, jambon, végé, brie)",
-                "price": 0
-            },
-            {
-                "name": "Incontournables (jambon fromage, poulet, thon,)",
-                "price": 0
-            },
-            {
-                "name": "Bagna",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "Clubs (emmental, thon, jambon, poulet)",
-                "price": 0
-            },
-            {
-                "name": "Menu sandwich à 1 € pour étudiant boursier",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-02 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-02 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "Beignet",
-                "price": 0
-            },
-            {
-                "name": "Cookie",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownie",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "Classiques (saucisson, jambon, végé, brie)",
-                "price": 0
-            },
-            {
-                "name": "Incontournables (jambon fromage, poulet, thon,)",
-                "price": 0
-            },
-            {
-                "name": "Bagna",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "Clubs (emmental, thon, jambon, poulet)",
-                "price": 0
-            },
-            {
-                "name": "Menu sandwich à 1 € pour étudiant boursier",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "Beignet",
-                "price": 0
-            },
-            {
-                "name": "Cookie",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownie",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "Classiques (saucisson, jambon, végé, brie)",
-                "price": 0
-            },
-            {
-                "name": "Incontournables (jambon fromage, poulet, thon,)",
-                "price": 0
-            },
-            {
-                "name": "Bagna",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "Clubs (emmental, thon, jambon, poulet)",
-                "price": 0
-            },
-            {
-                "name": "Menu sandwich à 1 € pour étudiant boursier",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "Beignet",
-                "price": 0
-            },
-            {
-                "name": "Cookie",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownie",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false
-    },
-    {
         "date": "2024-05-07 00:00:00",
         "title": "salade",
         "foodItems": [
@@ -290,7 +14,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -327,7 +53,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -340,7 +68,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -365,7 +95,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -382,7 +114,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -419,7 +153,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -432,7 +168,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -457,7 +195,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -474,7 +214,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -511,7 +253,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -524,7 +268,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -549,7 +295,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -566,7 +314,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -603,7 +353,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -616,7 +368,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -641,7 +395,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -658,7 +414,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -695,7 +453,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -708,7 +468,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -733,7 +495,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -750,7 +514,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -787,7 +553,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -800,7 +568,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -825,7 +595,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -842,7 +614,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -879,7 +653,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -892,7 +668,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -917,67 +695,47 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "Petit Dej",
+        "date": "2024-05-16 00:00:00",
+        "title": "salade",
         "foodItems": [
             {
-                "name": "Viennoiseries cuisson sur place",
+                "name": "grande salade composée",
                 "price": 0
             },
             {
-                "name": "Pain chocolat, croissant, pain aux raisins, choco suisse",
-                "price": 0
-            },
-            {
-                "name": "Boissons Chaudes",
-                "price": 0
-            },
-            {
-                "name": "café thé chocolat Latte (caramel,vanille,noisette)",
+                "name": "petite salade composée",
                 "price": 0
             }
         ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 3,
-        "toUpdate": false
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "REPAS",
+        "date": "2024-05-16 00:00:00",
+        "title": "sandwich",
         "foodItems": [
             {
-                "name": "SALADE",
+                "name": "Classiques (saucisson, jambon, végé, brie)",
                 "price": 0
             },
             {
-                "name": "Grande salade composée (poulet,saumon ou jambon cru)",
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
                 "price": 0
             },
             {
-                "name": "Petite salade composée (poulet, chèvre,thon)",
+                "name": "Bagna",
                 "price": 0
             },
             {
-                "name": "SANDWICH",
-                "price": 0
-            },
-            {
-                "name": "Rosette/jambon beurre/végétarien/brie",
-                "price": 0
-            },
-            {
-                "name": "Poulet/thon/jambon-emmental",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta tomate mozzarella",
-                "price": 0
-            },
-            {
-                "name": "Bagnat thon",
+                "name": "Ciabatta",
                 "price": 0
             },
             {
@@ -985,105 +743,99 @@
                 "price": 0
             },
             {
-                "name": "Menu sandwich classique et menu premium",
+                "name": "Clubs (emmental, thon, jambon, poulet)",
                 "price": 0
             },
             {
-                "name": "OFFRE CHAUDE",
-                "price": 0
-            },
-            {
-                "name": "Pasta box (carbonara, bolognaise,  ou saumon...)",
-                "price": 0
-            },
-            {
-                "name": "Quiche,croque monsieur,panini",
-                "price": 0
-            },
-            {
-                "name": "Plat chaud individuel à réchauffer",
-                "price": 0
-            },
-            {
-                "name": "DOUCEURS",
-                "price": 0
-            },
-            {
-                "name": "Beignet au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Cookie lait ou 3 chocolats",
-                "price": 0
-            },
-            {
-                "name": "Muffin pépites, tout chocolat, myrtilles-framboises, citron",
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 3,
-        "toUpdate": false
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-03 00:00:00",
-        "title": "Petit Dej",
+        "date": "2024-05-16 00:00:00",
+        "title": "plat chaud",
         "foodItems": [
             {
-                "name": "Viennoiseries cuisson sur place",
-                "price": 0
-            },
-            {
-                "name": "Pain chocolat, croissant, pain aux raisins, choco suisse",
-                "price": 0
-            },
-            {
-                "name": "Boissons Chaudes",
-                "price": 0
-            },
-            {
-                "name": "café thé chocolat Latte (caramel,vanille,noisette)",
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
                 "price": 0
             }
         ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 3,
-        "toUpdate": false
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-03 00:00:00",
-        "title": "REPAS",
+        "date": "2024-05-16 00:00:00",
+        "title": "douceurs",
         "foodItems": [
             {
-                "name": "SALADE",
+                "name": "Beignet",
                 "price": 0
             },
             {
-                "name": "Grande salade composée (poulet,saumon ou jambon cru)",
+                "name": "Cookie",
                 "price": 0
             },
             {
-                "name": "Petite salade composée (poulet, chèvre,thon)",
+                "name": "Muffin",
                 "price": 0
             },
             {
-                "name": "SANDWICH",
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
                 "price": 0
             },
             {
-                "name": "Rosette/jambon beurre/végétarien/brie",
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
                 "price": 0
             },
             {
-                "name": "Poulet/thon/jambon-emmental",
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
                 "price": 0
             },
             {
-                "name": "Ciabatta tomate mozzarella",
+                "name": "Bagna",
                 "price": 0
             },
             {
-                "name": "Bagnat thon",
+                "name": "Ciabatta",
                 "price": 0
             },
             {
@@ -1091,105 +843,99 @@
                 "price": 0
             },
             {
-                "name": "Menu sandwich classique et menu premium",
+                "name": "Clubs (emmental, thon, jambon, poulet)",
                 "price": 0
             },
             {
-                "name": "OFFRE CHAUDE",
-                "price": 0
-            },
-            {
-                "name": "Pasta box (carbonara, bolognaise,  ou saumon...)",
-                "price": 0
-            },
-            {
-                "name": "Quiche,croque monsieur,panini",
-                "price": 0
-            },
-            {
-                "name": "Plat chaud individuel à réchauffer",
-                "price": 0
-            },
-            {
-                "name": "DOUCEURS",
-                "price": 0
-            },
-            {
-                "name": "Beignet au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Cookie lait ou 3 chocolats",
-                "price": 0
-            },
-            {
-                "name": "Muffin pépites, tout chocolat, myrtilles-framboises, citron",
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 3,
-        "toUpdate": false
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-06 00:00:00",
-        "title": "Petit Dej",
+        "date": "2024-05-17 00:00:00",
+        "title": "plat chaud",
         "foodItems": [
             {
-                "name": "Viennoiseries cuisson sur place",
-                "price": 0
-            },
-            {
-                "name": "Pain chocolat, croissant, pain aux raisins, choco suisse",
-                "price": 0
-            },
-            {
-                "name": "Boissons Chaudes",
-                "price": 0
-            },
-            {
-                "name": "café thé chocolat Latte (caramel,vanille,noisette)",
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
                 "price": 0
             }
         ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 3,
-        "toUpdate": false
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-06 00:00:00",
-        "title": "REPAS",
+        "date": "2024-05-17 00:00:00",
+        "title": "douceurs",
         "foodItems": [
             {
-                "name": "SALADE",
+                "name": "Beignet",
                 "price": 0
             },
             {
-                "name": "Grande salade composée (poulet,saumon ou jambon cru)",
+                "name": "Cookie",
                 "price": 0
             },
             {
-                "name": "Petite salade composée (poulet, chèvre,thon)",
+                "name": "Muffin",
                 "price": 0
             },
             {
-                "name": "SANDWICH",
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-20 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
                 "price": 0
             },
             {
-                "name": "Rosette/jambon beurre/végétarien/brie",
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-20 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
                 "price": 0
             },
             {
-                "name": "Poulet/thon/jambon-emmental",
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
                 "price": 0
             },
             {
-                "name": "Ciabatta tomate mozzarella",
+                "name": "Bagna",
                 "price": 0
             },
             {
-                "name": "Bagnat thon",
+                "name": "Ciabatta",
                 "price": 0
             },
             {
@@ -1197,45 +943,61 @@
                 "price": 0
             },
             {
-                "name": "Menu sandwich classique et menu premium",
+                "name": "Clubs (emmental, thon, jambon, poulet)",
                 "price": 0
             },
             {
-                "name": "OFFRE CHAUDE",
-                "price": 0
-            },
-            {
-                "name": "Pasta box (carbonara, bolognaise,  ou saumon...)",
-                "price": 0
-            },
-            {
-                "name": "Quiche,croque monsieur,panini",
-                "price": 0
-            },
-            {
-                "name": "Plat chaud individuel à réchauffer",
-                "price": 0
-            },
-            {
-                "name": "DOUCEURS",
-                "price": 0
-            },
-            {
-                "name": "Beignet au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Cookie lait ou 3 chocolats",
-                "price": 0
-            },
-            {
-                "name": "Muffin pépites, tout chocolat, myrtilles-framboises, citron",
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 3,
-        "toUpdate": false
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-20 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-20 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 2,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -1260,7 +1022,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -1341,7 +1105,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -1354,7 +1120,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -1367,7 +1135,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -1380,7 +1150,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -1405,7 +1177,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -1486,7 +1260,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -1511,7 +1287,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -1592,7 +1370,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -1617,7 +1397,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -1698,367 +1480,244 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "Moment gourmand",
+        "date": "2024-05-16 00:00:00",
+        "title": "Petit Dej",
         "foodItems": [
             {
-                "name": "Tresses au chocolat",
+                "name": "Viennoiseries cuisson sur place",
                 "price": 0
             },
             {
-                "name": "Pains au chocolat",
+                "name": "Pain chocolat, croissant, pain aux raisins, choco suisse",
                 "price": 0
             },
             {
-                "name": "Croissants",
+                "name": "Boissons Chaudes",
                 "price": 0
             },
             {
-                "name": "Chaussons aux pommes",
-                "price": 0
-            },
-            {
-                "name": "Pains aux raisins",
-                "price": 0
-            },
-            {
-                "name": "Cafés gourmands",
-                "price": 0
-            },
-            {
-                "name": "Cafés",
+                "name": "café thé chocolat Latte (caramel,vanille,noisette)",
                 "price": 0
             }
         ],
         "mealType": "BREAKFAST",
-        "restaurantId": 4,
-        "toUpdate": false
+        "restaurantId": 3,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "Douceurs",
+        "date": "2024-05-16 00:00:00",
+        "title": "REPAS",
         "foodItems": [
             {
-                "name": "Cookies",
+                "name": "SALADE",
                 "price": 0
             },
             {
-                "name": "Muffins",
+                "name": "Grande salade composée (poulet,saumon ou jambon cru)",
                 "price": 0
             },
             {
-                "name": "Patisseries",
+                "name": "Petite salade composée (poulet, chèvre,thon)",
                 "price": 0
             },
             {
-                "name": "Beignets",
+                "name": "SANDWICH",
                 "price": 0
             },
             {
-                "name": "Yaourts natures",
+                "name": "Rosette/jambon beurre/végétarien/brie",
                 "price": 0
             },
             {
-                "name": "Yaourts gourmands",
+                "name": "Poulet/thon/jambon-emmental",
                 "price": 0
             },
             {
-                "name": "Compotes",
+                "name": "Ciabatta tomate mozzarella",
+                "price": 0
+            },
+            {
+                "name": "Bagnat thon",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich classique et menu premium",
+                "price": 0
+            },
+            {
+                "name": "OFFRE CHAUDE",
+                "price": 0
+            },
+            {
+                "name": "Pasta box (carbonara, bolognaise,  ou saumon...)",
+                "price": 0
+            },
+            {
+                "name": "Quiche,croque monsieur,panini",
+                "price": 0
+            },
+            {
+                "name": "Plat chaud individuel à réchauffer",
+                "price": 0
+            },
+            {
+                "name": "DOUCEURS",
+                "price": 0
+            },
+            {
+                "name": "Beignet au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Cookie lait ou 3 chocolats",
+                "price": 0
+            },
+            {
+                "name": "Muffin pépites, tout chocolat, myrtilles-framboises, citron",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
+        "restaurantId": 3,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-02 00:00:00",
-        "title": "Bar à salade",
+        "date": "2024-05-17 00:00:00",
+        "title": "Petit Dej",
         "foodItems": [
             {
-                "name": "4 bases aux choix",
+                "name": "Viennoiseries cuisson sur place",
                 "price": 0
             },
             {
-                "name": "20 ingredients aux choix",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-02 00:00:00",
-        "title": "Offres chaudes",
-        "foodItems": [
-            {
-                "name": "Paninis",
+                "name": "Pain chocolat, croissant, pain aux raisins, choco suisse",
                 "price": 0
             },
             {
-                "name": "Quiches",
+                "name": "Boissons Chaudes",
                 "price": 0
             },
             {
-                "name": "Croque-monsieur",
-                "price": 0
-            },
-            {
-                "name": "Pizzas",
-                "price": 0
-            },
-            {
-                "name": "Box",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "Moment gourmand",
-        "foodItems": [
-            {
-                "name": "Tresses au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Pains au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Croissants",
-                "price": 0
-            },
-            {
-                "name": "Chaussons aux pommes",
-                "price": 0
-            },
-            {
-                "name": "Pains aux raisins",
-                "price": 0
-            },
-            {
-                "name": "Cafés gourmands",
-                "price": 0
-            },
-            {
-                "name": "Cafés",
+                "name": "café thé chocolat Latte (caramel,vanille,noisette)",
                 "price": 0
             }
         ],
         "mealType": "BREAKFAST",
-        "restaurantId": 4,
-        "toUpdate": false
+        "restaurantId": 3,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-03 00:00:00",
-        "title": "Douceurs",
+        "date": "2024-05-17 00:00:00",
+        "title": "REPAS",
         "foodItems": [
             {
-                "name": "Cookies",
+                "name": "SALADE",
                 "price": 0
             },
             {
-                "name": "Muffins",
+                "name": "Grande salade composée (poulet,saumon ou jambon cru)",
                 "price": 0
             },
             {
-                "name": "Patisseries",
+                "name": "Petite salade composée (poulet, chèvre,thon)",
                 "price": 0
             },
             {
-                "name": "Beignets",
+                "name": "SANDWICH",
                 "price": 0
             },
             {
-                "name": "Yaourts natures",
+                "name": "Rosette/jambon beurre/végétarien/brie",
                 "price": 0
             },
             {
-                "name": "Yaourts gourmands",
+                "name": "Poulet/thon/jambon-emmental",
                 "price": 0
             },
             {
-                "name": "Compotes",
+                "name": "Ciabatta tomate mozzarella",
+                "price": 0
+            },
+            {
+                "name": "Bagnat thon",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich classique et menu premium",
+                "price": 0
+            },
+            {
+                "name": "OFFRE CHAUDE",
+                "price": 0
+            },
+            {
+                "name": "Pasta box (carbonara, bolognaise,  ou saumon...)",
+                "price": 0
+            },
+            {
+                "name": "Quiche,croque monsieur,panini",
+                "price": 0
+            },
+            {
+                "name": "Plat chaud individuel à réchauffer",
+                "price": 0
+            },
+            {
+                "name": "DOUCEURS",
+                "price": 0
+            },
+            {
+                "name": "Beignet au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Cookie lait ou 3 chocolats",
+                "price": 0
+            },
+            {
+                "name": "Muffin pépites, tout chocolat, myrtilles-framboises, citron",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
+        "restaurantId": 3,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-03 00:00:00",
-        "title": "Bar à salade",
+        "date": "2024-05-20 00:00:00",
+        "title": "Fermeture",
         "foodItems": [
             {
-                "name": "4 bases aux choix",
-                "price": 0
-            },
-            {
-                "name": "20 ingredients aux choix",
+                "name": "Structure fermée",
                 "price": 0
             }
         ],
         "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-03 00:00:00",
-        "title": "Offres chaudes",
-        "foodItems": [
-            {
-                "name": "Paninis",
-                "price": 0
-            },
-            {
-                "name": "Quiches",
-                "price": 0
-            },
-            {
-                "name": "Croque-monsieur",
-                "price": 0
-            },
-            {
-                "name": "Pizzas",
-                "price": 0
-            },
-            {
-                "name": "Box",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "Moment gourmand",
-        "foodItems": [
-            {
-                "name": "Tresses au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Pains au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Croissants",
-                "price": 0
-            },
-            {
-                "name": "Chaussons aux pommes",
-                "price": 0
-            },
-            {
-                "name": "Pains aux raisins",
-                "price": 0
-            },
-            {
-                "name": "Cafés gourmands",
-                "price": 0
-            },
-            {
-                "name": "Cafés",
-                "price": 0
-            }
-        ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "Douceurs",
-        "foodItems": [
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Muffins",
-                "price": 0
-            },
-            {
-                "name": "Patisseries",
-                "price": 0
-            },
-            {
-                "name": "Beignets",
-                "price": 0
-            },
-            {
-                "name": "Yaourts natures",
-                "price": 0
-            },
-            {
-                "name": "Yaourts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Compotes",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "Bar à salade",
-        "foodItems": [
-            {
-                "name": "4 bases aux choix",
-                "price": 0
-            },
-            {
-                "name": "20 ingredients aux choix",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
-    },
-    {
-        "date": "2024-05-06 00:00:00",
-        "title": "Offres chaudes",
-        "foodItems": [
-            {
-                "name": "Paninis",
-                "price": 0
-            },
-            {
-                "name": "Quiches",
-                "price": 0
-            },
-            {
-                "name": "Croque-monsieur",
-                "price": 0
-            },
-            {
-                "name": "Pizzas",
-                "price": 0
-            },
-            {
-                "name": "Box",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
-        "toUpdate": false
+        "restaurantId": 3,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -2095,7 +1754,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -2132,7 +1793,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -2149,7 +1812,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-07 00:00:00",
@@ -2178,7 +1843,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-08 00:00:00",
@@ -2191,7 +1858,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-09 00:00:00",
@@ -2204,7 +1873,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-10 00:00:00",
@@ -2217,7 +1888,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -2254,7 +1927,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -2291,7 +1966,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -2308,7 +1985,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-13 00:00:00",
@@ -2337,7 +2016,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -2374,7 +2055,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -2411,7 +2094,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -2428,7 +2113,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-14 00:00:00",
@@ -2457,7 +2144,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -2494,7 +2183,9 @@
         ],
         "mealType": "BREAKFAST",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -2531,7 +2222,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -2548,7 +2241,9 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     },
     {
         "date": "2024-05-15 00:00:00",
@@ -2577,6 +2272,279 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 4,
-        "toUpdate": false
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-16 00:00:00",
+        "title": "Moment gourmand",
+        "foodItems": [
+            {
+                "name": "Tresses au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Pains au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Croissants",
+                "price": 0
+            },
+            {
+                "name": "Chaussons aux pommes",
+                "price": 0
+            },
+            {
+                "name": "Pains aux raisins",
+                "price": 0
+            },
+            {
+                "name": "Cafés gourmands",
+                "price": 0
+            },
+            {
+                "name": "Cafés",
+                "price": 0
+            }
+        ],
+        "mealType": "BREAKFAST",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-16 00:00:00",
+        "title": "Douceurs",
+        "foodItems": [
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffins",
+                "price": 0
+            },
+            {
+                "name": "Patisseries",
+                "price": 0
+            },
+            {
+                "name": "Beignets",
+                "price": 0
+            },
+            {
+                "name": "Yaourts natures",
+                "price": 0
+            },
+            {
+                "name": "Yaourts gourmands",
+                "price": 0
+            },
+            {
+                "name": "Compotes",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-16 00:00:00",
+        "title": "Bar à salade",
+        "foodItems": [
+            {
+                "name": "4 bases aux choix",
+                "price": 0
+            },
+            {
+                "name": "20 ingredients aux choix",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-16 00:00:00",
+        "title": "Offres chaudes",
+        "foodItems": [
+            {
+                "name": "Paninis",
+                "price": 0
+            },
+            {
+                "name": "Quiches",
+                "price": 0
+            },
+            {
+                "name": "Croque-monsieur",
+                "price": 0
+            },
+            {
+                "name": "Pizzas",
+                "price": 0
+            },
+            {
+                "name": "Box",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "Moment gourmand",
+        "foodItems": [
+            {
+                "name": "Tresses au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Pains au chocolat",
+                "price": 0
+            },
+            {
+                "name": "Croissants",
+                "price": 0
+            },
+            {
+                "name": "Chaussons aux pommes",
+                "price": 0
+            },
+            {
+                "name": "Pains aux raisins",
+                "price": 0
+            },
+            {
+                "name": "Cafés gourmands",
+                "price": 0
+            },
+            {
+                "name": "Cafés",
+                "price": 0
+            }
+        ],
+        "mealType": "BREAKFAST",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "Douceurs",
+        "foodItems": [
+            {
+                "name": "Cookies",
+                "price": 0
+            },
+            {
+                "name": "Muffins",
+                "price": 0
+            },
+            {
+                "name": "Patisseries",
+                "price": 0
+            },
+            {
+                "name": "Beignets",
+                "price": 0
+            },
+            {
+                "name": "Yaourts natures",
+                "price": 0
+            },
+            {
+                "name": "Yaourts gourmands",
+                "price": 0
+            },
+            {
+                "name": "Compotes",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "Bar à salade",
+        "foodItems": [
+            {
+                "name": "4 bases aux choix",
+                "price": 0
+            },
+            {
+                "name": "20 ingredients aux choix",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-17 00:00:00",
+        "title": "Offres chaudes",
+        "foodItems": [
+            {
+                "name": "Paninis",
+                "price": 0
+            },
+            {
+                "name": "Quiches",
+                "price": 0
+            },
+            {
+                "name": "Croque-monsieur",
+                "price": 0
+            },
+            {
+                "name": "Pizzas",
+                "price": 0
+            },
+            {
+                "name": "Box",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
+    },
+    {
+        "date": "2024-05-20 00:00:00",
+        "title": "Fermeture",
+        "foodItems": [
+            {
+                "name": "Structure fermée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 4,
+        "toUpdate": false,
+        "toInsert": false,
+        "fieldsToUpdate": []
     }
 ]

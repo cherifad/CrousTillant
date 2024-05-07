@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Foodtruck Libre-Service d’Arsonval – Grenoble",
+        "place": "Grenoble centre",
+        "schedule": "Lundi au vendredi11h15 - 13h15",
+        "url": "https://www.crous-grenoble.fr/restaurant/arsonval-truck-libre-service/",
+        "cp": "38000",
+        "address": "5 Rue d'Arsonval",
+        "city": "Grenoble",
+        "phone": "04 76 57 44 96",
+        "img": "https://ephoto.nuonet.fr/link/xyg19rjwi8nsuw0.jpg",
+        "meals": [],
+        "crous_id": 2,
+        "lat": 45.192074,
+        "lon": 5.717808
+    },
+    {
+        "id": 2,
+        "name": "Brasserie Latour-Maubourg – Valence",
+        "place": "",
+        "schedule": "7h45 -14h00Lundi au vendredi",
+        "url": "https://www.crous-grenoble.fr/restaurant/brasserie-latour-maubourg-2/",
+        "cp": "26000",
+        "address": "3 Place la Tour-Maubourg",
+        "city": "Valence",
+        "phone": "",
+        "img": "https://ephoto.nuonet.fr/link/dwo19rk0q9umujk.jpg",
+        "meals": [],
+        "crous_id": 2,
+        "lat": 44.933503,
+        "lon": 4.903863
+    },
+    {
+        "id": 3,
+        "name": "RU BriffO’ – Valence",
+        "place": "",
+        "schedule": "Ouvert du lundi au vendredi de 11h30 à 13h30 (fermé le soir)",
+        "url": "https://www.crous-grenoble.fr/restaurant/briffo-3/",
+        "cp": "26000",
+        "address": "32 Rue Barthelemy de Laffemas",
+        "city": "Valence",
+        "phone": "04 75 56 48 18",
+        "img": "https://ephoto.nuonet.fr/link/gut19rk0uphvjmo.jpg",
+        "meals": [],
+        "crous_id": 2,
+        "lat": 44.91777,
+        "lon": 4.915908
+    }
+]
