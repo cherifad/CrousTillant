@@ -10,7 +10,7 @@ import MealCard from "@/components/meal-card";
 import { Heart, HeartOff, Navigation } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getDates } from "@/lib/utils";
+import { getDates, removeFromFavorites, addToFavorites } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
@@ -60,16 +60,20 @@ export default function SingleRestaurant() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const removeFavorite = () => {
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    const newFavorites = favorites.filter(
-      (id: number) => id !== parseInt(restaurantId!)
-    );
-    localStorage.setItem("favorites", JSON.stringify(newFavorites));
-    setIsFavorite(false);
-    toast({
-      description: "Lieu retiré des favoris 💔",
-    });
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      removeFromFavorites(restaurantId.toString());
+      setIsFavorite(false);
+      toast({
+        description: "Lieu retiré des favoris 💔",
+      });
+    } else {
+      addToFavorites({ name: restaurant?.name!, id: restaurantId.toString() });
+      setIsFavorite(true);
+      toast({
+        description: "Lieu ajouté aux favoris ❤️",
+      });
+    }
   };
 
   const sortData = (meals: Meal[] = []) => {
@@ -140,21 +144,29 @@ export default function SingleRestaurant() {
         <div>
           <div className="w-full justify-between md:flex">
             <div>
-              <span className="flex items-center">
+              <span className="sm:flex items-center">
                 <h1 className="font-bold text-3xl">{restaurant?.name}</h1>
-                {isFavorite && (
-                  <Badge
-                    className="ml-2 group cursor-pointer"
-                    onClick={removeFavorite}
-                  >
-                    <Heart className="h-3 w-3 mr-2 group-hover:hidden" />
-                    <HeartOff className="h-3 w-3 mr-2 hidden group-hover:block" />
-                    <span className="group-hover:hidden">Favori</span>
-                    <span className="hidden group-hover:block">
-                      Retirer des favoris
-                    </span>
-                  </Badge>
-                )}
+                <Badge
+                  className="sm:ml-2 group cursor-pointer"
+                  onClick={toggleFavorite}
+                >
+                  <Heart
+                    className={`h-3 w-3 mr-2 ${
+                      isFavorite ? "group-hover:hidden block" : "hidden group-hover:block"
+                    }`}
+                  />
+                  <HeartOff
+                    className={`h-3 w-3 mr-2 ${
+                      isFavorite ? "hidden group-hover:block" : "group-hover:hidden block"
+                    }`}
+                  />
+                  <span className="group-hover:hidden">
+                    {isFavorite ? "Favoris" : "Non favoris"}
+                  </span>
+                  <span className="hidden group-hover:block">
+                    {isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
+                  </span>
+                </Badge>
               </span>
               <RestaurantInfo
                 restaurant={restaurant}

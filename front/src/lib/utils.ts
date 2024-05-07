@@ -1,4 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
+import { get } from "http";
 import { twMerge } from "tailwind-merge";
 
 export type Favorite = {
@@ -53,7 +54,9 @@ export function addToFavorites(favorite: Favorite) {
 }
 
 export function removeFromFavorites(id: string) {
-  const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+  var favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+  const starredFav = getStarredFav();
 
   localStorage.setItem(
     "favorites",
@@ -61,6 +64,15 @@ export function removeFromFavorites(id: string) {
       favorites.filter((favorite: { id: string }) => favorite.id !== id)
     )
   );
+
+  if (starredFav && starredFav.id === id && favorites.length > 1) {
+    favorites = favorites.filter(
+      (favorite: { id: string }) => favorite.id !== id
+    );
+    setStarredFav(favorites[0]);
+  } else if (starredFav && starredFav.id === id && favorites.length === 1) {
+    localStorage.removeItem("starredFav");
+  }
 }
 
 export function isFavorite(id: string) {
