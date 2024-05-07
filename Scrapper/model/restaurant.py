@@ -1,5 +1,5 @@
 class Restaurant:
-    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, meals, lat=None, lon=None):
+    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, crous_id, lat=None, lon=None, meals=[]):
         self.id = id
         self.name = name
         self.place = place
@@ -11,6 +11,7 @@ class Restaurant:
         self.phone = phone
         self.img = img
         self.meals = meals
+        self.crous_id = crous_id
         self.lat = lat
         self.lon = lon
 
@@ -33,6 +34,7 @@ class Restaurant:
             'phone': self.phone,
             'img': self.img,
             'meals': [meal.toJsonObject() for meal in self.meals],
+            'crous_id': self.crous_id,
             'lat': self.lat,
             'lon': self.lon
         }

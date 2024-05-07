@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Cafétéria Archimède",
+        "place": "Lyon Tech-la Doua Villeurbanne",
+        "schedule": "Du lundi au vendredi7h30 à 16h",
+        "url": "https://www.crous-lyon.fr/restaurant/cafeteria-archimede/",
+        "cp": "69100",
+        "address": "7a Avenue Albert Einstein",
+        "city": "Villeurbanne",
+        "phone": "04 78 93 34 21",
+        "img": "https://ephoto.nuonet.fr/link/tjw19o9enk9xelc.jpeg",
+        "meals": [],
+        "crous_id": 1,
+        "lat": 45.78221,
+        "lon": 4.877652
+    },
+    {
+        "id": 2,
+        "name": "Cafétéria Astrée",
+        "place": "Lyon Tech-la Doua Villeurbanne",
+        "schedule": "Du lundi au vendredi 7h30 à 16h",
+        "url": "https://www.crous-lyon.fr/restaurant/cafeteria-astree/",
+        "cp": "69100",
+        "address": "6 Avenue Gaston Berger",
+        "city": "Villeurbanne",
+        "phone": "04 72 44 62 76",
+        "img": "https://ephoto.nuonet.fr/link/fsv19o9dk6s0f28.jpeg",
+        "meals": [],
+        "crous_id": 1,
+        "lat": 45.783486,
+        "lon": 4.870677
+    },
+    {
+        "id": 3,
+        "name": "Cafétéria Bistrot de la Manu",
+        "place": "Manufacture",
+        "schedule": "Cour nord - Sous-sol (bâtiment C) Lundi au jeudi de 7h30 à 18h Vendredi de 7h30 à 17h",
+        "url": "https://www.crous-lyon.fr/restaurant/cafeteria-bistrot-de-la-manu/",
+        "cp": "69008",
+        "address": "6 Rue Professeur Rollet",
+        "city": "Lyon",
+        "phone": "04 72 78 98 74",
+        "img": "https://ephoto.nuonet.fr/link/zum19o99ar74wow.jpeg",
+        "meals": [],
+        "crous_id": 1,
+        "lat": 45.748368,
+        "lon": 4.861379
+    }
+]

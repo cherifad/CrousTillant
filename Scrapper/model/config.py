@@ -1,10 +1,12 @@
 import json
+from datetime import datetime
 
 class SupportedCrousModel:
-    def __init__(self, Name: str, BaseUrl: str):
+    def __init__(self, Name: str, BaseUrl: str, id: int):
         self.name = Name
         self.folder_name = Name.lower().replace(' ', '_')
         self.url = BaseUrl
+        self.id = id
 
     def __str__(self):
         return f'{self.name} ({self.url}) ==> {self.folder_name}'
@@ -28,7 +30,7 @@ class Config:
             with open('conf.json') as f:
                 return Config(**json.load(f))
         except FileNotFoundError as e:
-            print('Config file not found' + str(e))
+            print(f"[ERROR] [{datetime.now()}] Configuration file not found: {e}")
             return None
         
     def __str__(self):
