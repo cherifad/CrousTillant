@@ -135,3 +135,10 @@ export const hideAnnouncement = () => {
 export const showAnnouncement = () => {
   localStorage.setItem("announcement", JSON.stringify({ show: true }));
 };
+
+export const getGithubStarCount = async () => {
+  const response = await fetch("https://api.github.com/repos/cherifad/SmartRU");
+  const data = await response.json();
+
+  return data.stargazers_count;
+};
