@@ -254,6 +254,8 @@ def compare_and_insert_meals(crous_name):
 def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
     # Find the differences between the arrays of JSON objects
     diff = DeepDiff(oldMeals, newMeals, ignore_order=True).to_dict()
+    meal_to_update = 0
+    meal_to_insert = 0
 
     # Get the objects that are different and set 'toUpdate' to True (with fieldsToUpdate) or toInsert to True in the new meals list
     for key, change in diff.items():
@@ -266,6 +268,7 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
                     # Update the corresponding Meal object
                     newMeals[index]["toUpdate"] = True
                     newMeals[index]["fieldsToUpdate"].append(details["new_value"])
+                    meal_to_update += 1
         elif key == 'iterable_item_added':
             # If items have been added, set toInsert to True
             for path, details in change.items():
@@ -288,7 +291,7 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
                             'toInsert': True,
                             'fieldsToUpdate': []
                         })
-                        print(f"[{datetime.datetime.now()}] Meal added: {meal.title}")
+                        meal_to_insert += 1
                     else:
                         # not a Meal object ==> this case "root[5]['foodItems'][2]": {'name': 'AJOUT', 'price': 9999999}
                         # Extract the index of the food item from the path
@@ -298,7 +301,9 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
                         # Update the corresponding Meal object
                         newMeals[index]["toUpdate"] = True
                         newMeals[index]["fieldsToUpdate"].append(field)
+                        meal_to_update += 1
 
+    print(f"[{datetime.datetime.now()}] Meals to update: {meal_to_update}, Meals to insert: {meal_to_insert}")
     return newMeals
 
 def is_a_meal_object(data):
