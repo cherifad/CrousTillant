@@ -5,11 +5,20 @@ import { twMerge } from "tailwind-merge";
 export type Favorite = {
   id: string;
   name: string;
+  crousId: number;
 };
 
 export type AnnouncementLocalStorage = {
   show: boolean;
   date?: Date;
+};
+
+export type Crous = {
+  id: number;
+  name: string;
+  url: string;
+  created_at: string;
+  updated_at: string;
 };
 
 export function cn(...inputs: ClassValue[]) {
@@ -48,15 +57,15 @@ export function addToFavorites(favorite: Favorite) {
     return;
   }
 
-  favorites.push({ id: favorite.id, name: favorite.name });
+  favorites.push({ id: favorite.id, name: favorite.name, crousId: favorite.crousId });
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
 
-export function removeFromFavorites(id: string) {
+export function removeFromFavorites(id: string, crousId: number) {
   var favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
 
-  const starredFav = getStarredFav();
+  const starredFav = getStarredFav(crousId);
 
   localStorage.setItem(
     "favorites",
@@ -81,8 +90,11 @@ export function isFavorite(id: string) {
   return favorites.some((favorite: { id: string }) => favorite.id === id);
 }
 
-export const getFavorites = (): Favorite[] => {
-  return JSON.parse(localStorage.getItem("favorites") || "[]");
+export const getFavorites = (crousId: Number): Favorite[] => {
+  const fav = JSON.parse(localStorage.getItem("favorites") || "[]");
+  console.log(fav);
+
+  return fav.filter((f: Favorite) => f.crousId === crousId);
 };
 
 export const clearUserPreferences = () => {
@@ -97,12 +109,12 @@ export const setStarredFav = (favorite: Favorite) => {
   localStorage.setItem("starredFav", JSON.stringify(favorite));
 };
 
-export const getStarredFav = (): Favorite | null => {
+export const getStarredFav = (crousId: Number): Favorite | null => {
   const fav = JSON.parse(localStorage.getItem("starredFav") || "null");
 
   if (!fav) {
     // return the first favorite
-    const favorites = getFavorites();
+    const favorites = getFavorites(crousId);
     return favorites.length > 0 ? favorites[0] : null;
   }
 
@@ -153,4 +165,12 @@ export const getGithubStarCount = async () => {
   const data = await response.json();
 
   return data.stargazers_count;
+};
+
+export const getSelectedCrous = (): Crous | null => {
+  return JSON.parse(localStorage.getItem("selectedCrous") || "null");
+};
+
+export const setSelectedCrous = (crous: Crous) => {
+  localStorage.setItem("selectedCrous", JSON.stringify(crous));
 };

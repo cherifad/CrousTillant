@@ -26,6 +26,7 @@ type Props = {
   city: string;
   phone: string;
   img: string;
+  crousId: number;
   favorites: Favorite[];
   onFavoriteChange: (
     restaurantId: number,
@@ -46,6 +47,7 @@ export default function RestaurantCard({
   city,
   phone,
   img,
+  crousId,
   favorites,
   onFavoriteChange,
 }: Props) {
@@ -55,11 +57,11 @@ export default function RestaurantCard({
 
   const putToFavorites = () => {
     if (isFavorite) {
-      removeFromFavorites(id.toString());
+      removeFromFavorites(id.toString(), crousId);
       setIsFavorite(false);
       onFavoriteChange(id, name, false);
     } else {
-      addToFavorites({ id: id.toString(), name });
+      addToFavorites({ id: id.toString(), name: name, crousId: crousId });
       setIsFavorite(true);
       onFavoriteChange(id, name, true);
     }
@@ -97,7 +99,7 @@ export default function RestaurantCard({
                 src="/img/default.jpeg"
                 alt={name + " image"}
                 fill={true}
-                style={{objectFit:"cover"}}
+                style={{ objectFit: "cover" }}
               />
             ) : (
               <Image
@@ -105,7 +107,7 @@ export default function RestaurantCard({
                 src={img}
                 alt={name + " image"}
                 fill={true}
-                style={{objectFit:"cover"}}
+                style={{ objectFit: "cover" }}
               />
             )}
           </div>

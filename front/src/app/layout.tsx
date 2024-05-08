@@ -6,7 +6,6 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { ThemeProvider } from "@/app/theme-provider";
 import Announcement from "@/components/announcement";
-
 import { cn } from "@/lib/utils";
 
 const fontSans = FontSans({

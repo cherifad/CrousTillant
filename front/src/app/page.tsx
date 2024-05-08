@@ -23,6 +23,8 @@ import {
   toggleDisplayGrid,
 } from "@/lib/utils";
 import { useSearchParams, redirect } from "next/navigation";
+import { getSelectedCrous, Crous } from "@/lib/utils";
+import Link from "next/link";
 
 export default function Home() {
   const [display, setDisplay] = useState<"list" | "grid">("list");
@@ -31,15 +33,23 @@ export default function Home() {
   const [loading, setLoading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
+  const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
 
   useEffect(() => {
     setLoading(true);
     // This is achieved by using the fetch method with the cache: 'no-store' option
-    fetch("/api/restaurant")
+    const crous = getSelectedCrous();
+    setSelectedCrous(crous);
+
+    if (!crous) {
+      redirect("/crous");
+    }
+
+    fetch("/api/restaurant?crousId=" + crous.id)
       .then((res) => res.json())
       .then((data) => setRestaurants(data));
 
-    setFavorites(getFavorites());
+    setFavorites(getFavorites(crous.id));
     setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -50,7 +60,14 @@ export default function Home() {
     isFavorite: boolean
   ) => {
     if (isFavorite) {
-      setFavorites([...favorites, { id: restaurantId.toString(), name: name }]);
+      setFavorites([
+        ...favorites,
+        {
+          id: restaurantId.toString(),
+          name: name,
+          crousId: selectedCrous?.id!,
+        },
+      ]);
     } else {
       setFavorites(
         favorites.filter(
@@ -63,11 +80,16 @@ export default function Home() {
   return (
     <>
       <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
-        <RedirectIfFavAsHomePage />
+        <CheckForRedirect />
       </Suspense>
       <div className="w-full justify-between md:flex">
         <div>
-          <h1 className="font-bold text-3xl">RU du Crous de Lyon</h1>
+          <h1 className="font-bold text-3xl flex items-center">
+            <span>Restaurants du {selectedCrous?.name}</span>
+            <Link className="ml-2 h-fit" href="/crous">
+              <Badge>Choisir un autre Crous</Badge>
+            </Link>
+          </h1>
           <p className="opacity-50">{restaurants.length} restaurants trouvés</p>
           {/* <Filters /> */}
           <Input
@@ -130,6 +152,7 @@ export default function Home() {
                     city={restaurant.city}
                     phone={restaurant.phone}
                     img={restaurant.img}
+                    crousId={restaurant.crousId}
                     favorites={favorites || []}
                     onFavoriteChange={onFavoriteChange}
                   />
@@ -178,6 +201,7 @@ export default function Home() {
                     city={restaurant.city}
                     phone={restaurant.phone}
                     img={restaurant.img}
+                    crousId={restaurant.crousId}
                     favorites={favorites || []}
                     onFavoriteChange={onFavoriteChange}
                   />
@@ -200,6 +224,7 @@ export default function Home() {
                       city={restaurant.city}
                       phone={restaurant.phone}
                       img={restaurant.img}
+                      crousId={restaurant.crousId}
                       favorites={favorites || []}
                       onFavoriteChange={onFavoriteChange}
                     />
@@ -211,12 +236,16 @@ export default function Home() {
   );
 }
 
-function RedirectIfFavAsHomePage() {
+function CheckForRedirect() {
   const params = useSearchParams();
   useEffect(() => {
+    if (!getSelectedCrous()) {
+      redirect("/crous");
+    }
+
     if (getFavAsHomePage()) {
       if (params && params.get("referer") != "me") {
-        const fav = getStarredFav();
+        const fav = getStarredFav(getSelectedCrous()?.id!);
         if (fav) {
           redirect(`/restaurant/${slugify(fav.name)}-${fav.id}`);
         }

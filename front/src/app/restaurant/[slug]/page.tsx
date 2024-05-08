@@ -10,7 +10,11 @@ import MealCard from "@/components/meal-card";
 import { Heart, HeartOff, Navigation } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getDates, removeFromFavorites, addToFavorites } from "@/lib/utils";
+import {
+  getDates,
+  removeFromFavorites,
+  addToFavorites,
+} from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
@@ -62,13 +66,17 @@ export default function SingleRestaurant() {
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      removeFromFavorites(restaurantId.toString());
+      removeFromFavorites(restaurantId.toString(), restaurant?.crousId!);
       setIsFavorite(false);
       toast({
         description: "Lieu retiré des favoris 💔",
       });
     } else {
-      addToFavorites({ name: restaurant?.name!, id: restaurantId.toString() });
+      addToFavorites({
+        name: restaurant?.name!,
+        id: restaurantId.toString(),
+        crousId: restaurant?.crousId!
+      });
       setIsFavorite(true);
       toast({
         description: "Lieu ajouté aux favoris ❤️",
@@ -152,12 +160,16 @@ export default function SingleRestaurant() {
                 >
                   <Heart
                     className={`h-3 w-3 mr-2 ${
-                      isFavorite ? "group-hover:hidden block" : "hidden group-hover:block"
+                      isFavorite
+                        ? "group-hover:hidden block"
+                        : "hidden group-hover:block"
                     }`}
                   />
                   <HeartOff
                     className={`h-3 w-3 mr-2 ${
-                      isFavorite ? "hidden group-hover:block" : "group-hover:hidden block"
+                      isFavorite
+                        ? "hidden group-hover:block"
+                        : "group-hover:hidden block"
                     }`}
                   />
                   <span className="group-hover:hidden">

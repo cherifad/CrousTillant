@@ -104,8 +104,6 @@ def get_restaurants(url, crous_name, crous_id):
             restaurants.append(restaurant.toJsonObject())
             print(f"[{datetime.datetime.now()}] Restaurant information gathered successfully.")
 
-        if i == 2:
-            break
         i += 1
     
     # write to json file

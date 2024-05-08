@@ -4,9 +4,11 @@ import psycopg
 from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
 
+db_connection = "dbname=smartru user=postgres password=postgres"
+
 def insert_meals(meals: list[Meal]):
     # Connect to an existing database
-    with psycopg.connect("dbname=smartru user=postgres password=postgres") as conn:
+    with psycopg.connect(db_connection) as conn:
         print(f"[{datetime.now()}] Checking for meals to insert or update in the database")
 
         # Open a cursor to perform database operations
@@ -36,24 +38,28 @@ def insert_meals(meals: list[Meal]):
 
 def insert_restaurants(restaurants):
     # Connect to an existing database
-    with psycopg.connect("dbname=smartru user=postgres password=postgres") as conn:
+    with psycopg.connect(db_connection) as conn:
 
         # Open a cursor to perform database operations
         with conn.cursor() as cur:
             print(f"[{datetime.now()}] Inserting {len(restaurants)} restaurants into the database")
 
             for restaurant in restaurants:
-                # insert restaurant
-                cur.execute(
-                    'INSERT INTO public."Restaurant" (name, place, schedule, url, cp, address, city, phone, img, "crousId", lat, lng, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
-                    (restaurant['name'], restaurant['place'], restaurant['schedule'], restaurant['url'], restaurant['cp'], restaurant['address'], restaurant['city'], restaurant['phone'], restaurant['img'], restaurant['crous_id'], restaurant['lat'], restaurant['lon'], datetime.now()))
-            
+                try:
+                    # insert restaurant
+                    cur.execute(
+                        'INSERT INTO public."Restaurant" (name, place, schedule, url, cp, address, city, phone, img, "crousId", lat, lng, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+                        (restaurant['name'], restaurant['place'], restaurant['schedule'], restaurant['url'], restaurant['cp'], restaurant['address'], restaurant['city'], restaurant['phone'], restaurant['img'], restaurant['crous_id'], restaurant['lat'], restaurant['lon'], datetime.now()))
+                except Exception as e:
+                    conn.commit()
+                    print(f"[{datetime.now()}] An error occurred while inserting the restaurants into the database: {e}")
+                
             # Make the changes to the database persistent
             conn.commit()
 
 def get_restaurants(crous_id):
     # Connect to an existing database
-    with psycopg.connect("dbname=smartru user=postgres password=postgres") as conn:
+    with psycopg.connect(db_connection) as conn:
 
         # Open a cursor to perform database operations
         with conn.cursor() as cur:
