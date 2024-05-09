@@ -30,7 +30,9 @@ export default function NotFoundPage() {
           <Button asChild variant="outline" className="mt-4">
             <Link
               href={
-                window.history.length > 1 ? "javascript:history.back()" : "/"
+                window !== undefined && window.history.length > 1
+                  ? "javascript:history.back()"
+                  : "/"
               }
             >
               Reculer comme l'écho du cor
