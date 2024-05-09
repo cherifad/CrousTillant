@@ -1,85 +1,69 @@
-import requests
-import json
-from bs4 import BeautifulSoup as bs
+import datetime
+import os 
 from model.config import Config
-from model.meal import Meal, MealType, FoodItem
-from utils import parse_date
-import sqlite3 as sql
-
-firefox_headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:89.0) Gecko/20100101 Firefox/89.0',
-    'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate, br',
-    'Connection': 'keep-alive',
-    'Upgrade-Insecure-Requests': '1',
-    'Cache-Control': 'max-age=0'
-}
-
-def getMenu(url, headers):
-    response = requests.get(url, headers=headers)
-    soup = bs(response.text, 'html.parser')
-
-    returnMeals: list[Meal] = []
-
-    meals = soup.find_all("div", class_="meal")
-    # print(meals)
-    for meal in meals:
-        # get parent div
-        parent = meal.find_parent("div")
-        date = parent.find("time", class_="menu_date_title").text
-        newMeal = Meal(parse_date(date.replace("Menu du ", "").strip()), "", [], MealType.BREAKFAST)
-        mealType = meal.find("div", class_="meal_title").text
-        if "Petit déjeuner" in mealType:
-            mealType = MealType.BREAKFAST
-        elif "Déjeuner" in mealType:
-            mealType = MealType.LUNCH
-        elif "Dîner" in mealType:
-            mealType = MealType.DINNER
-        else:
-            continue
-
-        foods = meal.find("ul", class_="meal_foodies").find_all("li", recursive=False)
-        # print(foods)
-
-        for food in foods:
-            title = food.contents[0].text
-            newMeal.title = title
-            newMeal.foodItems = []
-            items = food.find_all("li")
-            for item in items:
-                name = item.text.strip()
-                newMeal.foodItems.append(FoodItem(name, 0))
-            returnMeals.append(newMeal.toJsonObject())
-
-            print(f"found {len(newMeal.foodItems)} items for {mealType.name} : {newMeal.title}")
-            print(f"List of items for date {newMeal.date}\n" + '\n'.join([str(foodItem) for foodItem in newMeal.foodItems]) + '\n\n')
-        
-
-    return returnMeals
-
-def getRestaurants(url, headers):
-    response = requests.get(url, headers=headers)
-    soup = bs(response.text, 'html.parser')
-    items = soup.find("section", class_="vc_restaurants").find_all("li")
-    print(items)
-
-    return items
-
-def dbConnection():
-    conn = sql.connect('Database\data.db')
-    cursor = conn.cursor()
-    return conn, cursor
+from scraper import get_all_meals, compare_and_insert_meals, get_restaurants
+from database import get_restaurants as get_restaurants_db
 
 if __name__ == '__main__':
-    config = Config.loadConfig()
-    if config is None:
-        exit(1)
-    
-    # url = config.appConfig['BaseUrl']
-    # response = requests.get(url, headers=firefox_headers)
-    # soup = bs(response.text, 'html.parser')
-    # items = soup.find("section", class_="vc_restaurants").find_all("li")
-    # print(items)
 
-    getMenu("https://www.crous-lyon.fr/restaurant/cafeteria-saint-paul/", firefox_headers)
+    try:
+        # clear the console
+        os.system('cls' if os.name == 'nt' else 'clear')
+        
+        config = Config.loadConfig()
+        if config is None:
+            raise Exception("Failed to load the configuration file.")
+
+        print(f"[{datetime.datetime.now()}] Loaded configuration: {config}")
+
+        # look for required folders and files: json folder and error.log file
+        if not os.path.exists('json'):
+            raise Exception("The 'json' folder does not exist.")
+        if not os.path.exists('error.log'):
+            print(f"[{datetime.datetime.now()}] 'error.log' file does not exist. Creating it...")
+            with open('error.log', 'w') as f:
+                f.write(f"[{datetime.datetime.now()}] Created 'error.log' file.\n")
+
+        # get the crous name from the config
+        for supported_crous in config.supportedCrous:
+            print("==============================================================================")
+            print(f"[{datetime.datetime.now()}] Starting the scrapping process for {supported_crous.name}...")
+            # if a folder with the crous name does not exist, create it and fetch the data, fetch the date if the folder exists but is empty
+            if not os.path.exists(f'./json/{supported_crous.folder_name}') or len(os.listdir(f'./json/{supported_crous.folder_name}')) == 0:
+                if not os.path.exists(f'./json/{supported_crous.folder_name}'):
+                    os.makedirs(f'./json/{supported_crous.folder_name}')
+                    print(f"[{datetime.datetime.now()}] Created folder for {supported_crous} in the 'json' directory.")
+
+
+                #################### Restaurants scrapping ####################
+                # get the restaurants from the crous website
+                print(f"[{datetime.datetime.now()}] Starting the restaurants scrapping process for {supported_crous.name}...")
+                get_restaurants(supported_crous.url, supported_crous.folder_name, supported_crous.id)
+                print(f"[{datetime.datetime.now()}] Restaurants scrapping process completed successfully for {supported_crous.name}.")
+                #################### Restaurants scrapping ####################\
+
+            ####################### Meals scrapping #######################
+            # get all the meals from the restaurants
+            print(f"[{datetime.datetime.now()}] Scrapping meals from {supported_crous.name}...")
+            restaurants = get_restaurants_db(supported_crous.id) # json.load(open(f'./json/{supported_crous.folder_name}/restaurants_{supported_crous.folder_name}.json'))
+            get_all_meals(restaurants, supported_crous.folder_name)
+
+            # compare and insert the meals into the database
+            compare_and_insert_meals(supported_crous.folder_name)
+            print(f"[{datetime.datetime.now()}] Scrapping meals completed successfully for {supported_crous.name}.")
+            ####################### Meals scrapping #######################
+
+        print(f"[{datetime.datetime.now()}] Scrapping process completed successfully.")
+    except Exception as e:
+        print(f'[ERROR] [{datetime.datetime.now()}] An error occurred during the scrapping process. {e}')
+
+        #append the error to the log file
+        if os.path.exists('json'):
+            with open('error.log', 'a') as f:
+                f.write(f'[ERROR] [{datetime.datetime.now()}] {e}\n')
+
+        print(f"[{datetime.datetime.now()}] Scrapping process failed: {e}")
+
+        exit(1)
+
+    

@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  db:
+    container_name: db
+    image: postgres
+    ports:
+        - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: smartru
+    healthcheck:
+      test: ["CMD", "pg_isready", "-q", "-d", "smartru", "-U", "postgres"]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+    # run init.sql on init
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  web:
+    container_name: web
+    image: front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "2500:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+    links:
+      - db
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/smartru
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: adlencherif29@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - 2501:80
+
+  # api:
+  #   image: back
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     - db

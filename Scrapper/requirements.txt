@@ -1,0 +1,4 @@
+beautifulsoup4==4.12.3
+deepdiff==7.0.1
+psycopg==3.1.18
+Requests==2.31.0

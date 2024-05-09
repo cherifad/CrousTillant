@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -23,11 +23,44 @@ model Meal {
 model Restaurant {
   id         Int      @id @default(autoincrement())
   name       String
-  url        String
+  place      String
+  schedule   String
+  url        String   @unique
   cp         String
   address    String
   city       String
   phone      String
-  updated_at DateTime
+  img        String
+  lat        Float?
+  lng        Float?
+  crous      Crous    @relation(fields: [crousId], references: [id])
+  crousId    Int
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
   meals      Meal[]
+}
+
+model GlobalStats {
+  id               Int      @id @default(autoincrement())
+  date             DateTime
+  totalRestaurants Int
+  totalMeals       Int
+}
+
+model Announcement {
+  id         Int      @id @default(autoincrement())
+  title      String
+  content    String
+  img        String
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+}
+
+model Crous {
+  id         Int          @id @default(autoincrement())
+  name       String
+  url        String
+  restaurant Restaurant[]
+  created_at DateTime     @default(now())
+  updated_at DateTime     @updatedAt
 }

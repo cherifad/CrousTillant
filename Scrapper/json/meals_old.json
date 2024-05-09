@@ -1,0 +1,854 @@
+[
+    {
+        "date": "2024-04-30 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-04-30 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-01 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-01 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-01 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-01 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-02 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-03 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-06 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-07 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-08 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-09 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-10 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "salade",
+        "foodItems": [
+            {
+                "name": "grande salade composée",
+                "price": 0
+            },
+            {
+                "name": "petite salade composée",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "sandwich",
+        "foodItems": [
+            {
+                "name": "Classiques (saucisson, jambon, végé, brie)",
+                "price": 0
+            },
+            {
+                "name": "Incontournables (jambon fromage, poulet, thon,)",
+                "price": 0
+            },
+            {
+                "name": "Bagna",
+                "price": 0
+            },
+            {
+                "name": "Ciabatta",
+                "price": 0
+            },
+            {
+                "name": "Sandwich du mois",
+                "price": 0
+            },
+            {
+                "name": "Clubs (emmental, thon, jambon, poulet)",
+                "price": 0
+            },
+            {
+                "name": "Menu sandwich à 1 € pour étudiant boursier",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "plat chaud",
+        "foodItems": [
+            {
+                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    },
+    {
+        "date": "2024-05-13 00:00:00",
+        "title": "douceurs",
+        "foodItems": [
+            {
+                "name": "Beignet",
+                "price": 0
+            },
+            {
+                "name": "Cookie",
+                "price": 0
+            },
+            {
+                "name": "Muffin",
+                "price": 0
+            },
+            {
+                "name": "Brownie",
+                "price": 0
+            }
+        ],
+        "mealType": "LUNCH",
+        "restaurantId": 1
+    }
+]

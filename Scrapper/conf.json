@@ -8,5 +8,17 @@
         "AppId": "smart-ru",
         "BaseUrl": "https://www.crous-lyon.fr/se-restaurer/ou-manger/",
         "DbPath": "smart-ru.db"
-    }
+    },
+    "SupportedCrous": [
+        {
+            "id": 1,
+            "Name": "Crous de Lyon",
+            "BaseUrl": "https://www.crous-lyon.fr/se-restaurer/ou-manger/"
+        },
+        {
+            "id": 2,
+            "Name": "Crous de Grenoble",
+            "BaseUrl": "https://www.crous-grenoble.fr/se-restaurer/ou-manger/"
+        }
+    ]
 }

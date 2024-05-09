@@ -1,0 +1,29 @@
+# Use a slim base image of Python
+FROM python:3.10-slim AS base
+
+# Install cron and vim
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+    cron \
+    vim \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a directory for the application
+WORKDIR /app
+
+# Copy only necessary files for cron and application
+COPY crontab /etc/cron.d/crontab
+COPY requirements.txt /app/requirements.txt
+COPY . /app
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Set permissions for the crontab file
+RUN chmod 0644 /etc/cron.d/crontab
+
+# Set up cron job
+RUN crontab /etc/cron.d/crontab
+
+# Set entry point for cron
+CMD ["cron", "-f"]
