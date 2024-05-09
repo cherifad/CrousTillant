@@ -4,6 +4,8 @@ services:
   db:
     container_name: db
     image: postgres
+    ports:
+        - "5432:5432"
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -24,7 +26,7 @@ services:
       context: ./front
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "2500:3000"
     depends_on:
       db:
         condition: service_healthy
@@ -32,6 +34,15 @@ services:
       - db
     environment:
       DATABASE_URL: postgres://postgres:postgres@db:5432/smartru
+      
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: adlencherif29@gmail.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - 2501:80
 
   # api:
   #   image: back

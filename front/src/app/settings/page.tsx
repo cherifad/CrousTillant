@@ -24,19 +24,24 @@ import {
   deleteFavAsHomePage,
   getFavAsHomePage,
   setFavAsHomePage,
+  getSelectedCrous,
+  Crous,
 } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "next-themes";
+import { usePathname, redirect } from "next/navigation";
 
 export default function Settings() {
   const [popoverOpen, setPopoverOpen] = useState(false);
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [localStarredFav, setLocalStarredFav] = useState<Favorite | null>(null);
   const [localFavAsHomePage, setLocalFavAsHomePage] = useState<boolean>(false);
+  const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
 
   const { toast } = useToast();
-  const { setTheme, theme } = useTheme();
+  const { setTheme, theme, systemTheme } = useTheme();
+  const pathname = usePathname();
 
   const handleClearFavorites = () => {
     clearUserPreferences();
@@ -93,8 +98,15 @@ export default function Settings() {
   };
 
   useEffect(() => {
-    setFavorites(getFavorites());
-    setLocalStarredFav(getStarredFav());
+    const crous = getSelectedCrous();
+    setSelectedCrous(crous);
+
+    if (!crous) {
+      redirect("/crous?clbk=" + pathname);
+    }
+
+    setFavorites(getFavorites(crous.id));
+    setLocalStarredFav(getStarredFav(crous.id));
     setLocalFavAsHomePage(getFavAsHomePage());
   }, []);
 
@@ -110,7 +122,7 @@ export default function Settings() {
             </p>
           </div>
           <Switch
-            checked={theme === "dark"}
+            checked={theme === "system" ? systemTheme === "dark" : theme === "dark"}
             onCheckedChange={handleThemeChange}
           />
         </div>
@@ -120,7 +132,8 @@ export default function Settings() {
           <div className="space-y-0.5">
             <p className="font-medium text-base">Favori comme page d'accueil</p>
             <p className="text-[0.8rem] text-muted-foreground">
-              La page d'accueil affichera le premier restaurant en favori ou le restaurant choisi si défini.
+              La page d'accueil affichera le premier restaurant en favori ou le
+              restaurant choisi si défini.
             </p>
           </div>
           <Switch

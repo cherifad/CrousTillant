@@ -57,7 +57,11 @@ export function addToFavorites(favorite: Favorite) {
     return;
   }
 
-  favorites.push({ id: favorite.id, name: favorite.name, crousId: favorite.crousId });
+  favorites.push({
+    id: favorite.id,
+    name: favorite.name,
+    crousId: favorite.crousId,
+  });
 
   localStorage.setItem("favorites", JSON.stringify(favorites));
 }
@@ -103,14 +107,25 @@ export const clearUserPreferences = () => {
   localStorage.removeItem("favAsHomePage");
   localStorage.removeItem("display");
   localStorage.removeItem("announcement");
+  localStorage.removeItem("selectedCrous");
 };
 
 export const setStarredFav = (favorite: Favorite) => {
-  localStorage.setItem("starredFav", JSON.stringify(favorite));
+  var starredFavs = JSON.parse(localStorage.getItem("starredFav") || "[]");
+
+  if (starredFavs.some((f: Favorite) => f.crousId === favorite.crousId)) {
+    starredFavs = starredFavs.map((f: Favorite) =>
+      f.crousId === favorite.crousId ? favorite : f
+    );
+  } else {
+    starredFavs.push(favorite);
+  }
+
+  localStorage.setItem("starredFav", JSON.stringify(starredFavs));
 };
 
 export const getStarredFav = (crousId: Number): Favorite | null => {
-  const fav = JSON.parse(localStorage.getItem("starredFav") || "null");
+  const fav = JSON.parse(localStorage.getItem("starredFav") || "[]");
 
   if (!fav) {
     // return the first favorite
@@ -118,7 +133,7 @@ export const getStarredFav = (crousId: Number): Favorite | null => {
     return favorites.length > 0 ? favorites[0] : null;
   }
 
-  return fav;
+  return fav.filter((f: Favorite) => f.crousId === crousId)[0];
 };
 
 export const setFavAsHomePage = (activated: boolean) => {
