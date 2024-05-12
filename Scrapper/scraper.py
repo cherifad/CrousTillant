@@ -20,6 +20,11 @@ firefox_headers = {
 
 def get_menu(url, restaurantId):
     response = requests.get(url, headers=firefox_headers)
+    
+    if response.status_code != 200:
+        print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. Status code: {response.status_code}")
+        return []
+    
     soup = bs(response.text, 'html.parser')
 
     returnMeals: list[Meal] = []
@@ -59,7 +64,7 @@ def get_menu(url, restaurantId):
                 returnMeals.append(newMeal.toJsonObject())
     except Exception as e:
         print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. {e}")
-    
+
     print(f"[{datetime.datetime.now()}] Meals gathered successfully from {url}.")
     return returnMeals
 

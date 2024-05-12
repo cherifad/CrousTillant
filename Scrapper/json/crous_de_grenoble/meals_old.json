@@ -1,80 +1,5 @@
 [
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Vente A Emporter",
-        "foodItems": [
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs traditionnels",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs suédois",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs gourmands",
-                "price": 0
-            },
-            {
-                "name": "Pan Bagnat",
-                "price": 0
-            },
-            {
-                "name": "Wraps",
-                "price": 0
-            },
-            {
-                "name": "Panini",
-                "price": 0
-            },
-            {
-                "name": "Pasta Box",
-                "price": 0
-            },
-            {
-                "name": "Donuts",
-                "price": 0
-            },
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries traditionnelles",
-                "price": 0
-            },
-            {
-                "name": "Yaourts",
-                "price": 0
-            },
-            {
-                "name": "Boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 6,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Vente A Emporter",
         "foodItems": [
@@ -600,81 +525,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Vente A Emporter",
-        "foodItems": [
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs traditionnels",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs suédois",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs gourmands",
-                "price": 0
-            },
-            {
-                "name": "Pan Bagnat",
-                "price": 0
-            },
-            {
-                "name": "Wraps",
-                "price": 0
-            },
-            {
-                "name": "Panini",
-                "price": 0
-            },
-            {
-                "name": "Pasta Box",
-                "price": 0
-            },
-            {
-                "name": "Donuts",
-                "price": 0
-            },
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries traditionnelles",
-                "price": 0
-            },
-            {
-                "name": "Yaourts",
-                "price": 0
-            },
-            {
-                "name": "Boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 7,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Vente A Emporter",
         "foodItems": [
@@ -1195,37 +1045,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 7,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Sciences",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Tartes salées",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 51,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -1473,60 +1292,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 51,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plat du chef",
-        "foodItems": [
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Pâtes sauce végétarienne",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 52,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Littéraire",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Tartes salées, bruschettas",
-                "price": 0
-            },
-            {
-                "name": "Plat du jour, légumes, pâtes cuisinées",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés, pâtisseries 'maison'",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 52,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -2009,33 +1774,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "sandwich,bruschetta,pizza,fruit,",
-                "price": 0
-            },
-            {
-                "name": "panini,hot-dog,pain suédois,salade",
-                "price": 0
-            },
-            {
-                "name": "pâtisserie,confiserie,plats cuisinés,",
-                "price": 0
-            },
-            {
-                "name": "viennoiserie,boisson chaude et froide",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 53,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Au menu",
         "foodItems": [
@@ -2220,41 +1958,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 53,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Plat du jour",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 60,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -2485,41 +2188,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Diverses salades,",
-                "price": 0
-            },
-            {
-                "name": "Divers sandwichs,",
-                "price": 0
-            },
-            {
-                "name": "Plats cuisinés, Paninis, Tartes salées, Viennoiseries",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés (pâtisseries, laitages, compotes...)",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 63,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -2745,37 +2413,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Pizza, panini, hot dog",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 64,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -2972,37 +2609,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 64,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Panini, hot-dog, pizza",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            },
-            {
-                "name": "Confiseries",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 65,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -3209,53 +2815,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Midi",
-        "foodItems": [
-            {
-                "name": "-Viennoiseries",
-                "price": 0
-            },
-            {
-                "name": "-Sandwichs.",
-                "price": 0
-            },
-            {
-                "name": "-Panini.",
-                "price": 0
-            },
-            {
-                "name": "-Croque Monsieur",
-                "price": 0
-            },
-            {
-                "name": "-Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "-Sandwich de la semaine",
-                "price": 0
-            },
-            {
-                "name": "-Crudités .",
-                "price": 0
-            },
-            {
-                "name": "-Pâtisserie Américaine/Confiserie",
-                "price": 0
-            },
-            {
-                "name": "-Gaufres",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 70,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Midi",
         "foodItems": [
@@ -3580,37 +3139,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 70,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Pizza, Panini,hot-dog",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 71,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -3812,117 +3340,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 71,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "La Pause Gourmande",
-        "foodItems": [
-            {
-                "name": "Boissons chaudes, fraîches",
-                "price": 0
-            },
-            {
-                "name": "Viennoiseries, pâtisseries, friandises",
-                "price": 0
-            }
-        ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Illico Presto",
-        "foodItems": [
-            {
-                "name": "Sandwichs, Salades",
-                "price": 0
-            },
-            {
-                "name": "Plats à réchauffer, pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Desserts, fruits",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Dolce vita",
-        "foodItems": [
-            {
-                "name": "Pizzas, paninis, pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Bruschettas",
-                "price": 0
-            },
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "La Pause Gourmande",
-        "foodItems": [
-            {
-                "name": "Boissons chaudes, fraîches",
-                "price": 0
-            },
-            {
-                "name": "Viennoiseries, pâtisseries, friandises",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Point burger",
-        "foodItems": [
-            {
-                "name": "Burgers, steaks hachés",
-                "price": 0
-            },
-            {
-                "name": "Frites",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -4609,29 +4026,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Divers choix de plats cuisinés, tartes salées, sandwichs, salades, pasta box, viennoiseries...",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés : pâtisseries, pâtisseries américaines, laitages, fruits, compotes...",
-                "price": 0
-            },
-            {
-                "name": "Diverses boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 74,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -4785,29 +4179,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Divers choix de plats cuisinés, tartes salées, sandwichs, salades, pasta box, viennoiseries...",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés : pâtisseries, pâtisseries américaines, laitages, fruits, compotes...",
-                "price": 0
-            },
-            {
-                "name": "Diverses boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 75,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Au menu",
         "foodItems": [
@@ -4964,25 +4335,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 75,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Midi",
-        "foodItems": [
-            {
-                "name": "Sur réservation uniquement :",
-                "price": 0
-            },
-            {
-                "name": "oiseau.blanc@crous-grenoble.fr",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 76,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -5112,76 +4464,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 76,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "PIZZA DE 30 CM Pizzas spéciales",
-                "price": 0
-            },
-            {
-                "name": "Salades géantes",
-                "price": 0
-            },
-            {
-                "name": "Salades spéciales",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 79,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Le soir",
-        "foodItems": [
-            {
-                "name": "PIZZA DE 30 CM Pizzas spéciales",
-                "price": 0
-            },
-            {
-                "name": "Salades géantes",
-                "price": 0
-            },
-            {
-                "name": "Salades spéciales",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "DINNER",
-        "restaurantId": 79,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -5660,21 +4942,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Lundi 29 Avril 2024 au Samedi 31 Août 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 91,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -5775,90 +5042,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 91,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plats du jour",
-        "foodItems": [
-            {
-                "name": "menu non communiqué",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plats du jour (viande/poisson)",
-        "foodItems": [
-            {
-                "name": "menu non communiqué",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Ligne express",
-        "foodItems": [
-            {
-                "name": "Plat froid : salades composées",
-                "price": 0
-            },
-            {
-                "name": "Plat chaud : wok nouilles sautées",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Pâtes et grillades",
-        "foodItems": [
-            {
-                "name": "Steak haché sauce brune",
-                "price": 0
-            },
-            {
-                "name": "Jambon grillé sauce madère",
-                "price": 0
-            },
-            {
-                "name": "Haricots verts - Frites",
-                "price": 0
-            },
-            {
-                "name": "--",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce fourme d'Ambert",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce au thon",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -6492,25 +5675,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Snack",
-        "foodItems": [
-            {
-                "name": "Pizzas, Paninis, Salades, Sandwichs",
-                "price": 0
-            },
-            {
-                "name": "Burgers et Tacos en alternance",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 97,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -6658,56 +5822,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 97,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "pâtes pizza",
-        "foodItems": [
-            {
-                "name": "plusieurs choix de pizza à 7 points et une spéciale à 9 points",
-                "price": 0
-            },
-            {
-                "name": "pâtes avec 3 choix de sauce bolognaise/pesto/carbonara",
-                "price": 0
-            },
-            {
-                "name": "à 5 points",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 98,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "snack grille",
-        "foodItems": [
-            {
-                "name": "Burger le petit mezzo / frites ou légumes 10 points",
-                "price": 0
-            },
-            {
-                "name": "Steak haché frais / frites ou légumes 7 points",
-                "price": 0
-            },
-            {
-                "name": "Poisson / frites ou légumes  7 points",
-                "price": 0
-            },
-            {
-                "name": "Volaille / frites ou légumes  7 points",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 98,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -7213,21 +6327,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 98,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "PLAT PRINCIPAL",
-        "foodItems": [
-            {
-                "name": "FERME",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 99,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -7399,81 +6498,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Vente A Emporter",
-        "foodItems": [
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs traditionnels",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs suédois",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs gourmands",
-                "price": 0
-            },
-            {
-                "name": "Pan Bagnat",
-                "price": 0
-            },
-            {
-                "name": "Wraps",
-                "price": 0
-            },
-            {
-                "name": "Panini",
-                "price": 0
-            },
-            {
-                "name": "Pasta Box",
-                "price": 0
-            },
-            {
-                "name": "Donuts",
-                "price": 0
-            },
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries traditionnelles",
-                "price": 0
-            },
-            {
-                "name": "Yaourts",
-                "price": 0
-            },
-            {
-                "name": "Boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 6,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Vente A Emporter",
         "foodItems": [
@@ -7999,81 +7023,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Vente A Emporter",
-        "foodItems": [
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs traditionnels",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs suédois",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwichs gourmands",
-                "price": 0
-            },
-            {
-                "name": "Pan Bagnat",
-                "price": 0
-            },
-            {
-                "name": "Wraps",
-                "price": 0
-            },
-            {
-                "name": "Panini",
-                "price": 0
-            },
-            {
-                "name": "Pasta Box",
-                "price": 0
-            },
-            {
-                "name": "Donuts",
-                "price": 0
-            },
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries traditionnelles",
-                "price": 0
-            },
-            {
-                "name": "Yaourts",
-                "price": 0
-            },
-            {
-                "name": "Boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 7,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Vente A Emporter",
         "foodItems": [
@@ -8594,37 +7543,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 7,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Sciences",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Tartes salées",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 51,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -8872,60 +7790,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 51,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plat du chef",
-        "foodItems": [
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Pâtes sauce végétarienne",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 52,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Littéraire",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Tartes salées, bruschettas",
-                "price": 0
-            },
-            {
-                "name": "Plat du jour, légumes, pâtes cuisinées",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés, pâtisseries 'maison'",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 52,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -9408,33 +8272,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "sandwich,bruschetta,pizza,fruit,",
-                "price": 0
-            },
-            {
-                "name": "panini,hot-dog,pain suédois,salade",
-                "price": 0
-            },
-            {
-                "name": "pâtisserie,confiserie,plats cuisinés,",
-                "price": 0
-            },
-            {
-                "name": "viennoiserie,boisson chaude et froide",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 53,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Au menu",
         "foodItems": [
@@ -9619,41 +8456,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 53,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Plat du jour",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 60,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -9884,41 +8686,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Diverses salades,",
-                "price": 0
-            },
-            {
-                "name": "Divers sandwichs,",
-                "price": 0
-            },
-            {
-                "name": "Plats cuisinés, Paninis, Tartes salées, Viennoiseries",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés (pâtisseries, laitages, compotes...)",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 63,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -10144,37 +8911,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Pizza, panini, hot dog",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 64,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -10371,37 +9107,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 64,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Salades et sandwichs variés",
-                "price": 0
-            },
-            {
-                "name": "Panini, hot-dog, pizza",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            },
-            {
-                "name": "Confiseries",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 65,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -10608,53 +9313,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Midi",
-        "foodItems": [
-            {
-                "name": "-Viennoiseries",
-                "price": 0
-            },
-            {
-                "name": "-Sandwichs.",
-                "price": 0
-            },
-            {
-                "name": "-Panini.",
-                "price": 0
-            },
-            {
-                "name": "-Croque Monsieur",
-                "price": 0
-            },
-            {
-                "name": "-Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "-Sandwich de la semaine",
-                "price": 0
-            },
-            {
-                "name": "-Crudités .",
-                "price": 0
-            },
-            {
-                "name": "-Pâtisserie Américaine/Confiserie",
-                "price": 0
-            },
-            {
-                "name": "-Gaufres",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 70,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Midi",
         "foodItems": [
@@ -10979,37 +9637,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 70,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Sandwichs et salades variés",
-                "price": 0
-            },
-            {
-                "name": "Pizza, Panini,hot-dog",
-                "price": 0
-            },
-            {
-                "name": "Desserts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes et froides",
-                "price": 0
-            },
-            {
-                "name": "Petits déjeuners",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 71,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -11211,117 +9838,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 71,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "La Pause Gourmande",
-        "foodItems": [
-            {
-                "name": "Boissons chaudes, fraîches",
-                "price": 0
-            },
-            {
-                "name": "Viennoiseries, pâtisseries, friandises",
-                "price": 0
-            }
-        ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Illico Presto",
-        "foodItems": [
-            {
-                "name": "Sandwichs, Salades",
-                "price": 0
-            },
-            {
-                "name": "Plats à réchauffer, pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Desserts, fruits",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Dolce vita",
-        "foodItems": [
-            {
-                "name": "Pizzas, paninis, pâtes en sauce",
-                "price": 0
-            },
-            {
-                "name": "Bruschettas",
-                "price": 0
-            },
-            {
-                "name": "Salades",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "La Pause Gourmande",
-        "foodItems": [
-            {
-                "name": "Boissons chaudes, fraîches",
-                "price": 0
-            },
-            {
-                "name": "Viennoiseries, pâtisseries, friandises",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Point burger",
-        "foodItems": [
-            {
-                "name": "Burgers, steaks hachés",
-                "price": 0
-            },
-            {
-                "name": "Frites",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 73,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -12008,29 +10524,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Divers choix de plats cuisinés, tartes salées, sandwichs, salades, pasta box, viennoiseries...",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés : pâtisseries, pâtisseries américaines, laitages, fruits, compotes...",
-                "price": 0
-            },
-            {
-                "name": "Diverses boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 74,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -12184,29 +10677,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "Divers choix de plats cuisinés, tartes salées, sandwichs, salades, pasta box, viennoiseries...",
-                "price": 0
-            },
-            {
-                "name": "Desserts variés : pâtisseries, pâtisseries américaines, laitages, fruits, compotes...",
-                "price": 0
-            },
-            {
-                "name": "Diverses boissons",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 75,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Au menu",
         "foodItems": [
@@ -12363,25 +10833,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 75,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Midi",
-        "foodItems": [
-            {
-                "name": "Sur réservation uniquement :",
-                "price": 0
-            },
-            {
-                "name": "oiseau.blanc@crous-grenoble.fr",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 76,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -12511,76 +10962,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 76,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Au menu",
-        "foodItems": [
-            {
-                "name": "PIZZA DE 30 CM Pizzas spéciales",
-                "price": 0
-            },
-            {
-                "name": "Salades géantes",
-                "price": 0
-            },
-            {
-                "name": "Salades spéciales",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 79,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Le soir",
-        "foodItems": [
-            {
-                "name": "PIZZA DE 30 CM Pizzas spéciales",
-                "price": 0
-            },
-            {
-                "name": "Salades géantes",
-                "price": 0
-            },
-            {
-                "name": "Salades spéciales",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Boissons chaudes",
-                "price": 0
-            },
-            {
-                "name": "Boissons fraîches",
-                "price": 0
-            }
-        ],
-        "mealType": "DINNER",
-        "restaurantId": 79,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -13059,21 +11440,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Lundi 29 Avril 2024 au Samedi 31 Août 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 91,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -13174,90 +11540,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 91,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plats du jour",
-        "foodItems": [
-            {
-                "name": "menu non communiqué",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Plats du jour (viande/poisson)",
-        "foodItems": [
-            {
-                "name": "menu non communiqué",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Ligne express",
-        "foodItems": [
-            {
-                "name": "Plat froid : salades composées",
-                "price": 0
-            },
-            {
-                "name": "Plat chaud : wok nouilles sautées",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Pâtes et grillades",
-        "foodItems": [
-            {
-                "name": "Steak haché sauce brune",
-                "price": 0
-            },
-            {
-                "name": "Jambon grillé sauce madère",
-                "price": 0
-            },
-            {
-                "name": "Haricots verts - Frites",
-                "price": 0
-            },
-            {
-                "name": "--",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce fourme d'Ambert",
-                "price": 0
-            },
-            {
-                "name": "Pâtes en sauce au thon",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 92,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -13891,25 +12173,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Snack",
-        "foodItems": [
-            {
-                "name": "Pizzas, Paninis, Salades, Sandwichs",
-                "price": 0
-            },
-            {
-                "name": "Burgers et Tacos en alternance",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 97,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -14057,56 +12320,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 97,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "pâtes pizza",
-        "foodItems": [
-            {
-                "name": "plusieurs choix de pizza à 7 points et une spéciale à 9 points",
-                "price": 0
-            },
-            {
-                "name": "pâtes avec 3 choix de sauce bolognaise/pesto/carbonara",
-                "price": 0
-            },
-            {
-                "name": "à 5 points",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 98,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "snack grille",
-        "foodItems": [
-            {
-                "name": "Burger le petit mezzo / frites ou légumes 10 points",
-                "price": 0
-            },
-            {
-                "name": "Steak haché frais / frites ou légumes 7 points",
-                "price": 0
-            },
-            {
-                "name": "Poisson / frites ou légumes  7 points",
-                "price": 0
-            },
-            {
-                "name": "Volaille / frites ou légumes  7 points",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 98,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -14612,21 +12825,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 98,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "PLAT PRINCIPAL",
-        "foodItems": [
-            {
-                "name": "FERME",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 99,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []

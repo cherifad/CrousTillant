@@ -4,7 +4,7 @@ import psycopg
 from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
 
-db_connection = "dbname=smartru user=postgres password=postgres"
+db_connection = "dbname=smartru user=postgres password=postgres host=localhost port=5432"
 
 def insert_meals(meals: list[Meal]):
     # Connect to an existing database

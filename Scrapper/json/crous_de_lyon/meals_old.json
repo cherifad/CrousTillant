@@ -1,105 +1,5 @@
 [
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "Classiques (saucisson, jambon, végé, brie)",
-                "price": 0
-            },
-            {
-                "name": "Incontournables (jambon fromage, poulet, thon,)",
-                "price": 0
-            },
-            {
-                "name": "Bagna",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "Clubs (emmental, thon, jambon, poulet)",
-                "price": 0
-            },
-            {
-                "name": "Menu sandwich à 1 € pour étudiant boursier",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "Beignet",
-                "price": 0
-            },
-            {
-                "name": "Cookie",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownie",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "salade",
         "foodItems": [
@@ -795,21 +695,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 3,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -1390,21 +1275,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -2080,21 +1950,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 15,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -2725,21 +2580,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 16,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -3120,118 +2960,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "(poulet,saumon ou jambon cru)",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            },
-            {
-                "name": "(poulet, jambon cru, chèvre,thon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "rosette/jambon beurre/végétarien/brie",
-                "price": 0
-            },
-            {
-                "name": "poulet/thon/jambon-emmental",
-                "price": 0
-            },
-            {
-                "name": "ciabatta tomate mozzarella",
-                "price": 0
-            },
-            {
-                "name": "bagnat thon",
-                "price": 0
-            },
-            {
-                "name": "sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "menu sandwich classique et menu premium",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "pasta box (carbonara, bolognaise, thon ou saumon...)",
-                "price": 0
-            },
-            {
-                "name": "plat chaud individuel à réchauffer",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "beignet au chocolat",
-                "price": 0
-            },
-            {
-                "name": "cookie lait ou 3 chocolats",
-                "price": 0
-            },
-            {
-                "name": "muffin pépites, tout chocolat, myrtilles-framboises, citron, caramel beurre salé",
-                "price": 0
-            },
-            {
-                "name": "brownie",
-                "price": 0
-            },
-            {
-                "name": "donuts milka",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "salade",
         "foodItems": [
@@ -4011,21 +3739,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Jeudi 9 Mai 2024 au Dimanche 12 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 18,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -4700,21 +4413,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 19,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -5240,21 +4938,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 19,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 20,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -5775,21 +5458,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 21,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -6630,21 +6298,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 22,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -7395,21 +7048,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 22,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 23,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -8220,21 +7858,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 23,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 25,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -8885,21 +8508,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 26,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -9450,21 +9058,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 26,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 27,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -9715,118 +9308,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Moments gourmands",
-        "foodItems": [
-            {
-                "name": "Pains au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Croissants",
-                "price": 0
-            },
-            {
-                "name": "Pains aux raisins",
-                "price": 0
-            },
-            {
-                "name": "Cafés gourmands",
-                "price": 0
-            },
-            {
-                "name": "Cafés",
-                "price": 0
-            }
-        ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Sandwichs",
-        "foodItems": [
-            {
-                "name": "Classiques",
-                "price": 0
-            },
-            {
-                "name": "Incontournables",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Les douceurs",
-        "foodItems": [
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Muffins",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Beignets",
-                "price": 0
-            },
-            {
-                "name": "Yaourts natures",
-                "price": 0
-            },
-            {
-                "name": "Yaourts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Compotes ,fruits",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Offres chaudes",
-        "foodItems": [
-            {
-                "name": "Paninis",
-                "price": 0
-            },
-            {
-                "name": "Quiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Moments gourmands",
         "foodItems": [
@@ -10606,21 +10087,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 29,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -11351,21 +10817,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 29,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 30,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -12136,21 +11587,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 30,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Lundi 6 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 31,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -12761,21 +12197,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 32,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -13381,21 +12802,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 33,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -13966,21 +13372,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 34,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -14531,21 +13922,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 34,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 35,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -15366,21 +14742,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 35,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 36,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -15411,21 +14772,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 36,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 37,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -15994,21 +15340,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 38,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -16119,21 +15450,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 38,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 39,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -16594,21 +15910,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 40,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -16975,21 +16276,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 40,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 41,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -17436,21 +16722,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 41,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 42,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -17914,21 +17185,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 42,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 43,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -18545,21 +17801,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 44,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -19153,21 +18394,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 45,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -19580,21 +18806,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 45,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 46,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -20294,21 +19505,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 46,
-        "toUpdate": false,
-        "toInsert": false,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 47,
         "toUpdate": false,
         "toInsert": false,
         "fieldsToUpdate": []
@@ -20916,106 +20112,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "Classiques (saucisson, jambon, végé, brie)",
-                "price": 0
-            },
-            {
-                "name": "Incontournables (jambon fromage, poulet, thon,)",
-                "price": 0
-            },
-            {
-                "name": "Bagna",
-                "price": 0
-            },
-            {
-                "name": "Ciabatta",
-                "price": 0
-            },
-            {
-                "name": "Sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "Clubs (emmental, thon, jambon, poulet)",
-                "price": 0
-            },
-            {
-                "name": "Menu sandwich à 1 € pour étudiant boursier",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "Pasta box (carbonara, bolognaise, thon ou saumon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "Beignet",
-                "price": 0
-            },
-            {
-                "name": "Cookie",
-                "price": 0
-            },
-            {
-                "name": "Muffin",
-                "price": 0
-            },
-            {
-                "name": "Brownie",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "salade",
         "foodItems": [
@@ -21711,21 +20807,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 2,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 3,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -22306,21 +21387,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 3,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 4,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -22996,21 +22062,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 15,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -23641,21 +22692,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 16,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -24036,118 +23072,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "salade",
-        "foodItems": [
-            {
-                "name": "grande salade composée",
-                "price": 0
-            },
-            {
-                "name": "(poulet,saumon ou jambon cru)",
-                "price": 0
-            },
-            {
-                "name": "petite salade composée",
-                "price": 0
-            },
-            {
-                "name": "(poulet, jambon cru, chèvre,thon)",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "sandwich",
-        "foodItems": [
-            {
-                "name": "rosette/jambon beurre/végétarien/brie",
-                "price": 0
-            },
-            {
-                "name": "poulet/thon/jambon-emmental",
-                "price": 0
-            },
-            {
-                "name": "ciabatta tomate mozzarella",
-                "price": 0
-            },
-            {
-                "name": "bagnat thon",
-                "price": 0
-            },
-            {
-                "name": "sandwich du mois",
-                "price": 0
-            },
-            {
-                "name": "menu sandwich classique et menu premium",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "plat chaud",
-        "foodItems": [
-            {
-                "name": "pasta box (carbonara, bolognaise, thon ou saumon...)",
-                "price": 0
-            },
-            {
-                "name": "plat chaud individuel à réchauffer",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "douceurs",
-        "foodItems": [
-            {
-                "name": "beignet au chocolat",
-                "price": 0
-            },
-            {
-                "name": "cookie lait ou 3 chocolats",
-                "price": 0
-            },
-            {
-                "name": "muffin pépites, tout chocolat, myrtilles-framboises, citron, caramel beurre salé",
-                "price": 0
-            },
-            {
-                "name": "brownie",
-                "price": 0
-            },
-            {
-                "name": "donuts milka",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "salade",
         "foodItems": [
@@ -24927,21 +23851,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 17,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Jeudi 9 Mai 2024 au Dimanche 12 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 18,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -25616,21 +24525,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 19,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -26156,21 +25050,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 19,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 20,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -26691,21 +25570,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 21,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -27546,21 +26410,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 22,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -28311,21 +27160,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 22,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 23,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -29136,21 +27970,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 23,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 25,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -29801,21 +28620,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 26,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -30366,21 +29170,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 26,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 27,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -30631,118 +29420,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Moments gourmands",
-        "foodItems": [
-            {
-                "name": "Pains au chocolat",
-                "price": 0
-            },
-            {
-                "name": "Croissants",
-                "price": 0
-            },
-            {
-                "name": "Pains aux raisins",
-                "price": 0
-            },
-            {
-                "name": "Cafés gourmands",
-                "price": 0
-            },
-            {
-                "name": "Cafés",
-                "price": 0
-            }
-        ],
-        "mealType": "BREAKFAST",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Sandwichs",
-        "foodItems": [
-            {
-                "name": "Classiques",
-                "price": 0
-            },
-            {
-                "name": "Incontournables",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Les douceurs",
-        "foodItems": [
-            {
-                "name": "Cookies",
-                "price": 0
-            },
-            {
-                "name": "Brownies",
-                "price": 0
-            },
-            {
-                "name": "Muffins",
-                "price": 0
-            },
-            {
-                "name": "Pâtisseries",
-                "price": 0
-            },
-            {
-                "name": "Beignets",
-                "price": 0
-            },
-            {
-                "name": "Yaourts natures",
-                "price": 0
-            },
-            {
-                "name": "Yaourts gourmands",
-                "price": 0
-            },
-            {
-                "name": "Compotes ,fruits",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Offres chaudes",
-        "foodItems": [
-            {
-                "name": "Paninis",
-                "price": 0
-            },
-            {
-                "name": "Quiches",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Moments gourmands",
         "foodItems": [
@@ -31522,21 +30199,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 28,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 29,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -32267,21 +30929,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 29,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 30,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -33052,21 +31699,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 30,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Lundi 6 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 31,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -33677,21 +32309,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 32,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -34297,21 +32914,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 33,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -34882,21 +33484,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 34,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -35447,21 +34034,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 34,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 35,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -36282,21 +34854,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 35,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 36,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -36327,21 +34884,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 36,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 37,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -36910,21 +35452,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 38,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -37035,21 +35562,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 38,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 39,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -37510,21 +36022,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 40,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -37891,21 +36388,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 40,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 41,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -38352,21 +36834,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 41,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 42,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -38830,21 +37297,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 42,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 43,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -39461,21 +37913,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 44,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -40069,21 +38506,6 @@
         "fieldsToUpdate": []
     },
     {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 45,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
         "date": "2024-05-10 00:00:00",
         "title": "Fermeture",
         "foodItems": [
@@ -40496,21 +38918,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 45,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 46,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []
@@ -41210,21 +39617,6 @@
         ],
         "mealType": "LUNCH",
         "restaurantId": 46,
-        "toUpdate": false,
-        "toInsert": true,
-        "fieldsToUpdate": []
-    },
-    {
-        "date": "2024-05-09 00:00:00",
-        "title": "Fermeture",
-        "foodItems": [
-            {
-                "name": "Structure fermée du Mercredi 8 Mai 2024 au Vendredi 10 Mai 2024",
-                "price": 0
-            }
-        ],
-        "mealType": "LUNCH",
-        "restaurantId": 47,
         "toUpdate": false,
         "toInsert": true,
         "fieldsToUpdate": []

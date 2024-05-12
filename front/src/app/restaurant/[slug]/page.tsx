@@ -10,15 +10,12 @@ import MealCard from "@/components/meal-card";
 import { Heart, HeartOff, Navigation } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  getDates,
-  removeFromFavorites,
-  addToFavorites,
-} from "@/lib/utils";
+import { getDates, removeFromFavorites, addToFavorites } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
 import DateCard from "@/components/date-card";
+import { notFound } from "next/navigation";
 
 export default function SingleRestaurant() {
   const [restaurant, setRestaurant] = useState<Restaurant>();
@@ -41,7 +38,7 @@ export default function SingleRestaurant() {
   const restaurantId = params?.slug.toString().split("-").pop();
 
   if (!restaurantId || isNaN(parseInt(restaurantId))) {
-    return <h1>404 - Not Found</h1>;
+    return notFound();
   }
 
   useEffect(() => {
@@ -75,7 +72,7 @@ export default function SingleRestaurant() {
       addToFavorites({
         name: restaurant?.name!,
         id: restaurantId.toString(),
-        crousId: restaurant?.crousId!
+        crousId: restaurant?.crousId!,
       });
       setIsFavorite(true);
       toast({
