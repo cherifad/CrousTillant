@@ -136,12 +136,14 @@ export default function Home() {
       </Suspense>
       <div className="w-full justify-between md:flex">
         <div>
-          <h1 className="font-bold text-3xl flex items-center flex-wrap gap-2">
-            <span>Restaurants du {selectedCrous?.name}</span>
+          <span className="flex items-center flex-wrap gap-2">
+            <h1 className="font-bold text-3xl">
+              Restaurants du {selectedCrous?.name}
+            </h1>
             <Link href="/crous">
               <Badge>Choisir un autre Crous</Badge>
             </Link>
-          </h1>
+          </span>
           <p className="opacity-50">
             {restaurantToDisplay.length} restaurants trouvés
           </p>
