@@ -53,8 +53,7 @@ export default function SingleRestaurant() {
         setMeals(data.meals);
         sortData(data.meals);
       });
-
-    const favorites = getFavorites();
+      
     setIsFavorite(isFavLocalStorage(restaurantId));
 
     setLoading(false);
