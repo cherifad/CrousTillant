@@ -12,6 +12,6 @@ sudo docker build -t front -f Dockerfile .
 cd ..
 
 echo "Running docker compose..."
-sudo docker-compose up -d
+sudo docker compose up -d
 
 echo "Deployment completed successfully!"
