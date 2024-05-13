@@ -162,7 +162,7 @@ export default function Home() {
           </div>
         </div>
         <div className="flex items-center gap-3 mt-4 md:mt-0">
-          <p>Choisir l'affichage</p>
+          {/* <p>Choisir l'affichage</p>
           <div>
             <Button
               size="icon"
@@ -180,7 +180,7 @@ export default function Home() {
             >
               <Grid2X2 className="h-4 w-4" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>

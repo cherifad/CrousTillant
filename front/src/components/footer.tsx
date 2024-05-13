@@ -41,7 +41,7 @@ export default function Footer() {
         <ul className="flex gap-4">
           <li>
             <a
-              href="https://github.com/cherifad/SmartRU"
+              href="https://github.com/cherifad/CrousTillant"
               className="hover:underline flex items-center"
               target="_blank"
               rel="noreferrer"
@@ -52,7 +52,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://github.com/cherifad/SmartRU/issues/new?title=Huston%2C+on+a+un+probl%C3%A8me&body=J%27ai+un+probl%C3%A8me+avec+le+site+et+voici+ce+que+c%27est%3A"
+              href="https://github.com/cherifad/CrousTillant/issues/new?title=Huston%2C+on+a+un+probl%C3%A8me&body=J%27ai+un+probl%C3%A8me+avec+le+site+et+voici+ce+que+c%27est%3A"
               className="hover:underline flex items-center"
               target="_blank"
               rel="noreferrer"

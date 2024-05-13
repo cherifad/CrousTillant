@@ -258,7 +258,7 @@ export default function SingleRestaurant() {
                   )}
                 </div>
               </fieldset>
-              <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8">
+              <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8 h-fit">
                 <legend className="-ml-1 px-1 text-sm font-medium">
                   Menu des jours suivants
                 </legend>
