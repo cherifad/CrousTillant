@@ -101,9 +101,12 @@ export function isFavorite(id: string) {
   return favorites.some((favorite: { id: string }) => favorite.id === id);
 }
 
-export const getFavorites = (crousId: Number): Favorite[] => {
+export const getFavorites = (crousId?: Number): Favorite[] => {
   const fav = JSON.parse(localStorage.getItem("favorites") || "[]");
-  console.log(fav);
+
+  if (!crousId) {
+    return fav;
+  }
 
   return fav.filter((f: Favorite) => f.crousId === crousId);
 };

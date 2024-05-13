@@ -10,7 +10,7 @@ import MealCard from "@/components/meal-card";
 import { Heart, HeartOff, Navigation } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getDates, removeFromFavorites, addToFavorites } from "@/lib/utils";
+import { getDates, removeFromFavorites, addToFavorites, getFavorites, isFavorite as isFavLocalStorage } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
@@ -54,8 +54,8 @@ export default function SingleRestaurant() {
         sortData(data.meals);
       });
 
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setIsFavorite(favorites.includes(parseInt(restaurantId)));
+    const favorites = getFavorites();
+    setIsFavorite(isFavLocalStorage(restaurantId));
 
     setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
