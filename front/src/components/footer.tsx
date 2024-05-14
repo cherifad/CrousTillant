@@ -1,4 +1,4 @@
-import { Github, Bug } from "lucide-react";
+import { Github, Bug, BarChartBig } from "lucide-react";
 import Image from "next/image";
 
 export default function Footer() {
@@ -16,9 +16,7 @@ export default function Footer() {
             Adlen Cherif
           </a>
         </p>
-        <span className="mx-2 hidden lg:block">
-          &nbsp;&#8226;
-        </span>
+        <span className="mx-2 hidden lg:block">&nbsp;&#8226;</span>
         <p>
           <a
             href="https://www.unrwa.org/"
@@ -38,7 +36,7 @@ export default function Footer() {
         </p>
       </div>
       <div>
-        <ul className="flex gap-4">
+        <ul className="flex gap-4 flex-wrap justify-center py-4">
           <li>
             <a
               href="https://github.com/cherifad/CrousTillant"
@@ -59,6 +57,17 @@ export default function Footer() {
             >
               <Bug className="h-4 w-4 mr-2" />
               Signaler un bug
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://ru-stats.servperso.me/share/8OPVBdWGT24WUCIw/ru.servperso.me"
+              className="hover:underline flex items-center"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <BarChartBig className="h-4 w-4 mr-2" />
+              Statistiques
             </a>
           </li>
         </ul>

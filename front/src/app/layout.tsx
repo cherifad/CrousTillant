@@ -7,6 +7,7 @@ import Footer from "@/components/footer";
 import { ThemeProvider } from "@/app/theme-provider";
 import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
+import Script from "next/script";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -46,6 +47,11 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster />
+          <Script
+            defer
+            src="https://ru-stats.servperso.me/script.js"
+            data-website-id="c778fc13-9451-48b1-946a-aef37fa91256"
+          />
         </ThemeProvider>
       </body>
     </html>
