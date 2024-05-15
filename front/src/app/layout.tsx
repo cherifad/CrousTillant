@@ -17,7 +17,45 @@ const fontSans = FontSans({
 
 export const metadata: Metadata = {
   title: "Crous'tillant",
+  applicationName: "Crous'tillant",
+  appleWebApp: true,
   description: "Le menu du RU, plus simplement.",
+  icons: {
+    icon: [
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icons/apple-touch-icon.png" },
+      { url: "/icons/apple-touch-icon.png", sizes: "152x152" },
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180" },
+      { url: "/icons/apple-touch-icon.png", sizes: "167x167" },
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/icons/apple-touch-icon.png",
+        color: "#5bbad5",
+      },
+      { rel: "shortcut icon", url: "/favicon.ico" },
+    ],
+  },
+  manifest: "/manifest.json",
+  twitter: {
+    card: "summary",
+    title: "Crous'tillant",
+    description: "Le menu du RU, plus simplement.",
+    images: "https://ru.servperso.me/icons/android-chrome-192x192.png",
+    creator: "@cherifad",
+  },
+  openGraph: {
+    type: "website",
+    title: "Crous'tillant",
+    description: "Le menu du RU, plus simplement.",
+    siteName: "Crous'tillant",
+    url: "https://ru.servperso.me",
+    images: [{ url: "https://ru.servperso.me/icons/apple-touch-icon.png" }],
+  },
 };
 
 export default function RootLayout({
