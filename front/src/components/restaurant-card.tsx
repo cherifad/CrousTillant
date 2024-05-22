@@ -71,7 +71,7 @@ export default function RestaurantCard({
     if (src.length === 0) {
       return "/img/default.jpeg";
     }
-    return `${src}?w=${width}&q=${quality || 75}`;
+    return src;
   };
 
   return (
@@ -89,7 +89,9 @@ export default function RestaurantCard({
       </Button>
       <CardHeader>
         <CardTitle className="pr-6">{name}</CardTitle>
-        <CardDescription>{place}</CardDescription>
+        <CardDescription>
+          {place.length > 0 ? place : <span>&nbsp;</span>}
+        </CardDescription>
       </CardHeader>
       {display === "grid" && (
         <CardContent>

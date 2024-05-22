@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { AlignLeft, Grid2X2 } from "lucide-react";
+import { AlignLeft, Grid2X2, Locate, RotateCcw } from "lucide-react";
 import RestaurantCard from "@/components/restaurant-card";
 import React, { Suspense, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -23,17 +23,27 @@ import {
   toggleDisplayGrid,
 } from "@/lib/utils";
 import { useSearchParams, redirect } from "next/navigation";
-import { getSelectedCrous, Crous } from "@/lib/utils";
+import {
+  getSelectedCrous,
+  Crous,
+  getGeoLocation,
+  Position,
+  findRestaurantsAroundPosition,
+} from "@/lib/utils";
 import Link from "next/link";
 
 export default function Home() {
   const [display, setDisplay] = useState<"list" | "grid">("list");
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
+  const [restaurantToDisplay, setRestaurantToDisplay] = useState<Restaurant[]>(
+    []
+  );
   const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
   const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
+  const [position, setPosition] = useState<Position | null>(null);
 
   useEffect(() => {
     setLoading(true);
@@ -47,7 +57,10 @@ export default function Home() {
 
     fetch("/api/restaurant?crousId=" + crous.id)
       .then((res) => res.json())
-      .then((data) => setRestaurants(data));
+      .then((data) => {
+        setRestaurants(data);
+        setRestaurantToDisplay(data);
+      });
 
     setFavorites(getFavorites(crous.id));
     setLoading(false);
@@ -77,6 +90,45 @@ export default function Home() {
     }
   };
 
+  const handleLocationRequest = async () => {
+    setLoading(true);
+
+    const position = await getGeoLocation();
+
+    if (position) {
+      setPosition(position);
+      const nearbyRestaurant = findRestaurantsAroundPosition(
+        restaurants,
+        position,
+        10
+      );
+
+      if (nearbyRestaurant.length > 0) {
+        setRestaurantToDisplay(nearbyRestaurant);
+      }
+    }
+
+    setLoading(false);
+  };
+
+  const handleSearch = (search: string) => {
+    setSearch(search);
+    if (search === "") {
+      setRestaurantToDisplay(restaurants);
+    } else {
+      setRestaurantToDisplay(
+        restaurants.filter((restaurant: Restaurant) =>
+          restaurant.name.toLowerCase().includes(search.toLowerCase())
+        )
+      );
+    }
+  };
+
+  const resetSearch = () => {
+    setSearch("");
+    setRestaurantToDisplay(restaurants);
+  };
+
   return (
     <>
       <Suspense fallback={<Skeleton className="h-4 w-[250px]" />}>
@@ -84,24 +136,35 @@ export default function Home() {
       </Suspense>
       <div className="w-full justify-between md:flex">
         <div>
-          <h1 className="font-bold text-3xl flex items-center">
-            <span>Restaurants du {selectedCrous?.name}</span>
-            <Link className="ml-2 h-fit" href="/crous">
+          <span className="flex items-center flex-wrap gap-2">
+            <h1 className="font-bold text-3xl">
+              Restaurants du {selectedCrous?.name}
+            </h1>
+            <Link href="/crous">
               <Badge>Choisir un autre Crous</Badge>
             </Link>
-          </h1>
-          <p className="opacity-50">{restaurants.length} restaurants trouvés</p>
+          </span>
+          <p className="opacity-50">
+            {restaurantToDisplay.length} restaurants trouvés
+          </p>
           {/* <Filters /> */}
-          <Input
-            className="mt-4 md:mt-8"
-            placeholder="Rechercher un restaurant"
-            onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
-              setSearch(e.target.value)
-            }
-          />
+          <div className="flex gap-2 mt-4 md:mt-8 items-center flex-wrap md:flex-nowrap">
+            <Input
+              placeholder="Rechercher un restaurant"
+              onInput={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleSearch(e.target.value)
+              }
+            />
+            <Button variant="outline" onClick={handleLocationRequest}>
+              <Locate className="mr-2 h-4 w-4" /> Me localiser
+            </Button>
+            <Button variant="outline" onClick={resetSearch}>
+              <RotateCcw className="mr-2 h-4 w-4" /> Réinitialiser
+            </Button>
+          </div>
         </div>
         <div className="flex items-center gap-3 mt-4 md:mt-0">
-          <p>Choisir l'affichage</p>
+          {/* <p>Choisir l'affichage</p>
           <div>
             <Button
               size="icon"
@@ -119,7 +182,7 @@ export default function Home() {
             >
               <Grid2X2 className="h-4 w-4" />
             </Button>
-          </div>
+          </div> */}
         </div>
       </div>
       <div>
@@ -186,49 +249,25 @@ export default function Home() {
           </div>
         ) : (
           <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
-            {search === ""
-              ? restaurants.map((restaurant: Restaurant) => (
-                  <RestaurantCard
-                    key={restaurant.id}
-                    display={display}
-                    id={restaurant.id}
-                    name={restaurant.name}
-                    place={restaurant.place}
-                    schedule={restaurant.schedule}
-                    url={restaurant.url}
-                    cp={restaurant.cp}
-                    address={restaurant.address}
-                    city={restaurant.city}
-                    phone={restaurant.phone}
-                    img={restaurant.img}
-                    crousId={restaurant.crousId}
-                    favorites={favorites || []}
-                    onFavoriteChange={onFavoriteChange}
-                  />
-                ))
-              : restaurants
-                  .filter((restaurant: Restaurant) =>
-                    restaurant.name.toLowerCase().includes(search.toLowerCase())
-                  )
-                  .map((restaurant: Restaurant) => (
-                    <RestaurantCard
-                      key={restaurant.id}
-                      display={display}
-                      id={restaurant.id}
-                      name={restaurant.name}
-                      place={restaurant.place}
-                      schedule={restaurant.schedule}
-                      url={restaurant.url}
-                      cp={restaurant.cp}
-                      address={restaurant.address}
-                      city={restaurant.city}
-                      phone={restaurant.phone}
-                      img={restaurant.img}
-                      crousId={restaurant.crousId}
-                      favorites={favorites || []}
-                      onFavoriteChange={onFavoriteChange}
-                    />
-                  ))}
+            {restaurantToDisplay.map((restaurant: Restaurant) => (
+              <RestaurantCard
+                key={restaurant.id}
+                display={display}
+                id={restaurant.id}
+                name={restaurant.name}
+                place={restaurant.place}
+                schedule={restaurant.schedule}
+                url={restaurant.url}
+                cp={restaurant.cp}
+                address={restaurant.address}
+                city={restaurant.city}
+                phone={restaurant.phone}
+                img={restaurant.img}
+                crousId={restaurant.crousId}
+                favorites={favorites || []}
+                onFavoriteChange={onFavoriteChange}
+              />
+            ))}
           </div>
         )}
       </div>

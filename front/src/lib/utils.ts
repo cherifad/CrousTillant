@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
-import { get } from "http";
 import { twMerge } from "tailwind-merge";
+import { Restaurant } from "@prisma/client";
 
 export type Favorite = {
   id: string;
@@ -19,6 +19,13 @@ export type Crous = {
   url: string;
   created_at: string;
   updated_at: string;
+};
+
+export type Position = {
+  coords: {
+    latitude: number;
+    longitude: number;
+  };
 };
 
 export function cn(...inputs: ClassValue[]) {
@@ -94,9 +101,12 @@ export function isFavorite(id: string) {
   return favorites.some((favorite: { id: string }) => favorite.id === id);
 }
 
-export const getFavorites = (crousId: Number): Favorite[] => {
+export const getFavorites = (crousId?: Number): Favorite[] => {
   const fav = JSON.parse(localStorage.getItem("favorites") || "[]");
-  console.log(fav);
+
+  if (!crousId) {
+    return fav;
+  }
 
   return fav.filter((f: Favorite) => f.crousId === crousId);
 };
@@ -189,3 +199,71 @@ export const getSelectedCrous = (): Crous | null => {
 export const setSelectedCrous = (crous: Crous) => {
   localStorage.setItem("selectedCrous", JSON.stringify(crous));
 };
+
+export const getGeoLocation = async (): Promise<Position | null> => {
+  if ("geolocation" in navigator) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  } else {
+    return null;
+  }
+};
+
+function calculateDistance(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number
+): number {
+  const R = 6371; // Radius of the Earth in km
+  const dLat = ((lat2 - lat1) * Math.PI) / 180;
+  const dLon = ((lon2 - lon1) * Math.PI) / 180;
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos((lat1 * Math.PI) / 180) *
+      Math.cos((lat2 * Math.PI) / 180) *
+      Math.sin(dLon / 2) *
+      Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  const d = R * c; // Distance in km
+  return d;
+}
+
+export function findRestaurantsAroundPosition(
+  restaurants: Restaurant[],
+  position: Position,
+  maxDistance: number
+): Restaurant[] {
+  const nearbyRestaurants: Restaurant[] = [];
+  for (const restaurant of restaurants) {
+    if (restaurant.lat !== undefined && restaurant.lng !== undefined) {
+      const distance = calculateDistance(
+        position.coords.latitude,
+        position.coords.longitude,
+        restaurant.lat!,
+        restaurant.lng!
+      );
+      if (distance <= maxDistance) {
+        nearbyRestaurants.push(restaurant);
+      }
+    }
+  }
+  // Sort nearby restaurants based on distance
+  nearbyRestaurants.sort((a, b) => {
+    const distanceA = calculateDistance(
+      position.coords.latitude,
+      position.coords.longitude,
+      a.lat!,
+      a.lng!
+    );
+    const distanceB = calculateDistance(
+      position.coords.latitude,
+      position.coords.longitude,
+      b.lat!,
+      b.lng!
+    );
+    return distanceA - distanceB;
+  });
+  return nearbyRestaurants;
+}

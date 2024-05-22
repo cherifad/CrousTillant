@@ -7,18 +7,20 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useParams } from "next/navigation";
 import DatePicker from "@/components/date-picker";
 import MealCard from "@/components/meal-card";
-import { Heart, HeartOff, Navigation } from "lucide-react";
+import { Heart, HeartOff, Navigation, Link } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   getDates,
   removeFromFavorites,
   addToFavorites,
+  isFavorite as isFavLocalStorage,
 } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
 import DateCard from "@/components/date-card";
+import { notFound } from "next/navigation";
 
 export default function SingleRestaurant() {
   const [restaurant, setRestaurant] = useState<Restaurant>();
@@ -34,6 +36,7 @@ export default function SingleRestaurant() {
   const [selectedDateDinner, setSelectedDateDinner] = useState<Meal[]>([]);
   const [maxAvailableDate, setMaxAvailableDate] = useState<Date | undefined>();
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
+  const [emptyMeals, setEmptyMeals] = useState<boolean>(false);
 
   const { toast } = useToast();
 
@@ -41,7 +44,7 @@ export default function SingleRestaurant() {
   const restaurantId = params?.slug.toString().split("-").pop();
 
   if (!restaurantId || isNaN(parseInt(restaurantId))) {
-    return <h1>404 - Not Found</h1>;
+    return notFound();
   }
 
   useEffect(() => {
@@ -54,11 +57,13 @@ export default function SingleRestaurant() {
         }
         setRestaurant(data);
         setMeals(data.meals);
+        if (data.meals.length === 0) {
+          setEmptyMeals(true);
+        }
         sortData(data.meals);
       });
 
-    const favorites = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setIsFavorite(favorites.includes(parseInt(restaurantId)));
+    setIsFavorite(isFavLocalStorage(restaurantId));
 
     setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -75,7 +80,7 @@ export default function SingleRestaurant() {
       addToFavorites({
         name: restaurant?.name!,
         id: restaurantId.toString(),
-        crousId: restaurant?.crousId!
+        crousId: restaurant?.crousId!,
       });
       setIsFavorite(true);
       toast({
@@ -184,11 +189,13 @@ export default function SingleRestaurant() {
                 restaurant={restaurant}
                 numberOfMeals={meals.length}
               />
-              <DatePicker
-                onDateChange={setSelectedDate}
-                maxDate={maxAvailableDate}
-                current={selectedDate}
-              />
+              {!emptyMeals && (
+                <DatePicker
+                  onDateChange={setSelectedDate}
+                  maxDate={maxAvailableDate}
+                  current={selectedDate}
+                />
+              )}
             </div>
             <div className="flex items-center gap-3 mt-4 md:mt-0">
               <Button asChild>
@@ -204,86 +211,107 @@ export default function SingleRestaurant() {
             </div>
           </div>
           <div>
-            <div className="grid gap-4 md:grid-cols-3 mt-8">
-              <fieldset className="grid gap-6 md:col-span-2 rounded-lg border p-4 mb-4 md:mb-8">
-                <legend className="-ml-1 px-1 text-sm font-medium">
-                  Menu du{" "}
-                  {selectedDate.toLocaleDateString("fr-FR", {
-                    weekday: "long",
-                    day: "numeric",
-                    month: "long",
-                  })}
-                </legend>
-                <div className="flex flex-col gap-4">
-                  {selectedDateMeals.length === 0 ? (
-                    <p className="text-center">
-                      Aucun menu disponible pour cette date 🥲
-                    </p>
-                  ) : (
-                    <>
-                      {selectedDateBreakfast.length > 0 && (
-                        <Card>
-                          <CardHeader>
-                            <CardTitle>🥞 Petit-déjeuner</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            {selectedDateBreakfast.map((meal) => (
-                              <MealCard key={meal.id} meal={meal} />
-                            ))}
-                          </CardContent>
-                        </Card>
-                      )}
-                      {selectedDateLunch.length > 0 && (
-                        <Card>
-                          <CardHeader>
-                            <CardTitle>🍽 Déjeuner</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            {selectedDateLunch.map((meal) => (
-                              <MealCard key={meal.id} meal={meal} />
-                            ))}
-                          </CardContent>
-                        </Card>
-                      )}
-                      {selectedDateDinner.length > 0 && (
-                        <Card>
-                          <CardHeader>
-                            <CardTitle>🍲 Dîner</CardTitle>
-                          </CardHeader>
-                          <CardContent>
-                            {selectedDateDinner.map((meal) => (
-                              <MealCard key={meal.id} meal={meal} />
-                            ))}
-                          </CardContent>
-                        </Card>
-                      )}
-                    </>
-                  )}
-                </div>
-              </fieldset>
-              <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8">
-                <legend className="-ml-1 px-1 text-sm font-medium">
-                  Menu des jours suivants
-                </legend>
-                <div className="flex flex-wrap gap-2">
-                  {availableDates.map((date) => (
-                    <DateCard
-                      key={date.toISOString()}
-                      mealNumber={
-                        meals.filter(
-                          (meal) =>
-                            new Date(meal.date).toLocaleDateString() ===
-                            date.toLocaleDateString()
-                        ).length
-                      }
-                      date={date}
-                      onSelectedDateChange={setSelectedDate}
-                      selectedDate={selectedDate}
-                    />
-                  ))}
-                </div>
-              </fieldset>
-            </div>
+            {!emptyMeals ? (
+              <div className="grid gap-4 md:grid-cols-3 mt-8">
+                <fieldset className="grid gap-6 md:col-span-2 rounded-lg border p-4 mb-4 md:mb-8">
+                  <legend className="-ml-1 px-1 text-sm font-medium">
+                    Menu du{" "}
+                    {selectedDate.toLocaleDateString("fr-FR", {
+                      weekday: "long",
+                      day: "numeric",
+                      month: "long",
+                    })}
+                  </legend>
+                  <div className="flex flex-col gap-4">
+                    {selectedDateMeals.length === 0 ? (
+                      <p className="text-center">
+                        Aucun menu disponible pour cette date 🥲
+                      </p>
+                    ) : (
+                      <>
+                        {selectedDateBreakfast.length > 0 && (
+                          <Card>
+                            <CardHeader>
+                              <CardTitle>🥞 Petit-déjeuner</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              {selectedDateBreakfast.map((meal) => (
+                                <MealCard key={meal.id} meal={meal} />
+                              ))}
+                            </CardContent>
+                          </Card>
+                        )}
+                        {selectedDateLunch.length > 0 && (
+                          <Card>
+                            <CardHeader>
+                              <CardTitle>🍽 Déjeuner</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              {selectedDateLunch.map((meal) => (
+                                <MealCard key={meal.id} meal={meal} />
+                              ))}
+                            </CardContent>
+                          </Card>
+                        )}
+                        {selectedDateDinner.length > 0 && (
+                          <Card>
+                            <CardHeader>
+                              <CardTitle>🍲 Dîner</CardTitle>
+                            </CardHeader>
+                            <CardContent>
+                              {selectedDateDinner.map((meal) => (
+                                <MealCard key={meal.id} meal={meal} />
+                              ))}
+                            </CardContent>
+                          </Card>
+                        )}
+                      </>
+                    )}
+                  </div>
+                </fieldset>
+                <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8 h-fit">
+                  <legend className="-ml-1 px-1 text-sm font-medium">
+                    Menu des jours suivants
+                  </legend>
+                  <div className="flex flex-wrap gap-2">
+                    {availableDates.map((date) => (
+                      <DateCard
+                        key={date.toISOString()}
+                        mealNumber={
+                          meals.filter(
+                            (meal) =>
+                              new Date(meal.date).toLocaleDateString() ===
+                              date.toLocaleDateString()
+                          ).length
+                        }
+                        date={date}
+                        onSelectedDateChange={setSelectedDate}
+                        selectedDate={selectedDate}
+                      />
+                    ))}
+                  </div>
+                </fieldset>
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center gap-4 items-center h-full mt-8 text-center">
+                <p>Aucun menu disponible pour ce restaurant 🥲</p>
+                <p>
+                  Ceci est peut-être dû à une erreur de notre part ou que le
+                  restaurant n'a pas encore publié de menus.
+                </p>
+                <Button asChild>
+                  <a
+                    href={restaurant?.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-2"
+                  >
+                    Voir sur le site officiel
+                    <Link className="h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+            )}
           </div>
         </div>
       )}
