@@ -1,4 +1,24 @@
 class Restaurant:
+    """
+    Represents a restaurant.
+
+    Attributes:
+        id (int): The unique identifier of the restaurant.
+        name (str): The name of the restaurant.
+        place (str): The place where the restaurant is located.
+        schedule (str): The schedule of the restaurant.
+        url (str): The URL of the restaurant's website.
+        cp (str): The postal code of the restaurant.
+        address (str): The address of the restaurant.
+        city (str): The city where the restaurant is located.
+        phone (str): The phone number of the restaurant.
+        img (str): The image URL of the restaurant.
+        meals (list): The list of meals offered by the restaurant.
+        crous_id (str): The CROUS identifier of the restaurant.
+        lat (float): The latitude coordinate of the restaurant's location.
+        lon (float): The longitude coordinate of the restaurant's location.
+    """
+
     def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, crous_id, lat=None, lon=None, meals=[]):
         self.id = id
         self.name = name

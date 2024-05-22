@@ -19,6 +19,16 @@ firefox_headers = {
 }
 
 def get_menu(url, restaurantId):
+    """
+    Retrieves the menu from the specified URL for a given restaurant.
+
+    Args:
+        url (str): The URL of the menu page.
+        restaurantId (int): The ID of the restaurant.
+
+    Returns:
+        list: A list of dictionaries representing the meals in the menu.
+    """
     response = requests.get(url, headers=firefox_headers)
     
     if response.status_code != 200:
@@ -254,6 +264,16 @@ def compare_and_insert_meals(crous_name):
         json.dump(newMeals, f, indent=4, ensure_ascii=False)
 
 def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
+    """
+    Compares two arrays of JSON objects and identifies the differences between them.
+    
+    Args:
+        oldMeals (list[Meal]): The old array of Meal objects.
+        newMeals (list[Meal]): The new array of Meal objects.
+    
+    Returns:
+        list[Meal]: The updated array of Meal objects with 'toUpdate' and 'toInsert' flags set accordingly.
+    """
     # Find the differences between the arrays of JSON objects
     diff = DeepDiff(oldMeals, newMeals, ignore_order=True).to_dict()
     meal_to_update = 0
@@ -309,6 +329,15 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
     return newMeals
 
 def is_a_meal_object(data):
+    """
+    Checks if the given data can be used to create a Meal object.
+
+    Args:
+        data (dict): A dictionary containing the data for a meal.
+
+    Returns:
+        bool: True if the data can be used to create a Meal object, False otherwise.
+    """
     try:
         meal = Meal(**data)
         return True
