@@ -234,12 +234,11 @@ def compare_and_insert_meals(crous_name):
         newMeals = json.load(f)
     print(f"[{datetime.datetime.now()}] Meals in the new file: {len(newMeals)}")
 
-    # Remove old meals older than today's date
-    today = datetime.datetime.now()
-    oldMeals = [meal for meal in oldMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') >= today]
-    newMeals = [meal for meal in newMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') >= today]
-
+    # Remove old meals older than today's date, do not remove today's meals
     print(f"[{datetime.datetime.now()}] Removing old meals older than today...")
+    today = datetime.datetime.now()
+    oldMeals = [meal for meal in oldMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') > today]
+    newMeals = [meal for meal in newMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') > today]
 
     print(f"[{datetime.datetime.now()}] Comparing {len(oldMeals)} old meals with {len(newMeals)} new meals...")
     
