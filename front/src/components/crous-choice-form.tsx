@@ -44,19 +44,19 @@ export default function CrousChoiceForm({ callBackUrl }: CrousChoiceFormProps) {
   }
 
   return (
-    <div>
+    <div className="mt-4">
       <ul className="flex flex-wrap gap-2 justify-center">
         {crousList.map((crous) => (
           <li key={crous.id}>
             <Card
-              //   className="bg-[#e40513] cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-96 w-44 items-center justify-center flex flex-col"
-              className={`bg-[#e40513] cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${
+              className={`bg-[#e40513] cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-full md:min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${
                 selectedCrousLocal?.id === crous.id && "bg-[#ff1d25] scale-105"
               }`}
               onClick={() => setSelectedCrousLocal(crous)}
+              onDoubleClick={() => handleSelectCrous(crous)}
             >
               <CardHeader>
-                <CardTitle className="text-center font-bold text-5xl">
+                <CardTitle className="text-center font-bold text-5xl select-none">
                   {crous.name.split("Crous de ")[1].charAt(0)}
                 </CardTitle>
                 <CardDescription className="text-white dark:text-black text-center">
