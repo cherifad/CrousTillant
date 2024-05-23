@@ -8,6 +8,8 @@ import { ThemeProvider } from "@/app/theme-provider";
 import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -58,11 +60,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
+  // Providing all messages to the client
+  const messages = await getMessages();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
@@ -72,25 +79,27 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <main className="p-4 pb-20 lg:p-24 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
-            <Header />
-            <Announcement />
-            {children}
-          </main>
-          <Footer />
-          <Toaster />
-          <Script
-            defer
-            src="https://ru-stats.servperso.me/script.js"
-            data-website-id="c778fc13-9451-48b1-946a-aef37fa91256"
-          />
-        </ThemeProvider>
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <main className="p-4 pb-20 lg:p-24 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
+              <Header />
+              <Announcement />
+              {children}
+            </main>
+            <Footer />
+            <Toaster />
+            <Script
+              defer
+              src="https://ru-stats.servperso.me/script.js"
+              data-website-id="c778fc13-9451-48b1-946a-aef37fa91256"
+            />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

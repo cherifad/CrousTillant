@@ -31,6 +31,7 @@ import {
   findRestaurantsAroundPosition,
 } from "@/lib/utils";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function Home() {
   const [display, setDisplay] = useState<"list" | "grid">("list");
@@ -44,6 +45,8 @@ export default function Home() {
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
   const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
   const [position, setPosition] = useState<Position | null>(null);
+
+  const t = useTranslations("Index");
 
   useEffect(() => {
     setLoading(true);

@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/components/theme-switcher";
+import LanguageSwitcher from "@/components/language-switcher";
 import { Settings, Home, Info, Mail, Star } from "lucide-react";
 import { useMediaQuery } from "usehooks-ts";
 import Image from "next/image";
@@ -111,6 +112,7 @@ export default function Header() {
           </a>
         </Button>
         <ModeToggle />
+        <LanguageSwitcher />
       </div>
     </header>
   );
