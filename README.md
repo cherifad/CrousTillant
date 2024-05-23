@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://github.com/cherifad/CrousTillant/blob/627b1463e94c1d708baac037723de2206d3ff7d5/front/public/img/logo.png" alt="Sublime's custom image"/>
+</p>
+
 # Bienvenue dans l'univers délicieusement loufoque du Crous 🍔🎉
 
 ## À Propos
