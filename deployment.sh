@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Perform a git pull to fetch the latest changes
-git pull
+# Perform a git pull to fetch the latest changes from deploy branch
+echo "Pulling the latest changes from the deploy branch..."
+git checkout deploy
+git pull origin deploy
 
 cd front
 
