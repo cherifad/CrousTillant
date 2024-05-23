@@ -1,18 +1,15 @@
+import { useTranslations } from "next-intl";
+
 export default function About() {
+  const t = useTranslations("About");
+
   return (
     <div>
-      <h1 className="font-bold text-3xl">À propos</h1>
+      <h1 className="font-bold text-3xl">{t("title")}</h1>
+      <p className="mt-4">{t("content_1")}</p>
+      <p className="mt-4">{t("content_2")}</p>
       <p className="mt-4">
-        Ce site a été réalisé car le site officiel du Crous de Lyon ne propose
-        pas une interface utilisateur moderne et intuitive pour consulter les
-        menus des restaurants universitaires.
-      </p>
-      <p className="mt-4">
-        L'objectif était de réaliser une application web permettant de consulter
-        les menus des restaurants universitaires du Crous de Lyon.
-      </p>
-      <p className="mt-4">
-        Le projet a été réalisé par{" "}
+        {t("content_3")}{" "}
         <a
           href="https://github.com/cherifad"
           className="text-blue-500 hover:underline"
@@ -23,7 +20,7 @@ export default function About() {
         </a>{" "}
         .
       </p>
-      <p className="mt-4">Merci à copilot pour avoir écrit ce texte 😘</p>
+      <p className="mt-4">{t("content_4")}</p>
     </div>
   );
 }

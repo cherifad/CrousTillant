@@ -5,5 +5,12 @@
   "LanguageSwitcher": {
     "en": "English",
     "fr": "Français"
+  },
+  "About": {
+    "title": "À propos",
+    "content_1": "Ce site a été réalisé car le site officiel du Crous de Lyon ne propose pas une interface utilisateur moderne et intuitive pour consulter les menus des restaurants universitaires.",
+    "content_2": "Le site est en cours de développement et de nouvelles fonctionnalités seront ajoutées prochainement.",
+    "content_3": "Le projet a été réalisé par",
+    "content_4": "Merci à copilot pour avoir écrit ce texte 😘"
   }
 }

@@ -5,5 +5,12 @@
   "LanguageSwitcher": {
     "en": "English",
     "fr": "French"
+  },
+  "About": {
+    "title": "About",
+    "content_1": "This site was created because the official website of Crous de Lyon does not offer a modern and intuitive user interface for viewing the menus of university restaurants.",
+    "content_2": "The site is under development and new features will be added soon.",
+    "content_3": "The project was created by",
+    "content_4": "Thanks to copilot for writing this text 😘"
   }
 }
