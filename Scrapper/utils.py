@@ -8,6 +8,19 @@ import urllib.parse
 # Parse a date string in French format to a datetime object
 # ex: "vendredi 26 avril 2024" -> datetime(2024, 4, 26)
 def parse_date(date_string):
+    """
+    Parses a date string in the format "%A %d %B %Y" and returns a string representation of the parsed date.
+
+    Args:
+        date_string (str): The date string to parse.
+
+    Returns:
+        str: A string representation of the parsed date.
+
+    Raises:
+        ValueError: If the date string is not in the correct format.
+
+    """
     # Set the locale to French for proper parsing of French month names
     locale.setlocale(locale.LC_TIME, 'fr_FR.UTF-8')
 
@@ -16,6 +29,16 @@ def parse_date(date_string):
     return date.__str__()
 
 def extract_cp_city_coord(address):
+    """
+    Extracts the postal code, city, address, and coordinates from the given address.
+
+    Args:
+        address (str): The address from which to extract the postal code, city, address, and coordinates.
+
+    Returns:
+        tuple: A tuple containing the postal code, city, address, and coordinates.
+               If no postal code or city is found, returns (None, None, None, None).
+    """
     if address is None or address == "":
         print(f"[{datetime.now()}] Address is empty, cannot extract postal code and city")
         return None, None
@@ -39,6 +62,16 @@ def extract_cp_city_coord(address):
         return None, None, None
     
 def convert_json_to_utf8(json_file):
+    """
+    Converts a JSON file to UTF-8 encoding.
+
+    Args:
+        json_file (str): The path to the JSON file.
+
+    Raises:
+        FileNotFoundError: If the specified JSON file does not exist.
+
+    """
     with open(json_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     

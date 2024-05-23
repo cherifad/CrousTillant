@@ -31,6 +31,7 @@ import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "next-themes";
 import { usePathname, redirect } from "next/navigation";
+import Link from "next/link";
 
 export default function Settings() {
   const [popoverOpen, setPopoverOpen] = useState(false);
@@ -105,9 +106,13 @@ export default function Settings() {
       redirect("/crous?clbk=" + pathname);
     }
 
-    setFavorites(getFavorites(crous.id));
-    setLocalStarredFav(getStarredFav(crous.id));
-    setLocalFavAsHomePage(getFavAsHomePage());
+    try {
+      setFavorites(getFavorites(crous.id));
+      setLocalStarredFav(getStarredFav(crous.id));
+      setLocalFavAsHomePage(getFavAsHomePage());
+    } catch {
+      clearUserPreferences();
+    }
   }, []);
 
   return (
@@ -122,7 +127,9 @@ export default function Settings() {
             </p>
           </div>
           <Switch
-            checked={theme === "system" ? systemTheme === "dark" : theme === "dark"}
+            checked={
+              theme === "system" ? systemTheme === "dark" : theme === "dark"
+            }
             onCheckedChange={handleThemeChange}
           />
         </div>
@@ -168,6 +175,21 @@ export default function Settings() {
               ))}
             </SelectContent>
           </Select>
+        </div>
+        <div className="space-y-2 flex flex-row items-center justify-between rounded-lg border p-4">
+          <div className="space-y-0.5">
+            <p className="font-medium text-base">Changer de Crous</p>
+            <p className="text-[0.8rem] text-muted-foreground">
+              Changer de Crous pour afficher les restaurants.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <div className="flex justify-end gap-2">
+              <Button asChild>
+                <Link href="/crous">Changer</Link>
+              </Button>
+            </div>
+          </div>
         </div>
       </SettingCard>
       <SettingCard title="Personnel">

@@ -8,6 +8,7 @@ import {
 } from "@/lib/utils";
 import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export default function AnnouncementComponent() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
@@ -35,29 +36,32 @@ export default function AnnouncementComponent() {
     <>
       {announcements.length > 0 && show && (
         <fieldset className="grid gap-6 rounded-lg border p-4 mb-4 md:mb-8 relative pt-7">
-          <Button
-            size="icon"
-            className="absolute top-0 right-2"
-            onClick={() => {
-              hideAnnouncement();
-              setShow(false);
-            }}
-          >
-            <Plus className="h-4 w-4 transform rotate-45" />
-          </Button>
           <legend className="-ml-1 px-1 text-sm font-medium">
-            {announcements.length} annonces récentes
+            {announcements.length} annonce{announcements.length > 1 && "s"}{" "}
+            récente{announcements.length > 1 && "s"}
           </legend>
-          <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+          <div>
             {announcements.map((announcement) => {
               return (
                 <div key={announcement.id} className="flex flex-col gap-2">
                   <h2 className="font-bold text-lg">{announcement.title}</h2>
                   <p>{announcement.content}</p>
+                  {announcements.indexOf(announcement) !==
+                    announcements.length - 1 && <Separator />}
                 </div>
               );
             })}
           </div>
+          <Button
+            className="w-fit"
+            onClick={() => {
+              setShow(false);
+              hideAnnouncement();
+            }}
+          >
+            <Plus className="h-4 w-4 transform rotate-45 mr-2" />
+            Ne plus afficher
+          </Button>
         </fieldset>
       )}
     </>

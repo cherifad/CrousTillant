@@ -3,10 +3,24 @@ import json
 import psycopg
 from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
+import os
 
-db_connection = "dbname=smartru user=postgres password=postgres"
+db_connection = os.getenv('DATABASE_URL')
+
+if db_connection is None:
+    print("Database connection string not found, please set the DATABASE_URL environment variable")
+    exit(1)
 
 def insert_meals(meals: list[Meal]):
+    """
+    Inserts or updates meals in the database.
+
+    Args:
+        meals (list[Meal]): A list of Meal objects to be inserted or updated.
+
+    Returns:
+        None
+    """
     # Connect to an existing database
     with psycopg.connect(db_connection) as conn:
         print(f"[{datetime.now()}] Checking for meals to insert or update in the database")
@@ -37,6 +51,28 @@ def insert_meals(meals: list[Meal]):
             conn.commit()
 
 def insert_restaurants(restaurants):
+    """
+    Inserts a list of restaurants into the database.
+
+    Args:
+        restaurants (list): A list of dictionaries representing the restaurants to be inserted.
+            Each dictionary should contain the following keys:
+            - name (str): The name of the restaurant.
+            - place (str): The place of the restaurant.
+            - schedule (str): The schedule of the restaurant.
+            - url (str): The URL of the restaurant.
+            - cp (str): The postal code of the restaurant.
+            - address (str): The address of the restaurant.
+            - city (str): The city of the restaurant.
+            - phone (str): The phone number of the restaurant.
+            - img (str): The image URL of the restaurant.
+            - crous_id (str): The CROUS ID of the restaurant.
+            - lat (float): The latitude coordinate of the restaurant.
+            - lon (float): The longitude coordinate of the restaurant.
+
+    Returns:
+        None
+    """
     # Connect to an existing database
     with psycopg.connect(db_connection) as conn:
 
@@ -58,6 +94,17 @@ def insert_restaurants(restaurants):
             conn.commit()
 
 def get_restaurants(crous_id):
+    """
+    Retrieves restaurants from the database based on the provided Crous ID.
+
+    Args:
+        crous_id (int): The Crous ID of the restaurants to retrieve.
+
+    Returns:
+        list: A list of Restaurant objects representing the retrieved restaurants.
+              Returns None if no restaurants are found.
+
+    """
     # Connect to an existing database
     with psycopg.connect(db_connection) as conn:
 

@@ -19,7 +19,22 @@ firefox_headers = {
 }
 
 def get_menu(url, restaurantId):
+    """
+    Retrieves the menu from the specified URL for a given restaurant.
+
+    Args:
+        url (str): The URL of the menu page.
+        restaurantId (int): The ID of the restaurant.
+
+    Returns:
+        list: A list of dictionaries representing the meals in the menu.
+    """
     response = requests.get(url, headers=firefox_headers)
+    
+    if response.status_code != 200:
+        print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. Status code: {response.status_code}")
+        return []
+    
     soup = bs(response.text, 'html.parser')
 
     returnMeals: list[Meal] = []
@@ -59,7 +74,7 @@ def get_menu(url, restaurantId):
                 returnMeals.append(newMeal.toJsonObject())
     except Exception as e:
         print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. {e}")
-    
+
     print(f"[{datetime.datetime.now()}] Meals gathered successfully from {url}.")
     return returnMeals
 
@@ -229,12 +244,11 @@ def compare_and_insert_meals(crous_name):
         newMeals = json.load(f)
     print(f"[{datetime.datetime.now()}] Meals in the new file: {len(newMeals)}")
 
-    # Remove old meals older than today's date
-    today = datetime.datetime.now()
-    oldMeals = [meal for meal in oldMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') >= today]
-    newMeals = [meal for meal in newMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') >= today]
-
+    # Remove old meals older than today's date, do not remove today's meals
     print(f"[{datetime.datetime.now()}] Removing old meals older than today...")
+    today = datetime.datetime.now()
+    oldMeals = [meal for meal in oldMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') > today]
+    newMeals = [meal for meal in newMeals if datetime.datetime.strptime(meal['date'], '%Y-%m-%d %H:%M:%S') > today]
 
     print(f"[{datetime.datetime.now()}] Comparing {len(oldMeals)} old meals with {len(newMeals)} new meals...")
     
@@ -250,6 +264,16 @@ def compare_and_insert_meals(crous_name):
         json.dump(newMeals, f, indent=4, ensure_ascii=False)
 
 def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
+    """
+    Compares two arrays of JSON objects and identifies the differences between them.
+    
+    Args:
+        oldMeals (list[Meal]): The old array of Meal objects.
+        newMeals (list[Meal]): The new array of Meal objects.
+    
+    Returns:
+        list[Meal]: The updated array of Meal objects with 'toUpdate' and 'toInsert' flags set accordingly.
+    """
     # Find the differences between the arrays of JSON objects
     diff = DeepDiff(oldMeals, newMeals, ignore_order=True).to_dict()
     meal_to_update = 0
@@ -305,6 +329,15 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
     return newMeals
 
 def is_a_meal_object(data):
+    """
+    Checks if the given data can be used to create a Meal object.
+
+    Args:
+        data (dict): A dictionary containing the data for a meal.
+
+    Returns:
+        bool: True if the data can be used to create a Meal object, False otherwise.
+    """
     try:
         meal = Meal(**data)
         return True
