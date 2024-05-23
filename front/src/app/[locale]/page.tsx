@@ -30,7 +30,7 @@ import {
   Position,
   findRestaurantsAroundPosition,
 } from "@/lib/utils";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { useTranslations } from "next-intl";
 
 export default function Home() {

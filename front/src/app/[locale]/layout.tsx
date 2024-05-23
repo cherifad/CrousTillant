@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Poppins as FontSans } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import { ThemeProvider } from "@/app/theme-provider";
+import { ThemeProvider } from "@/app/[locale]/theme-provider";
 import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
@@ -64,6 +64,7 @@ export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
   const locale = await getLocale();
 
@@ -71,7 +72,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <head />
       <body
         className={cn(

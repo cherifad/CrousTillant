@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/card";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { Heart, HeartOff } from "lucide-react";
 import { useState } from "react";
 import { slugify } from "@/lib/utils";

@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
-import Link from "next/link";
+import { Link } from "@/navigation";
 import { usePathname } from "next/navigation";
 import ModeToggle from "@/components/theme-switcher";
 import LanguageSwitcher from "@/components/language-switcher";

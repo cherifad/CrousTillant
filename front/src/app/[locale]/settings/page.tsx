@@ -31,7 +31,7 @@ import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "next-themes";
 import { usePathname, redirect } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/navigation";
 
 export default function Settings() {
   const [popoverOpen, setPopoverOpen] = useState(false);
