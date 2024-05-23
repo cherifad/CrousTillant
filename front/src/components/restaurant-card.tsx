@@ -88,7 +88,9 @@ export default function RestaurantCard({
         )}
       </Button>
       <CardHeader>
-        <CardTitle className="pr-6">{name}</CardTitle>
+        <CardTitle className="pr-6">
+          <Link href={`/restaurant/${slugify(name)}-${id}`}>{name}</Link>
+        </CardTitle>
         <CardDescription>
           {place.length > 0 ? place : <span>&nbsp;</span>}
         </CardDescription>
