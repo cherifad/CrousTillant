@@ -9,7 +9,7 @@ db_connection = os.getenv('DATABASE_URL')
 
 if db_connection is None:
     print("Database connection string not found, please set the DATABASE_URL environment variable")
-    exit(1)
+    db_connection = 'dbname=smartru user=postgres password=postgres host=localhost port=5432'
 
 def insert_meals(meals: list[Meal]):
     """
