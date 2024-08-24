@@ -159,11 +159,17 @@ export const deleteFavAsHomePage = () => {
 };
 
 export const toggleDisplayGrid = (
-  display: "list" | "grid",
-  setDisplay: (value: "list" | "grid") => void
+  display: "list" | "map",
+  setDisplay: (value: "list" | "map") => void
 ) => {
-  setDisplay(display === "list" ? "grid" : "list");
-  localStorage.setItem("display", display === "list" ? "grid" : "list");
+  setDisplay(display === "list" ? "map" : "list");
+  localStorage.setItem("display", display === "list" ? "map" : "list");
+  return display === "list" ? "map" : "list";
+};
+
+export const getDisplayGrid = (): "list" | "map" => {
+  const res = localStorage.getItem("display") || "list";
+  return res as "list" | "map";
 };
 
 export const shouldShowAnnouncement = (): AnnouncementLocalStorage => {
