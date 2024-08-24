@@ -19,7 +19,6 @@ import { useSearchParams, redirect } from "next/navigation";
 import { getSelectedCrous, Crous, Position } from "@/lib/utils";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import MapManager from "@/lib/map";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
 
 const MapComponent = dynamic(() => import("@/components/map"), {

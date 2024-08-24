@@ -21,10 +21,7 @@ services:
 
   web:
     container_name: web
-    image: front
-    build:
-      context: ./front
-      dockerfile: Dockerfile
+    image: croustillant-front:latest
     ports:
       - "2500:3000"
     depends_on:

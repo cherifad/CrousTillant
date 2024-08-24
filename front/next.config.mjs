@@ -18,6 +18,7 @@ export default withPWAConfig({
       },
     ],
   },
+  output: 'standalone',
   webpack: (config, { isServer }) => {
     // If it's a server build, exclude the `.node` file from bundling
     if (isServer) {
