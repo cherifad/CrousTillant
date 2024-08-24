@@ -5,7 +5,8 @@ from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
 import os
 
-db_connection = os.getenv('DATABASE_URL')
+db_connection = os.getenv('SCRAPER_DATABASE_URL')
+print(os.environ)
 
 if db_connection is None:
     print("Database connection string not found, please set the DATABASE_URL environment variable")
