@@ -90,6 +90,18 @@ export default function SingleRestaurant() {
   };
 
   const sortData = (meals: Meal[] = []) => {
+    // get only meals for today and further dates
+    meals = meals.filter(
+      (meal) => new Date(meal.date) >= new Date(new Date().setHours(0, 0, 0, 0))
+    );
+
+    setMeals(meals);
+
+    if (meals.length === 0) {
+      setEmptyMeals(true);
+      return;
+    }
+
     // search for max date available in meals
     const maxDate = new Date(
       Math.max.apply(
