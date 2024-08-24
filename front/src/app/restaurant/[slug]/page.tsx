@@ -38,10 +38,12 @@ export default function SingleRestaurant() {
   const params = useParams();
   const restaurantId = params?.slug.toString().split("-").pop();
 
+  // Redirect to 404 if restaurantId is not a number or is not provided
   if (!restaurantId || isNaN(parseInt(restaurantId))) {
     return notFound();
   }
 
+  // Fetch restaurant data and perform additional operations when the component mounts
   useEffect(() => {
     setLoading(true);
     fetch(`/api/restaurant/${restaurantId}`)
@@ -64,7 +66,13 @@ export default function SingleRestaurant() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  /**
+   * Sorts the given array of meals and performs additional operations based on the sorted data.
+   * 
+   * @param meals - An array of meals to be sorted.
+   */
   const sortData = (meals: Meal[] = []) => {
+    setLoading(true);
     // get only meals for today and further dates
     meals = meals.filter(
       (meal) => new Date(meal.date) >= new Date(new Date().setHours(0, 0, 0, 0))
@@ -74,6 +82,7 @@ export default function SingleRestaurant() {
 
     if (meals.length === 0) {
       setEmptyMeals(true);
+      setLoading(false);
       return;
     }
 
@@ -96,8 +105,14 @@ export default function SingleRestaurant() {
 
     // filter meals for selected date
     getMealsForDate(meals);
+    setLoading(false);
   };
 
+  /**
+   * Retrieves meals for a specific date.
+   * 
+   * @param meals - An array of meals.
+   */
   const getMealsForDate = (meals: Meal[] = []) => {
     // filter meals for selected date
     const selectedDateMeals = meals.filter(
@@ -113,6 +128,10 @@ export default function SingleRestaurant() {
     }
   };
 
+  /**
+   * Splits an array of meals into breakfast, lunch, and dinner arrays based on their meal type.
+   * @param meals - The array of meals to be split.
+   */
   const splitMeals = (meals: Meal[] = []) => {
     const breakfast = meals.filter((meal) => meal.meal_type === "BREAKFAST");
     const lunch = meals.filter((meal) => meal.meal_type === "LUNCH");
@@ -123,11 +142,13 @@ export default function SingleRestaurant() {
     setSelectedDateDinner(dinner);
   };
 
+  // Fetch meals for selected date when it changes
   useEffect(() => {
     getMealsForDate(meals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedDate]);
 
+  // Split meals into breakfast, lunch, and dinner when selectedDateMeals changes
   useEffect(() => {
     splitMeals(selectedDateMeals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
