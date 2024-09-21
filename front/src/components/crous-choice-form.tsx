@@ -39,18 +39,14 @@ export default function CrousChoiceForm({ callBackUrl }: CrousChoiceFormProps) {
       });
   }, []);
 
-  if (loading) {
-    return <div>Chargement...</div>;
-  }
-
   return (
     <div className="mt-4">
       <ul className="flex flex-wrap gap-2 justify-center">
         {crousList.map((crous) => (
           <li key={crous.id}>
             <Card
-              className={`bg-[#e40513] cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-full md:min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${
-                selectedCrousLocal?.id === crous.id && "bg-[#ff1d25] scale-105"
+              className={`bg-primary cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-full md:min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${
+                selectedCrousLocal?.id === crous.id && " scale-105"
               }`}
               onClick={() => setSelectedCrousLocal(crous)}
               onDoubleClick={() => handleSelectCrous(crous)}
@@ -70,7 +66,7 @@ export default function CrousChoiceForm({ callBackUrl }: CrousChoiceFormProps) {
       <div className="flex justify-center mt-4">
         <Button
           onClick={() => handleSelectCrous(selectedCrousLocal!)}
-          disabled={!selectedCrousLocal}
+          disabled={!selectedCrousLocal || loading}
         >
           {selectedCrousLocal
             ? `Choisir le ${selectedCrousLocal.name}`

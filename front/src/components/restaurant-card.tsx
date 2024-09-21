@@ -15,7 +15,6 @@ import { slugify } from "@/lib/utils";
 import { Favorite, addToFavorites, removeFromFavorites } from "@/lib/utils";
 
 type Props = {
-  display: "list" | "grid";
   id: number;
   name: string;
   place: string;
@@ -36,7 +35,6 @@ type Props = {
 };
 
 export default function RestaurantCard({
-  display,
   id,
   name,
   place,
@@ -95,33 +93,6 @@ export default function RestaurantCard({
           {place.length > 0 ? place : <span>&nbsp;</span>}
         </CardDescription>
       </CardHeader>
-      {display === "grid" && (
-        <CardContent>
-          <div className="w-full h-[200px] relative overflow-hidden rounded-lg">
-            {img.length === 0 ? (
-              <Image
-                src="/img/default.jpeg"
-                alt={name + " image"}
-                fill={true}
-                style={{ objectFit: "cover" }}
-              />
-            ) : (
-              <Image
-                loader={imageLoader}
-                src={img}
-                alt={name + " image"}
-                fill={true}
-                style={{ objectFit: "cover" }}
-              />
-            )}
-          </div>
-          <p className="mt-4">{schedule}</p>
-          <p className="mt-2">
-            {address} - {cp} {city}
-          </p>
-          <p className="mt-2">{phone}</p>
-        </CardContent>
-      )}
       <CardFooter className="flex justify-between gap-3">
         <Button asChild className="flex-1">
           <Link href={`/restaurant/${slugify(name)}-${id}`}>Voir le menu</Link>

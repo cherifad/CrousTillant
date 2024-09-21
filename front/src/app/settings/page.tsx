@@ -32,6 +32,8 @@ import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "next-themes";
 import { usePathname, redirect } from "next/navigation";
 import Link from "next/link";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { TriangleAlert } from "lucide-react";
 
 export default function Settings() {
   const [popoverOpen, setPopoverOpen] = useState(false);
@@ -135,6 +137,21 @@ export default function Settings() {
         </div>
       </SettingCard>
       <SettingCard title="Comportement">
+        {favorites.length === 0 && (
+          <Alert variant="destructive">
+            <TriangleAlert className="h-4 w-4" />
+            <AlertTitle>Attention</AlertTitle>
+            <AlertDescription>
+              Vous n'avez pas de favoris pour le moment, les paramètres suivants
+              sont désactivés. Ajoutez votre premier favori maintenant en se
+              rendant sur la page{" "}
+              <Link href="/" className="underline font-bold">
+                d'accueil
+              </Link>
+              .
+            </AlertDescription>
+          </Alert>
+        )}
         <div className="space-y-2 flex flex-row items-center justify-between rounded-lg border p-4">
           <div className="space-y-0.5">
             <p className="font-medium text-base">Favori comme page d'accueil</p>
