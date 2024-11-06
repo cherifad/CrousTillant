@@ -78,7 +78,7 @@ def get_menu(url, restaurantId):
     print(f"[{datetime.datetime.now()}] Meals gathered successfully from {url}.")
     return returnMeals
 
-def get_restaurants(url, crous_name, crous_id):
+def get_restaurants(url, crous_name, crous_id, cur):
     """
     Retrieves restaurant information from a given URL.
 
@@ -126,7 +126,7 @@ def get_restaurants(url, crous_name, crous_id):
         json.dump(restaurants, f, indent=4, ensure_ascii=False)
 
     # insert restaurants into the database
-    insert_restaurants(restaurants)
+    insert_restaurants(restaurants, cur)
 
     return restaurants
 
@@ -212,7 +212,7 @@ def get_all_meals(restaurants: list[Restaurant], crous_name: str):
     
     return allMeals
 
-def compare_and_insert_meals(crous_name):
+def compare_and_insert_meals(crous_name, cur):
     """
     Compare meals between 'meals_old.json' and 'meals_new.json', and insert any new meals into the database.
     If 'meals_old.json' doesn't exist, it directly inserts all meals from 'meals_new.json' into the database.
@@ -255,7 +255,7 @@ def compare_and_insert_meals(crous_name):
     newMeals = compare_json_objects(oldMeals, newMeals)
 
     # Insert all new meals into the database
-    insert_meals(newMeals)
+    insert_meals(newMeals, cur)
     print(f"[{datetime.datetime.now()}] Meals inserted successfully.")
 
 

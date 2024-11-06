@@ -1,17 +1,34 @@
 from datetime import datetime
 import json
-import psycopg
+import psycopg2
 from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
-import os
+from model.config import SupportedCrousModel
 
-db_connection = os.getenv('DATABASE_URL')
+# load_dotenv()
 
-if db_connection is None:
-    print("Database connection string not found, please set the DATABASE_URL environment variable")
-    exit(1)
+# # Get environment variables
+# db_name = os.getenv("POSTGRES_DATABASE")
+# db_host = os.getenv("POSTGRES_HOST")
+# db_user = os.getenv("POSTGRES_USER")
+# db_password = os.getenv("POSTGRES_PASSWORD")
+# db_url = os.getenv("POSTGRES_URL")
 
-def insert_meals(meals: list[Meal]):
+# # Connect to the PostgreSQL database using psycopg2
+# try:
+#     connection = psycopg.connect("postgres://default:p59OJGbhyzqg@ep-misty-sky-a22on4e7.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require")
+#     print("Connection successful")
+# except Exception as e:
+#     print("Error connecting to the database:", e)
+#     exit(1)
+
+# db_connection = os.getenv('DATABASE_URL')
+
+# if db_connection is None:
+#     print("Database connection string not found, please set the DATABASE_URL environment variable")
+#     exit(1)
+
+def insert_meals(meals: list[Meal], conn):
     """
     Inserts or updates meals in the database.
 
@@ -22,35 +39,33 @@ def insert_meals(meals: list[Meal]):
         None
     """
     # Connect to an existing database
-    with psycopg.connect(db_connection) as conn:
-        print(f"[{datetime.now()}] Checking for meals to insert or update in the database")
+    cur = conn.cursor()
 
-        # Open a cursor to perform database operations
-        with conn.cursor() as cur:          
+    print(f"[{datetime.now()}] Checking for meals to insert or update in the database")        
+    for meal in meals:
+        if type(meal) is not Meal:
+            meal = Meal(**meal)
+        if meal.toUpdate:
+            print(f"[{datetime.now()}] Updating meal {meal.title}")
+            # update meal
+            cur.execute(
+                'UPDATE public."Meal" SET food_items = %s WHERE date = %s AND meal_type = %s AND title = %s',
+                (json.dumps([FoodItem(**foodItem).toJsonObject() for foodItem in meal.foodItems]), meal.date, meal.mealType, meal.title))
+        elif meal.toInsert:
+            print(f"[{datetime.now()}] Inserting meal {meal.title} into the database")
+            cur.execute(
+                'INSERT INTO public."Meal" (date, title, food_items, meal_type, "restaurantId") VALUES (%s, %s, %s, %s, %s)',
+                (meal.date, meal.title, json.dumps([FoodItem(**foodItem).toJsonObject() for foodItem in meal.foodItems]), meal.mealType, meal.restaurantId))
+        else:
+            print(f"[{datetime.now()}] Meal {meal.title} already up to date, skipping")
+            continue
 
-            for meal in meals:
-                if type(meal) is not Meal:
-                    meal = Meal(**meal)
+    # commit the transaction
+    conn.commit()
+    # close the cursor
+    cur.close()
 
-                if meal.toUpdate:
-                    print(f"[{datetime.now()}] Updating meal {meal.title}")
-                    # update meal
-                    cur.execute(
-                        'UPDATE public."Meal" SET food_items = %s WHERE date = %s AND meal_type = %s AND title = %s',
-                        (json.dumps([FoodItem(**foodItem).toJsonObject() for foodItem in meal.foodItems]), meal.date, meal.mealType, meal.title))
-                elif meal.toInsert:
-                    print(f"[{datetime.now()}] Inserting meal {meal.title} into the database")
-                    cur.execute(
-                        'INSERT INTO public."Meal" (date, title, food_items, meal_type, "restaurantId") VALUES (%s, %s, %s, %s, %s)',
-                        (meal.date, meal.title, json.dumps([FoodItem(**foodItem).toJsonObject() for foodItem in meal.foodItems]), meal.mealType, meal.restaurantId))
-                else:
-                    print(f"[{datetime.now()}] Meal {meal.title} already up to date, skipping")
-                    continue
-
-            # Make the changes to the database persistent
-            conn.commit()
-
-def insert_restaurants(restaurants):
+def insert_restaurants(restaurants, conn):
     """
     Inserts a list of restaurants into the database.
 
@@ -73,27 +88,31 @@ def insert_restaurants(restaurants):
     Returns:
         None
     """
+    print(f"[{datetime.now()}] Inserting {len(restaurants)} restaurants into the database")
+
     # Connect to an existing database
-    with psycopg.connect(db_connection) as conn:
+    cur = conn.cursor()
 
-        # Open a cursor to perform database operations
-        with conn.cursor() as cur:
-            print(f"[{datetime.now()}] Inserting {len(restaurants)} restaurants into the database")
+    for restaurant in restaurants:
+        try:
+            # insert restaurant
+            cur.execute(
+                'INSERT INTO public."Restaurant" (name, place, schedule, url, cp, address, city, phone, img, "crousId", lat, lng, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
+                (restaurant['name'], restaurant['place'], restaurant['schedule'], restaurant['url'], restaurant['cp'], restaurant['address'], restaurant['city'], restaurant['phone'], restaurant['img'], restaurant['crous_id'], restaurant['lat'], restaurant['lon'], datetime.now()))
+        except psycopg2.DatabaseError as error:
+            print(f"[{datetime.now()}] An error occurred while inserting the restaurants into the database: {e}")
+            if conn:
+                conn.rollback()
+                print(error)
+        except Exception as e:
+            print(f"[{datetime.now()}] An error occurred while inserting the restaurants into the database: {e}")
 
-            for restaurant in restaurants:
-                try:
-                    # insert restaurant
-                    cur.execute(
-                        'INSERT INTO public."Restaurant" (name, place, schedule, url, cp, address, city, phone, img, "crousId", lat, lng, updated_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
-                        (restaurant['name'], restaurant['place'], restaurant['schedule'], restaurant['url'], restaurant['cp'], restaurant['address'], restaurant['city'], restaurant['phone'], restaurant['img'], restaurant['crous_id'], restaurant['lat'], restaurant['lon'], datetime.now()))
-                except Exception as e:
-                    conn.commit()
-                    print(f"[{datetime.now()}] An error occurred while inserting the restaurants into the database: {e}")
-                
-            # Make the changes to the database persistent
-            conn.commit()
+    # commit the transaction
+    conn.commit()
+    # close the cursor
+    cur.close()
 
-def get_restaurants(crous_id):
+def get_restaurants(crous_id, conn):
     """
     Retrieves restaurants from the database based on the provided Crous ID.
 
@@ -106,17 +125,93 @@ def get_restaurants(crous_id):
 
     """
     # Connect to an existing database
-    with psycopg.connect(db_connection) as conn:
+    cur = conn.cursor()
 
-        # Open a cursor to perform database operations
-        with conn.cursor() as cur:
-            # get all the existing tables from the database schema
-            cur.execute("SELECT id, name, place, schedule, url, cp, address, city, phone, img, \"crousId\", lat, lng FROM public.\"Restaurant\" WHERE \"crousId\" = %s", (crous_id,))
-            restaurants = cur.fetchall()
-            print(f"[{datetime.now()}] Found {len(restaurants)} restaurants in the database")
+    try:
+        # get all the existing tables from the database schema
+        cur.execute("SELECT id, name, place, schedule, url, cp, address, city, phone, img, \"crousId\", lat, lng FROM public.\"Restaurant\" WHERE \"crousId\" = %s", (crous_id,))
+        restaurants = cur.fetchall()
+        print(f"[{datetime.now()}] Found {len(restaurants)} restaurants in the database")
 
-            returned_restaurants = [Restaurant(id=restaurant[0], name=restaurant[1], place=restaurant[2], schedule=restaurant[3], url=restaurant[4], cp=restaurant[5], address=restaurant[6], city=restaurant[7], phone=restaurant[8], img=restaurant[9], crous_id=restaurant[10], lat=restaurant[11], lon=restaurant[12]) for restaurant in restaurants]
-            print(f"[{datetime.now()}] Successfully retrieved {len(returned_restaurants)} restaurants from the database")
-            return returned_restaurants
-        
-    return None
+        returned_restaurants = [Restaurant(id=restaurant[0], name=restaurant[1], place=restaurant[2], schedule=restaurant[3], url=restaurant[4], cp=restaurant[5], address=restaurant[6], city=restaurant[7], phone=restaurant[8], img=restaurant[9], crous_id=restaurant[10], lat=restaurant[11], lon=restaurant[12]) for restaurant in restaurants]
+        print(f"[{datetime.now()}] Successfully retrieved {len(returned_restaurants)} restaurants from the database")
+        return returned_restaurants
+    except psycopg2.DatabaseError as error:
+        if conn:
+            conn.rollback()
+            print(f"[{datetime.now()}] An error occurred while retrieving the restaurants from the database: {error}")
+
+def check_supported_crous(supported_crous_list: list[SupportedCrousModel], conn):
+    """
+    Checks if the supported Crous models are in the database. 
+    The folder_name attribute of the SupportedCrousModel is NOT used to check.
+    Id from model has to be the same too as the id from the database, if not update the record in the database.
+
+    Args:
+        supported_crous_list (list[SupportedCrousModel]): A list of supported Crous models to check.
+
+    Returns:
+        list[SupportedCrousModel]: A list of supported Crous models that are not in the database.
+    """
+    # Connect to an existing database
+    cur = conn.cursor()
+
+    print(f"[{datetime.now()}] Checking for supported Crous models in the database")
+
+    # get all the existing tables from the database schema
+    cur.execute("SELECT id, name, url FROM public.\"Crous\"")
+    supported_crous = cur.fetchall()
+    print(f"[{datetime.now()}] Found {len(supported_crous)} supported Crous in the database")
+
+    # close the cursor
+    cur.close()
+
+    # compare the supported Crous models with the ones in the database, return the ones that are not in the database
+    if len(supported_crous_list) == 0:
+        # all supported Crous models are missing
+        return supported_crous_list
+    else:
+        missing_supported_crous = []
+        for crous in supported_crous_list:
+            found = False
+            for crous_db in supported_crous:
+                if crous.id == crous_db[0]:
+                    found = True
+                    break
+            if not found:
+                missing_supported_crous.append(crous)
+
+    return missing_supported_crous
+
+def insert_supported_crous(supported_crous_list: list[SupportedCrousModel], conn):
+    """
+    Inserts a list of supported Crous models into the database.
+
+    Args:
+        supported_crous_list (list[SupportedCrousModel]): A list of supported Crous models to insert.
+
+    Returns:
+        None
+    """
+    print(f"[{datetime.now()}] Inserting {len(supported_crous_list)} supported Crous models into the database")
+
+    # Connect to an existing database
+    cur = conn.cursor()
+
+    for crous in supported_crous_list:
+        try:
+            # insert supported Crous model
+            cur.execute(
+                'INSERT INTO public."Crous" (id, name, url, created_at, updated_at) VALUES (%s, %s, %s, %s, %s)',
+                (crous.id, crous.name, crous.url, datetime.now(), datetime.now()))
+        except psycopg2.DatabaseError as error:
+            print(f"[{datetime.now()}] An error occurred while inserting the supported Crous models into the database: {error}")
+            if conn:
+                conn.rollback()
+        except Exception as e:
+            print(f"[{datetime.now()}] An error occurred while inserting the supported Crous models into the database: {e}")
+
+    # commit the transaction
+    conn.commit()
+    # close the cursor
+    cur.close()

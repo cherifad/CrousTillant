@@ -35,7 +35,7 @@
         "id": 3,
         "name": "Cafétéria Bistrot de la Manu",
         "place": "Manufacture",
-        "schedule": "Cour nord - Sous-sol (bâtiment C) Lundi au jeudi de 7h30 à 18h Vendredi de 7h30 à 17h",
+        "schedule": "Espace rue nord Lundi au jeudi de 7h30 à 18h Vendredi de 7h30 à 17h",
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-bistrot-de-la-manu/",
         "cp": "69008",
         "address": "6 Rue Professeur Rollet",
@@ -211,7 +211,7 @@
         "id": 14,
         "name": "Cafétéria le Labo",
         "place": "Rockefeller",
-        "schedule": "Du lundi au vendredi7h30 à 17h",
+        "schedule": "Du lundi au vendredi7h30 à 16h",
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-le-labo/",
         "cp": "69008",
         "address": "11 Rue Guillaume Paradin",
@@ -227,7 +227,7 @@
         "id": 15,
         "name": "Cafétéria Le Studio",
         "place": "Lyon Tech-la Doua Villeurbanne",
-        "schedule": "Du lundi au vendredi De 7h30 à 17h",
+        "schedule": "Du lundi au vendredi De 7h30 à 20h",
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-le-studio/",
         "cp": "69100",
         "address": "1 Rue de la Technologie",
@@ -263,7 +263,7 @@
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-lyon-sud/",
         "cp": "69310",
         "address": "Chemin du Grand Revoyet",
-        "city": "Pierre-Bénite",
+        "city": "Oullins-Pierre-Bénite",
         "phone": "04 72 30 27 50",
         "img": "https://ephoto.nuonet.fr/link/kxx19oc4z6b1vk0.jpeg",
         "meals": [],
@@ -323,7 +323,7 @@
         "id": 21,
         "name": "Cafétéria Rabelais",
         "place": "Rockefeller",
-        "schedule": "Du lundi au vendredi 7h30 à 17h",
+        "schedule": "Du lundi au vendredi 7h30 à 18h",
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-rabelais/",
         "cp": "69008",
         "address": "8 Avenue Rockefeller",
@@ -355,7 +355,7 @@
         "id": 23,
         "name": "Cafétéria Tréfilerie à Saint-Étienne",
         "place": "Saint-Etienne",
-        "schedule": "Du lundi au vendredi 11h à 13h30",
+        "schedule": "Du lundi au vendredi 8h à 18h",
         "url": "https://www.crous-lyon.fr/restaurant/cafeteria-trefilerie-a-saint-etienne/",
         "cp": "42100",
         "address": "Rue Edouard Vaillant",
@@ -403,7 +403,7 @@
         "id": 26,
         "name": "Restaurant de Bron",
         "place": "Porte des Alpes",
-        "schedule": "Du lundi au vendredi 11h30 à 14h10",
+        "schedule": "Du lundi au vendredi 11h30 à 14h15",
         "url": "https://www.crous-lyon.fr/restaurant/restaurant-de-bron/",
         "cp": "69500",
         "address": "5 Avenue Pierre Mendès France",
@@ -481,6 +481,22 @@
     },
     {
         "id": 31,
+        "name": "Restaurant Monod",
+        "place": "ENS-Gerland",
+        "schedule": "Du lundi au vendredi 11h30 à 14h",
+        "url": "https://www.crous-lyon.fr/restaurant/restaurant-et-cafeteria-monod/",
+        "cp": "69007",
+        "address": "46 Allée d'Italie",
+        "city": "Lyon",
+        "phone": "04 72 72 80 40",
+        "img": "https://ephoto.nuonet.fr/link/per19obnoo12lhc.jpeg",
+        "meals": [],
+        "crous_id": 1,
+        "lat": 45.729897,
+        "lon": 4.827168
+    },
+    {
+        "id": 32,
         "name": "Restaurant IUT Gratte-Ciel",
         "place": "IUT Gratte Ciel Villeurbanne",
         "schedule": "Du lundi au vendredi 11h15 - 13h30",
@@ -496,7 +512,7 @@
         "lon": 4.886973
     },
     {
-        "id": 32,
+        "id": 33,
         "name": "Restaurant Manufacture des Tabacs",
         "place": "Manufacture",
         "schedule": "Espace rue Sud (sous-sol)Du lundi au vendredi 11h15 à 14h15",
@@ -512,7 +528,7 @@
         "lon": 4.859749
     },
     {
-        "id": 33,
+        "id": 34,
         "name": "Restaurant Métare à Saint-Étienne",
         "place": "Saint-Etienne",
         "schedule": "Du lundi au vendredi11h à 13h30",
@@ -528,7 +544,7 @@
         "lon": 4.426611
     },
     {
-        "id": 34,
+        "id": 35,
         "name": "Restaurant Puvis de Chavannes",
         "place": "",
         "schedule": "11h15 à 13h45",
@@ -544,7 +560,7 @@
         "lon": 4.872026
     },
     {
-        "id": 35,
+        "id": 36,
         "name": "Restaurant Rockefeller",
         "place": "Rockefeller",
         "schedule": "Du lundi au vendredi 11h30 à 13h45",
@@ -560,7 +576,7 @@
         "lon": 4.883023
     },
     {
-        "id": 36,
+        "id": 37,
         "name": "Restaurant Tréfilerie à Saint-Étienne",
         "place": "Saint-Etienne",
         "schedule": "Du lundi au vendredi11h à 13h30",
