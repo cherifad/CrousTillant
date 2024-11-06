@@ -58,11 +58,10 @@ export default function SingleRestaurant() {
           setEmptyMeals(true);
         }
         sortData(data.meals);
-      });
+      })
+      .finally(() => setLoading(false));
 
     setIsFavorite(isFavLocalStorage(restaurantId));
-
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
