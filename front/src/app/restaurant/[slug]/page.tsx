@@ -6,21 +6,18 @@ import { Restaurant, Meal } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useParams } from "next/navigation";
 import DatePicker from "@/components/date-picker";
-import MealCard from "@/components/meal-card";
-import { Heart, HeartOff, Navigation, Link } from "lucide-react";
-import { useToast } from "@/components/ui/use-toast";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Navigation } from "lucide-react";
 import {
   getDates,
-  removeFromFavorites,
-  addToFavorites,
   isFavorite as isFavLocalStorage,
 } from "@/lib/utils";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
-import DateCard from "@/components/date-card";
 import { notFound } from "next/navigation";
+import ToggleFavorite from "@/components/restaurant/toggle-favorite";
+import MealsDisplay from "@/components/restaurant/meals-display";
+import NoMealMessage from "@/components/restaurant/no-meal-message";
+import RestaurantCalendar from "@/components/restaurant/calendar";
 
 export default function SingleRestaurant() {
   const [restaurant, setRestaurant] = useState<Restaurant>();
@@ -38,15 +35,15 @@ export default function SingleRestaurant() {
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
   const [emptyMeals, setEmptyMeals] = useState<boolean>(false);
 
-  const { toast } = useToast();
-
   const params = useParams();
   const restaurantId = params?.slug.toString().split("-").pop();
 
+  // Redirect to 404 if restaurantId is not a number or is not provided
   if (!restaurantId || isNaN(parseInt(restaurantId))) {
     return notFound();
   }
 
+  // Fetch restaurant data and perform additional operations when the component mounts
   useEffect(() => {
     setLoading(true);
     fetch(`/api/restaurant/${restaurantId}`)
@@ -61,35 +58,33 @@ export default function SingleRestaurant() {
           setEmptyMeals(true);
         }
         sortData(data.meals);
-      });
+      })
+      .finally(() => setLoading(false));
 
     setIsFavorite(isFavLocalStorage(restaurantId));
-
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const toggleFavorite = () => {
-    if (isFavorite) {
-      removeFromFavorites(restaurantId.toString(), restaurant?.crousId!);
-      setIsFavorite(false);
-      toast({
-        description: "Lieu retiré des favoris 💔",
-      });
-    } else {
-      addToFavorites({
-        name: restaurant?.name!,
-        id: restaurantId.toString(),
-        crousId: restaurant?.crousId!,
-      });
-      setIsFavorite(true);
-      toast({
-        description: "Lieu ajouté aux favoris ❤️",
-      });
-    }
-  };
-
+  /**
+   * Sorts the given array of meals and performs additional operations based on the sorted data.
+   * 
+   * @param meals - An array of meals to be sorted.
+   */
   const sortData = (meals: Meal[] = []) => {
+    setLoading(true);
+    // get only meals for today and further dates
+    meals = meals.filter(
+      (meal) => new Date(meal.date) >= new Date(new Date().setHours(0, 0, 0, 0))
+    );
+
+    setMeals(meals);
+
+    if (meals.length === 0) {
+      setEmptyMeals(true);
+      setLoading(false);
+      return;
+    }
+
     // search for max date available in meals
     const maxDate = new Date(
       Math.max.apply(
@@ -109,8 +104,14 @@ export default function SingleRestaurant() {
 
     // filter meals for selected date
     getMealsForDate(meals);
+    setLoading(false);
   };
 
+  /**
+   * Retrieves meals for a specific date.
+   * 
+   * @param meals - An array of meals.
+   */
   const getMealsForDate = (meals: Meal[] = []) => {
     // filter meals for selected date
     const selectedDateMeals = meals.filter(
@@ -126,6 +127,10 @@ export default function SingleRestaurant() {
     }
   };
 
+  /**
+   * Splits an array of meals into breakfast, lunch, and dinner arrays based on their meal type.
+   * @param meals - The array of meals to be split.
+   */
   const splitMeals = (meals: Meal[] = []) => {
     const breakfast = meals.filter((meal) => meal.meal_type === "BREAKFAST");
     const lunch = meals.filter((meal) => meal.meal_type === "LUNCH");
@@ -136,11 +141,13 @@ export default function SingleRestaurant() {
     setSelectedDateDinner(dinner);
   };
 
+  // Fetch meals for selected date when it changes
   useEffect(() => {
     getMealsForDate(meals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedDate]);
 
+  // Split meals into breakfast, lunch, and dinner when selectedDateMeals changes
   useEffect(() => {
     splitMeals(selectedDateMeals);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -159,31 +166,12 @@ export default function SingleRestaurant() {
             <div>
               <span className="sm:flex items-center">
                 <h1 className="font-bold text-3xl">{restaurant?.name}</h1>
-                <Badge
-                  className="sm:ml-2 group cursor-pointer"
-                  onClick={toggleFavorite}
-                >
-                  <Heart
-                    className={`h-3 w-3 mr-2 ${
-                      isFavorite
-                        ? "group-hover:hidden block"
-                        : "hidden group-hover:block"
-                    }`}
-                  />
-                  <HeartOff
-                    className={`h-3 w-3 mr-2 ${
-                      isFavorite
-                        ? "hidden group-hover:block"
-                        : "group-hover:hidden block"
-                    }`}
-                  />
-                  <span className="group-hover:hidden">
-                    {isFavorite ? "Favoris" : "Non favoris"}
-                  </span>
-                  <span className="hidden group-hover:block">
-                    {isFavorite ? "Retirer des favoris" : "Ajouter aux favoris"}
-                  </span>
-                </Badge>
+                <ToggleFavorite
+                  isFavorite={isFavorite}
+                  restaurantId={parseInt(restaurantId)}
+                  restaurant={restaurant}
+                  setIsFavorite={setIsFavorite}
+                />
               </span>
               <RestaurantInfo
                 restaurant={restaurant}
@@ -228,44 +216,11 @@ export default function SingleRestaurant() {
                         Aucun menu disponible pour cette date 🥲
                       </p>
                     ) : (
-                      <>
-                        {selectedDateBreakfast.length > 0 && (
-                          <Card>
-                            <CardHeader>
-                              <CardTitle>🥞 Petit-déjeuner</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              {selectedDateBreakfast.map((meal) => (
-                                <MealCard key={meal.id} meal={meal} />
-                              ))}
-                            </CardContent>
-                          </Card>
-                        )}
-                        {selectedDateLunch.length > 0 && (
-                          <Card>
-                            <CardHeader>
-                              <CardTitle>🍽 Déjeuner</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              {selectedDateLunch.map((meal) => (
-                                <MealCard key={meal.id} meal={meal} />
-                              ))}
-                            </CardContent>
-                          </Card>
-                        )}
-                        {selectedDateDinner.length > 0 && (
-                          <Card>
-                            <CardHeader>
-                              <CardTitle>🍲 Dîner</CardTitle>
-                            </CardHeader>
-                            <CardContent>
-                              {selectedDateDinner.map((meal) => (
-                                <MealCard key={meal.id} meal={meal} />
-                              ))}
-                            </CardContent>
-                          </Card>
-                        )}
-                      </>
+                      <MealsDisplay
+                        selectedDateBreakfast={selectedDateBreakfast}
+                        selectedDateLunch={selectedDateLunch}
+                        selectedDateDinner={selectedDateDinner}
+                      />
                     )}
                   </div>
                 </fieldset>
@@ -273,44 +228,16 @@ export default function SingleRestaurant() {
                   <legend className="-ml-1 px-1 text-sm font-medium">
                     Menu des jours suivants
                   </legend>
-                  <div className="flex flex-wrap gap-2">
-                    {availableDates.map((date) => (
-                      <DateCard
-                        key={date.toISOString()}
-                        mealNumber={
-                          meals.filter(
-                            (meal) =>
-                              new Date(meal.date).toLocaleDateString() ===
-                              date.toLocaleDateString()
-                          ).length
-                        }
-                        date={date}
-                        onSelectedDateChange={setSelectedDate}
-                        selectedDate={selectedDate}
-                      />
-                    ))}
-                  </div>
+                  <RestaurantCalendar
+                    availableDates={availableDates}
+                    meals={meals}
+                    selectedDate={selectedDate}
+                    setSelectedDate={setSelectedDate}
+                  />
                 </fieldset>
               </div>
             ) : (
-              <div className="flex flex-col justify-center gap-4 items-center h-full mt-8 text-center">
-                <p>Aucun menu disponible pour ce restaurant 🥲</p>
-                <p>
-                  Ceci est peut-être dû à une erreur de notre part ou que le
-                  restaurant n'a pas encore publié de menus.
-                </p>
-                <Button asChild>
-                  <a
-                    href={restaurant?.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="flex items-center gap-2"
-                  >
-                    Voir sur le site officiel
-                    <Link className="h-4 w-4" />
-                  </a>
-                </Button>
-              </div>
+              <NoMealMessage restaurant={restaurant} />
             )}
           </div>
         </div>
