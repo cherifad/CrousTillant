@@ -5,29 +5,6 @@ from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
 from model.config import SupportedCrousModel
 
-# load_dotenv()
-
-# # Get environment variables
-# db_name = os.getenv("POSTGRES_DATABASE")
-# db_host = os.getenv("POSTGRES_HOST")
-# db_user = os.getenv("POSTGRES_USER")
-# db_password = os.getenv("POSTGRES_PASSWORD")
-# db_url = os.getenv("POSTGRES_URL")
-
-# # Connect to the PostgreSQL database using psycopg2
-# try:
-#     connection = psycopg.connect("postgres://default:p59OJGbhyzqg@ep-misty-sky-a22on4e7.eu-central-1.aws.neon.tech:5432/verceldb?sslmode=require")
-#     print("Connection successful")
-# except Exception as e:
-#     print("Error connecting to the database:", e)
-#     exit(1)
-
-# db_connection = os.getenv('DATABASE_URL')
-
-# if db_connection is None:
-#     print("Database connection string not found, please set the DATABASE_URL environment variable")
-#     exit(1)
-
 def insert_meals(meals: list[Meal], conn):
     """
     Inserts or updates meals in the database.
