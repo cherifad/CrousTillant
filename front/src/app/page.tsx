@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AlignLeft, Map } from "lucide-react";
 import React, { Suspense, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import { Restaurant } from "@prisma/client";
+import type { Restaurant } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
 import {
   getFavorites,
@@ -20,6 +20,7 @@ import { getSelectedCrous, Crous, Position } from "@/lib/utils";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
+import Loading from "./loading";
 
 const MapComponent = dynamic(() => import("@/components/map"), {
   ssr: false,
@@ -73,10 +74,10 @@ export default function Home() {
         setRestaurantToDisplay(data);
         const currentDisplay = getDisplayGrid();
         setDisplay(currentDisplay);
-      });
+      })
+      .finally(() => setLoading(false))
 
     setFavorites(getFavorites(crous.id));
-    setLoading(false);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -158,7 +159,9 @@ export default function Home() {
             </Link>
           </span>
           <p className="opacity-50">
-            {restaurantToDisplay.length} restaurants trouvés
+            {
+              loading ? <Loading /> : `Il y a ${restaurants.length} restaurants`
+            }
           </p>
           <Filters
             loading={loading}
