@@ -4,15 +4,27 @@ from dotenv import load_dotenv
 from model.config import Config
 from scraper import get_all_meals, compare_and_insert_meals, get_restaurants
 from database import get_restaurants as get_restaurants_db, check_supported_crous, insert_supported_crous
+from utils import check_locale
 from psycopg2 import pool
 
 if __name__ == '__main__':
+
+    locale_name = 'fr_FR.UTF-8'
+    if not check_locale(locale_name):
+        print("You'll need to install this locale on your system.")
+        print("On Linux, you can run the following command to install the locale:")
+        print(f"sudo locale-gen {locale_name}")
+        print("sudo update-locale")
+        exit(1)
 
     # Load .env file
     load_dotenv()
 
     # Get the connection string from the environment variable
     connection_string = os.getenv('DATABASE_URL')
+
+    if connection_string is None:
+        raise Exception("The 'DATABASE_URL' environment variable is not set.")
 
     # Create a connection pool
     connection_pool = pool.SimpleConnectionPool(

@@ -4,6 +4,17 @@ import locale
 import requests
 import urllib.parse
 
+import locale
+
+def check_locale(locale_name):
+    try:
+        # Attempt to set the locale to see if it exists
+        locale.setlocale(locale.LC_TIME, locale_name)
+        print(f"Locale '{locale_name}' is available.")
+        return True
+    except locale.Error:
+        print(f"Locale '{locale_name}' is not available.")
+        return False
 
 # Parse a date string in French format to a datetime object
 # ex: "vendredi 26 avril 2024" -> datetime(2024, 4, 26)
