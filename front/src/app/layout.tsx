@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/app/theme-provider";
 import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import SnowFall from "@/components/snow-fall";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -81,6 +82,7 @@ export default function RootLayout({
           <main className="p-4 pb-20 lg:p-24 grid auto-rows-max items-start gap-4 md:gap-8 lg:col-span-2">
             <Header />
             <Announcement />
+            <SnowFall />
             {children}
           </main>
           <Footer />
