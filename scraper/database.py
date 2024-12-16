@@ -4,6 +4,7 @@ import psycopg2
 from model.meal import Meal, FoodItem
 from model.restaurant import Restaurant
 from model.config import SupportedCrousModel
+from model.scraping_log import ScrapingStatus, ScrapingLog
 
 def insert_meals(meals: list[Meal], conn):
     """
@@ -187,6 +188,88 @@ def insert_supported_crous(supported_crous_list: list[SupportedCrousModel], conn
                 conn.rollback()
         except Exception as e:
             print(f"[{datetime.now()}] An error occurred while inserting the supported Crous models into the database: {e}")
+
+    # commit the transaction
+    conn.commit()
+    # close the cursor
+    cur.close()
+
+def insert_scraping_log(log: ScrapingLog, conn, update=False):
+    """
+    Inserts a scraping log into the database.
+
+    Args:
+        crous_id (int): The Crous ID of the scraping log to insert.
+        started_at (datetime): The datetime when the scraping log was started.
+        update (bool): If the scraping log is an update or not.
+
+    Returns:
+        int: The ID of the inserted scraping log.
+    """
+    print(f"[{datetime.now()}] Inserting a scraping log into the database")
+
+    # Connect to an existing database
+    cur = conn.cursor()
+
+    try:
+        if update:
+            if log.id != -1:
+                # update the scraping log
+                cur.execute(
+                    'UPDATE public."ScrapingLog" SET status = %s, error = %s, ended_at = %s WHERE id = %s',
+                    (log.status.value, log.error, log.ended_at, log.id))
+            else:
+                print(f"[{datetime.now()}] No scraping log ID provided for the update")
+        else:
+            # insert the scraping log
+            cur.execute(
+                'INSERT INTO public."ScrapingLog" (\"crousId\", status, started_at, ended_at) VALUES (%s, %s, %s, %s) RETURNING id',
+                (log.crous.id, log.status.value, log.started_at, datetime.now()))
+            log.id = cur.fetchone()[0]
+        
+    except psycopg2.DatabaseError as error:
+        print(f"[{datetime.now()}] An error occurred while inserting the scraping log into the database: {error}")
+        print(log.status.value)
+        if conn:
+            conn.rollback()
+    except Exception as e:
+        print(f"[{datetime.now()}] An error occurred while inserting the scraping log into the database: {e}")
+
+    # commit the transaction
+    conn.commit()
+
+    # close the cursor
+    cur.close()
+
+    return log.id
+
+def update_restaurant_scraping_status(restaurantId: int, status: ScrapingStatus, conn, error=None):
+    """
+    Updates the scraping status of a restaurant in the database.
+
+    Args:
+        restaurant (Restaurant): The restaurant to update.
+        status (ScrapingStatus): The new status of the restaurant.
+        error (str): The error message if the status is ERROR.
+
+    Returns:
+        None
+    """
+
+    # Connect to an existing database
+    cur = conn.cursor()
+
+    try:
+        # update the restaurant
+        cur.execute(
+            'UPDATE public."Restaurant" SET last_scraping_at = %s, last_scraping_status = %s, last_scraping_error = %s WHERE id = %s',
+            (datetime.now(), status.value, error, restaurantId))
+    except psycopg2.DatabaseError as error:
+        print(f"[{datetime.now()}] An error occurred while updating the restaurant scraping status in the database: {error}")
+        if conn:
+            conn.rollback()
+    except Exception as e:
+        print(f"[{datetime.now()}] An error occurred while updating the restaurant scraping status in the database: {e}")
 
     # commit the transaction
     conn.commit()

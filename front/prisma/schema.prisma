@@ -5,9 +5,15 @@ generator client {
   provider = "prisma-client-js"
 }
 
+enum ScrapingStatus {
+  pending
+  success
+  error
+}
+
 datasource db {
-  provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  provider  = "postgresql"
+  url       = env("POSTGRES_PRISMA_URL") // uses connection pooling
   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
 }
 
@@ -22,23 +28,36 @@ model Meal {
 }
 
 model Restaurant {
-  id         Int      @id @default(autoincrement())
-  name       String
-  place      String
-  schedule   String
-  url        String   @unique
-  cp         String
-  address    String
-  city       String
-  phone      String
-  img        String
-  lat        Float?
-  lng        Float?
-  crous      Crous    @relation(fields: [crousId], references: [id])
+  id                   Int            @id @default(autoincrement())
+  name                 String
+  place                String
+  schedule             String
+  url                  String         @unique
+  cp                   String
+  address              String
+  city                 String
+  phone                String
+  img                  String
+  lat                  Float?
+  lng                  Float?
+  crous                Crous          @relation(fields: [crousId], references: [id])
+  crousId              Int
+  last_scraping_at     DateTime?
+  last_scraping_status ScrapingStatus @default(pending)
+  last_scraping_error  String?
+  created_at           DateTime       @default(now())
+  updated_at           DateTime       @updatedAt
+  meals                Meal[]
+}
+
+model ScrapingLog {
+  id         Int            @id @default(autoincrement())
+  crous      Crous          @relation(fields: [crousId], references: [id])
   crousId    Int
-  created_at DateTime @default(now())
-  updated_at DateTime @updatedAt
-  meals      Meal[]
+  status     ScrapingStatus
+  error      String?
+  started_at DateTime
+  ended_at   DateTime
 }
 
 model GlobalStats {
@@ -58,10 +77,11 @@ model Announcement {
 }
 
 model Crous {
-  id         Int          @id @default(autoincrement())
-  name       String
-  url        String
-  restaurant Restaurant[]
-  created_at DateTime     @default(now())
-  updated_at DateTime     @updatedAt
+  id          Int           @id @default(autoincrement())
+  name        String
+  url         String
+  restaurant  Restaurant[]
+  created_at  DateTime      @default(now())
+  updated_at  DateTime      @updatedAt
+  ScrapingLog ScrapingLog[]
 }

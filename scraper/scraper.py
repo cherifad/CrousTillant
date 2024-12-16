@@ -3,8 +3,9 @@ import requests
 import json
 from bs4 import BeautifulSoup as bs
 from model.meal import Meal, MealType, Restaurant, FoodItem
+from model.scraping_log import ScrapingStatus
 from utils import parse_date, extract_cp_city_coord
-from database import insert_meals, insert_restaurants
+from database import insert_meals, insert_restaurants, update_restaurant_scraping_status
 import datetime
 from deepdiff import DeepDiff
 
@@ -18,7 +19,7 @@ firefox_headers = {
     'Cache-Control': 'max-age=0'
 }
 
-def get_menu(url, restaurantId):
+def get_menu(url, restaurantId, conn):
     """
     Retrieves the menu from the specified URL for a given restaurant.
 
@@ -32,6 +33,7 @@ def get_menu(url, restaurantId):
     response = requests.get(url, headers=firefox_headers)
     
     if response.status_code != 200:
+        update_restaurant_scraping_status(restaurantId, ScrapingStatus.ERROR, conn, f"Failed to retrieve meals from {url}. Status code: {response.status_code}")
         print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. Status code: {response.status_code}")
         return []
     
@@ -73,8 +75,10 @@ def get_menu(url, restaurantId):
                     newMeal.foodItems.append(FoodItem(name, 0))
                 returnMeals.append(newMeal.toJsonObject())
     except Exception as e:
+        update_restaurant_scraping_status(restaurantId, ScrapingStatus.ERROR, conn, f"Failed to retrieve meals from {url}. {e}")
         print(f"[{datetime.datetime.now()}] Failed to retrieve meals from {url}. {e}")
 
+    update_restaurant_scraping_status(restaurantId, ScrapingStatus.SUCCESS, conn)
     print(f"[{datetime.datetime.now()}] Meals gathered successfully from {url}.")
     return returnMeals
 
@@ -183,7 +187,7 @@ def get_restaurant_details(url, restaurant: Restaurant):
 
     return restaurant
 
-def get_all_meals(restaurants: list[Restaurant], crous_name: str):
+def get_all_meals(restaurants: list[Restaurant], crous_name: str, conn):
     """
     Retrieves all meals from the given list of restaurants.
 
@@ -196,7 +200,7 @@ def get_all_meals(restaurants: list[Restaurant], crous_name: str):
     allMeals = []
     i = 0
     for restaurant in restaurants:
-        meals = get_menu(restaurant.url, restaurant.id)
+        meals = get_menu(restaurant.url, restaurant.id, conn)
         for meal in meals:
             allMeals.append(meal)
         i += 1

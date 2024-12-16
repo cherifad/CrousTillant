@@ -1,3 +1,4 @@
+
 class Restaurant:
     """
     Represents a restaurant.
@@ -19,7 +20,7 @@ class Restaurant:
         lon (float): The longitude coordinate of the restaurant's location.
     """
 
-    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, crous_id, lat=None, lon=None, meals=[]):
+    def __init__(self, id, name, place, schedule, url, cp, address, city, phone, img, crous_id, lat=None, lon=None, meals=[], last_scraping_at=None, last_scraping_status=None, last_scraping_error=None):
         self.id = id
         self.name = name
         self.place = place
@@ -34,6 +35,9 @@ class Restaurant:
         self.crous_id = crous_id
         self.lat = lat
         self.lon = lon
+        self.last_scraping_at = last_scraping_at
+        self.last_scraping_status = last_scraping_status
+        self.last_scraping_error = last_scraping_error
 
     def __str__(self):
         return f'{self.name} - {self.url} - {self.cp} - {self.address} - {self.city} - {self.phone}'
@@ -56,5 +60,8 @@ class Restaurant:
             'meals': [meal.toJsonObject() for meal in self.meals],
             'crous_id': self.crous_id,
             'lat': self.lat,
-            'lon': self.lon
+            'lon': self.lon,
+            'last_scraping_at': self.last_scraping_at,
+            'last_scraping_status': self.last_scraping_status,
+            'last_scraping_error': self.last_scraping_error
         }

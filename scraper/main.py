@@ -2,8 +2,9 @@ import datetime
 import os
 from dotenv import load_dotenv
 from model.config import Config
+from model.scraping_log import ScrapingStatus, ScrapingLog
 from scraper import get_all_meals, compare_and_insert_meals, get_restaurants
-from database import get_restaurants as get_restaurants_db, check_supported_crous, insert_supported_crous
+from database import get_restaurants as get_restaurants_db, check_supported_crous, insert_supported_crous, insert_scraping_log
 from utils import check_locale
 from psycopg2 import pool
 
@@ -42,6 +43,8 @@ if __name__ == '__main__':
     # Get a connection from the pool
     conn = connection_pool.getconn()
 
+    current_log = None
+
     try:
         # clear the console
         os.system('cls' if os.name == 'nt' else 'clear')
@@ -71,6 +74,7 @@ if __name__ == '__main__':
         for supported_crous in config.supportedCrous:
             print("==============================================================================")
             print(f"[{datetime.datetime.now()}] Starting the scrapping process for {supported_crous.name}...")
+
             # if a folder with the crous name does not exist, create it and fetch the data, fetch the date if the folder exists but is empty
             if not os.path.exists(f'./json/{supported_crous.folder_name}') or len(os.listdir(f'./json/{supported_crous.folder_name}')) == 0:
                 if not os.path.exists(f'./json/{supported_crous.folder_name}'):
@@ -85,15 +89,25 @@ if __name__ == '__main__':
                 print(f"[{datetime.datetime.now()}] Restaurants scrapping process completed successfully for {supported_crous.name}.")
                 #################### Restaurants scrapping ####################\
 
+            # insert the log into the database
+            current_log = ScrapingLog(-1, supported_crous, ScrapingStatus.PENDING, '', datetime.datetime.now(), None)
+            current_log.id = insert_scraping_log(current_log, conn, False)
+
             ####################### Meals scrapping #######################
             # get all the meals from the restaurants
             print(f"[{datetime.datetime.now()}] Scrapping meals from {supported_crous.name}...")
 
             restaurants = get_restaurants_db(supported_crous.id, conn) # json.load(open(f'./json/{supported_crous.folder_name}/restaurants_{supported_crous.folder_name}.json'))
-            get_all_meals(restaurants, supported_crous.folder_name)
+            get_all_meals(restaurants, supported_crous.folder_name, conn)
 
             # compare and insert the meals into the database
             compare_and_insert_meals(supported_crous.folder_name, conn)
+
+            current_log.status = ScrapingStatus.SUCCESS
+            current_log.ended_at = datetime.datetime.now()
+            # update the log in the database
+            insert_scraping_log(current_log, conn, True)
+
             print(f"[{datetime.datetime.now()}] Scrapping meals completed successfully for {supported_crous.name}.")
             ####################### Meals scrapping #######################
 
@@ -103,6 +117,13 @@ if __name__ == '__main__':
         print(f"[{datetime.datetime.now()}] Scrapping process completed successfully.")
     except Exception as e:
         print(f'[ERROR] [{datetime.datetime.now()}] An error occurred during the scrapping process. {e}')
+
+        # insert the log into the database
+        if current_log is not None and current_log.id != -1:
+            current_log.status = ScrapingStatus.ERROR
+            current_log.error = str(e)
+            current_log.ended_at = datetime.datetime.now()
+            insert_scraping_log(current_log, conn, True)
 
         #append the error to the log file
         if os.path.exists('json'):

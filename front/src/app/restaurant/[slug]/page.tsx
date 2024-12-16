@@ -18,6 +18,7 @@ import ToggleFavorite from "@/components/restaurant/toggle-favorite";
 import MealsDisplay from "@/components/restaurant/meals-display";
 import NoMealMessage from "@/components/restaurant/no-meal-message";
 import RestaurantCalendar from "@/components/restaurant/calendar";
+import UpdateBadge from "@/components/update-badge";
 
 export default function SingleRestaurant() {
   const [restaurant, setRestaurant] = useState<Restaurant>();
@@ -33,7 +34,7 @@ export default function SingleRestaurant() {
   const [selectedDateDinner, setSelectedDateDinner] = useState<Meal[]>([]);
   const [maxAvailableDate, setMaxAvailableDate] = useState<Date | undefined>();
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
-  const [emptyMeals, setEmptyMeals] = useState<boolean>(false);
+  const [emptyMeals, setEmptyMeals] = useState<boolean>(true);
 
   const params = useParams();
   const restaurantId = params?.slug.toString().split("-").pop();
@@ -172,6 +173,8 @@ export default function SingleRestaurant() {
                   restaurant={restaurant}
                   setIsFavorite={setIsFavorite}
                 />
+                hello
+                <UpdateBadge restaurant={restaurant} />
               </span>
               <RestaurantInfo
                 restaurant={restaurant}
