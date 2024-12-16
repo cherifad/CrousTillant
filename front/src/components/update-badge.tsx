@@ -20,7 +20,7 @@ export default function UpdateBadge({
                 </span>
             </Badge>
         ) : scrapingLog ? (
-            <Badge className={`sm:ml-2 select-none hover:bg-inherit text-white ${scrapingLog.status === "success" ? "bg-green-500" : "bg-red-500"}`}>
+            <Badge className={`sm:ml-2 select-none hover:bg-inherit text-white ${scrapingLog.status === "success" ? "bg-green-500 hover:bg-green-500" : "bg-red-500 hover:bg-red-500"}`}>
                 <span >
                     Mis à jour : {scrapingLog.ended_at ? new Date(scrapingLog.ended_at).toLocaleString() : "jamais"}
                 </span>

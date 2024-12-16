@@ -21,6 +21,7 @@ import Link from "next/link";
 import dynamic from "next/dynamic";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
 import Loading from "./loading";
+import UpdateBadge from "@/components/update-badge";
 
 const MapComponent = dynamic(() => import("@/components/map"), {
   ssr: false,
@@ -157,6 +158,7 @@ export default function Home() {
             <Link href="/crous">
               <Badge>Choisir un autre Crous</Badge>
             </Link>
+            <UpdateBadge restaurant={undefined} />
           </span>
           <p className="opacity-50">
             {
