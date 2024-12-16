@@ -289,7 +289,13 @@ def compare_json_objects(oldMeals: list[Meal], newMeals: list[Meal]):
                     index = int(path.split("[")[1].split("]")[0])
                     # Update the corresponding Meal object
                     newMeals[index]["toUpdate"] = True
-                    newMeals[index]["fieldsToUpdate"].append(details["new_value"])
+                    new_value = details["new_value"]
+                    if isinstance(new_value, (str, int, float, bool)):
+                        if new_value not in newMeals[index]["fieldsToUpdate"]:
+                            newMeals[index]["fieldsToUpdate"].append(new_value)
+                    else:
+                        if new_value not in newMeals[index]["fieldsToUpdate"]:
+                            newMeals[index]["fieldsToUpdate"].append(str(new_value))
                     meal_to_update += 1
         elif key == 'iterable_item_added':
             # If items have been added, set toInsert to True

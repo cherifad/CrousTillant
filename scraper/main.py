@@ -36,6 +36,8 @@ if __name__ == '__main__':
     # Check if the pool was created successfully
     if connection_pool:
         print("Connection pool created successfully")
+    else:
+        raise Exception("Failed to create connection pool")
 
     # Get a connection from the pool
     conn = connection_pool.getconn()
