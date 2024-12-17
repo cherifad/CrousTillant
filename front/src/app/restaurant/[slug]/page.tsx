@@ -173,7 +173,7 @@ export default function SingleRestaurant() {
                   restaurant={restaurant}
                   setIsFavorite={setIsFavorite}
                 />
-                <UpdateBadge restaurant={restaurant ?? undefined} />
+                <UpdateBadge restaurant={restaurant} />
               </span>
               <RestaurantInfo
                 restaurant={restaurant}

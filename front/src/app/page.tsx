@@ -22,6 +22,7 @@ import dynamic from "next/dynamic";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
 import Loading from "./loading";
 import UpdateBadge from "@/components/update-badge";
+import { useRouter } from "next/navigation";
 
 const MapComponent = dynamic(() => import("@/components/map"), {
   ssr: false,
@@ -47,6 +48,7 @@ export default function Home() {
   const [mapKey, setMapKey] = useState(0); // key to force remount of the map
 
   const mapId = "restaurantMap"; // or any other ID you use
+  const router = useRouter();
 
   const handleMapReady = () => {
     setMapReady(true);
@@ -65,7 +67,8 @@ export default function Home() {
     setSelectedCrous(crous);
 
     if (!crous) {
-      redirect("/crous");
+      router.push("/crous");
+      return;
     }
 
     fetch("/api/restaurant?crousId=" + crous.id)
@@ -75,6 +78,13 @@ export default function Home() {
         setRestaurantToDisplay(data);
         const currentDisplay = getDisplayGrid();
         setDisplay(currentDisplay);
+      })
+      .then(() => {
+        fetch("/api/crous/" + crous.id)
+          .then((res) => res.json())
+          .then((data) => {
+            setSelectedCrous(data);
+          });
       })
       .finally(() => setLoading(false))
 
@@ -158,7 +168,7 @@ export default function Home() {
             <Link href="/crous">
               <Badge>Choisir un autre Crous</Badge>
             </Link>
-            <UpdateBadge restaurant={undefined} />
+            <UpdateBadge scrapingLog={selectedCrous?.ScrapingLog?.[0]} />
           </span>
           <p className="opacity-50">
             {
