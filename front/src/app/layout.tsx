@@ -9,6 +9,7 @@ import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
 import SnowFall from "@/components/snow-fall";
+import { Analytics } from "@vercel/analytics/react"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
+      <Analytics/>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
