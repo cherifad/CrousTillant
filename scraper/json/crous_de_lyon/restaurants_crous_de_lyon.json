@@ -13,7 +13,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.78221,
-        "lon": 4.877652
+        "lon": 4.877652,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 2,
@@ -29,7 +32,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.783486,
-        "lon": 4.870677
+        "lon": 4.870677,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 3,
@@ -45,7 +51,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.748368,
-        "lon": 4.861379
+        "lon": 4.861379,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 4,
@@ -61,7 +70,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 46.043412,
-        "lon": 4.072015
+        "lon": 4.072015,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 5,
@@ -77,7 +89,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.751427,
-        "lon": 4.82696
+        "lon": 4.82696,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 6,
@@ -93,7 +108,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.780925,
-        "lon": 4.870886
+        "lon": 4.870886,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 7,
@@ -109,7 +127,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.76714,
-        "lon": 4.886973
+        "lon": 4.886973,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 8,
@@ -125,7 +146,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.751424,
-        "lon": 4.837792
+        "lon": 4.837792,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 9,
@@ -141,7 +165,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.42281,
-        "lon": 4.425474
+        "lon": 4.425474,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 10,
@@ -157,7 +184,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.722593,
-        "lon": 4.915127
+        "lon": 4.915127,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 11,
@@ -173,7 +203,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.76344,
-        "lon": 4.822397
+        "lon": 4.822397,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 12,
@@ -189,7 +222,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.423505,
-        "lon": 4.4307
+        "lon": 4.4307,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 13,
@@ -205,7 +241,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.746083,
-        "lon": 4.834984
+        "lon": 4.834984,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 14,
@@ -221,7 +260,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.738076,
-        "lon": 4.887029
+        "lon": 4.887029,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 15,
@@ -237,7 +279,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.78597,
-        "lon": 4.882445
+        "lon": 4.882445,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 16,
@@ -253,7 +298,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.783952,
-        "lon": 4.770857
+        "lon": 4.770857,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 17,
@@ -269,7 +317,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.703482,
-        "lon": 4.805235
+        "lon": 4.805235,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 18,
@@ -285,7 +336,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.453303,
-        "lon": 4.386089
+        "lon": 4.386089,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 19,
@@ -301,7 +355,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.479604,
-        "lon": 4.361924
+        "lon": 4.361924,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 20,
@@ -317,7 +374,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.72979,
-        "lon": 4.828583
+        "lon": 4.828583,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 21,
@@ -333,7 +393,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.742275,
-        "lon": 4.880108
+        "lon": 4.880108,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 22,
@@ -349,7 +412,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.747105,
-        "lon": 4.826206
+        "lon": 4.826206,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 23,
@@ -365,7 +431,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.427859,
-        "lon": 4.393336
+        "lon": 4.393336,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 24,
@@ -381,7 +450,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.722593,
-        "lon": 4.915127
+        "lon": 4.915127,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 25,
@@ -397,7 +469,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.748813,
-        "lon": 4.861412
+        "lon": 4.861412,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 26,
@@ -413,7 +488,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.722593,
-        "lon": 4.915127
+        "lon": 4.915127,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 27,
@@ -429,7 +507,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.748298,
-        "lon": 4.836525
+        "lon": 4.836525,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 28,
@@ -445,7 +526,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.733056,
-        "lon": 4.83401
+        "lon": 4.83401,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 29,
@@ -461,7 +545,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.783952,
-        "lon": 4.770857
+        "lon": 4.770857,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 30,
@@ -477,7 +564,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.779613,
-        "lon": 4.922664
+        "lon": 4.922664,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 31,
@@ -493,7 +583,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.729897,
-        "lon": 4.827168
+        "lon": 4.827168,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 32,
@@ -509,7 +602,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.76714,
-        "lon": 4.886973
+        "lon": 4.886973,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 33,
@@ -525,7 +621,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.747183,
-        "lon": 4.859749
+        "lon": 4.859749,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 34,
@@ -541,7 +640,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.421831,
-        "lon": 4.426611
+        "lon": 4.426611,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 35,
@@ -557,7 +659,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.778826,
-        "lon": 4.872026
+        "lon": 4.872026,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 36,
@@ -573,7 +678,10 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.741236,
-        "lon": 4.883023
+        "lon": 4.883023,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 37,
@@ -589,6 +697,9 @@
         "meals": [],
         "crous_id": 1,
         "lat": 45.427859,
-        "lon": 4.393336
+        "lon": 4.393336,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     }
 ]

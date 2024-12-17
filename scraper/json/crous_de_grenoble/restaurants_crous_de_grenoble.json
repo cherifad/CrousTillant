@@ -13,7 +13,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 44.917439,
-        "lon": 4.915634
+        "lon": 4.915634,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 2,
@@ -29,7 +32,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 44.933503,
-        "lon": 4.903863
+        "lon": 4.903863,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 3,
@@ -45,7 +51,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 44.91777,
-        "lon": 4.915908
+        "lon": 4.915908,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 4,
@@ -61,7 +70,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.191966,
-        "lon": 5.769929
+        "lon": 5.769929,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 5,
@@ -77,7 +89,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.189997,
-        "lon": 5.772338
+        "lon": 5.772338,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 6,
@@ -93,7 +108,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.192074,
-        "lon": 5.717808
+        "lon": 5.717808,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 7,
@@ -109,7 +127,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.643197,
-        "lon": 5.870901
+        "lon": 5.870901,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 8,
@@ -125,7 +146,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.643197,
-        "lon": 5.870901
+        "lon": 5.870901,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 9,
@@ -141,7 +165,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.165512,
-        "lon": 5.728135
+        "lon": 5.728135,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 10,
@@ -157,7 +184,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.920391,
-        "lon": 6.154122
+        "lon": 6.154122,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 11,
@@ -165,15 +195,18 @@
         "place": "Chambery",
         "schedule": "Du lundi au vendredi, de 11h20 à 14h00",
         "url": "https://www.crous-grenoble.fr/restaurant/cafeteria-jacob/",
-        "cp": "55000",
-        "address": "Rue Robert Rousselle",
-        "city": "Bar-le-Duc",
+        "cp": "33170",
+        "address": "Voie du Restaurant Universitaire 3",
+        "city": "Gradignan",
         "phone": "",
         "img": "",
         "meals": [],
         "crous_id": 2,
-        "lat": 48.773538,
-        "lon": 5.179132
+        "lat": 44.792057,
+        "lon": -0.613802,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 12,
@@ -189,7 +222,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.206135,
-        "lon": 5.752382
+        "lon": 5.752382,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 13,
@@ -205,7 +241,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.194426,
-        "lon": 5.76538
+        "lon": 5.76538,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 14,
@@ -221,7 +260,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.919839,
-        "lon": 6.156274
+        "lon": 6.156274,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 15,
@@ -237,7 +279,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.64536,
-        "lon": 5.869466
+        "lon": 5.869466,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 16,
@@ -253,7 +298,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.184323,
-        "lon": 5.753048
+        "lon": 5.753048,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 17,
@@ -269,7 +317,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.188078,
-        "lon": 5.769394
+        "lon": 5.769394,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 18,
@@ -285,7 +336,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.194065,
-        "lon": 5.762338
+        "lon": 5.762338,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 19,
@@ -301,7 +355,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.186082,
-        "lon": 5.716411
+        "lon": 5.716411,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 20,
@@ -317,7 +374,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.183763,
-        "lon": 5.73061
+        "lon": 5.73061,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 21,
@@ -333,7 +393,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.154787,
-        "lon": 5.713002
+        "lon": 5.713002,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 22,
@@ -349,7 +412,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 47.225864,
-        "lon": -1.580189
+        "lon": -1.580189,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 23,
@@ -365,7 +431,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.558021,
-        "lon": 5.909324
+        "lon": 5.909324,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 24,
@@ -381,7 +450,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.191614,
-        "lon": 5.765331
+        "lon": 5.765331,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 25,
@@ -397,7 +469,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.203522,
-        "lon": 5.701859
+        "lon": 5.701859,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 26,
@@ -413,7 +488,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.190708,
-        "lon": 5.769072
+        "lon": 5.769072,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 27,
@@ -429,7 +507,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.199113,
-        "lon": 5.774513
+        "lon": 5.774513,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 28,
@@ -445,7 +526,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.191778,
-        "lon": 5.767253
+        "lon": 5.767253,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 29,
@@ -461,7 +545,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.190708,
-        "lon": 5.769072
+        "lon": 5.769072,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 30,
@@ -477,7 +564,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.193693,
-        "lon": 5.708632
+        "lon": 5.708632,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 31,
@@ -493,7 +583,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.643197,
-        "lon": 5.870901
+        "lon": 5.870901,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 32,
@@ -509,7 +602,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.188737,
-        "lon": 5.774065
+        "lon": 5.774065,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 33,
@@ -525,7 +621,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.23444,
-        "lon": 5.675473
+        "lon": 5.675473,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 34,
@@ -541,11 +640,14 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.934179,
-        "lon": 6.11726
+        "lon": 6.11726,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 35,
-        "name": "Restaurant agrée – Centre Hospitalier Ardèche Nord",
+        "name": "Restaurant agrée – Centre Hospitalier Ardèche Nord – Annonay",
         "place": "",
         "schedule": "",
         "url": "https://www.crous-grenoble.fr/restaurant/restaurant-agree-centre-hospitalier-ardeche-nord/",
@@ -557,11 +659,14 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.241769,
-        "lon": 4.665458
+        "lon": 4.665458,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 36,
-        "name": "Restaurant agrée – Centre Hospitalier d’Ardèche Méridionale – IFSI",
+        "name": "Restaurant agrée – Centre Hospitalier d’Ardèche Méridionale – IFSI Aubenas",
         "place": "",
         "schedule": "",
         "url": "https://www.crous-grenoble.fr/restaurant/restaurant-agree-centre-hospitalier-dardeche-meridionale-ifsi/",
@@ -573,11 +678,14 @@
         "meals": [],
         "crous_id": 2,
         "lat": 44.60878,
-        "lon": 4.39424
+        "lon": 4.39424,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 37,
-        "name": "Restaurant agrée – Centre Hospitalier Pierre OUDOT",
+        "name": "Restaurant agrée – Centre Hospitalier Pierre OUDOT – Bourgoin-Jallieu",
         "place": "",
         "schedule": "",
         "url": "https://www.crous-grenoble.fr/restaurant/restaurant-agree-centre-hospitalier-pierre-oudot/",
@@ -589,7 +697,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.596672,
-        "lon": 5.244289
+        "lon": 5.244289,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 38,
@@ -605,7 +716,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 46.360712,
-        "lon": 6.478036
+        "lon": 6.478036,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 39,
@@ -621,11 +735,14 @@
         "meals": [],
         "crous_id": 2,
         "lat": 44.732868,
-        "lon": 4.59407
+        "lon": 4.59407,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 40,
-        "name": "Restaurant agrée – Lycée Galilée",
+        "name": "Restaurant agrée – Lycée Galilée – Vienne",
         "place": "",
         "schedule": "",
         "url": "https://www.crous-grenoble.fr/restaurant/restaurant-agree-lycee-galilee/",
@@ -637,11 +754,14 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.504195,
-        "lon": 4.854567
+        "lon": 4.854567,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 41,
-        "name": "Restaurant agrée – Lycée Louis LACHENAL",
+        "name": "Restaurant agrée – Lycée Louis LACHENAL – Annecy",
         "place": "",
         "schedule": "",
         "url": "https://www.crous-grenoble.fr/restaurant/restaurant-agree-lycee-louis-lachenal/",
@@ -653,7 +773,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.937977,
-        "lon": 6.133046
+        "lon": 6.133046,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 42,
@@ -669,7 +792,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.188377,
-        "lon": 5.773704
+        "lon": 5.773704,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 43,
@@ -685,7 +811,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.918992,
-        "lon": 6.156833
+        "lon": 6.156833,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 44,
@@ -701,7 +830,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.192074,
-        "lon": 5.717808
+        "lon": 5.717808,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 45,
@@ -709,15 +841,18 @@
         "place": "",
         "schedule": "Le midi, du lundi au vendredi : de 11h20 à 13h40",
         "url": "https://www.crous-grenoble.fr/restaurant/ru-de-jacob-bellecombette-3/",
-        "cp": "55000",
-        "address": "Rue Robert Rousselle",
-        "city": "Bar-le-Duc",
+        "cp": "33170",
+        "address": "Voie du Restaurant Universitaire 3",
+        "city": "Gradignan",
         "phone": "",
         "img": "http://appli.crous-grenoble.fr/fichiers/image/chambery/RestoU_2.jpg",
         "meals": [],
         "crous_id": 2,
-        "lat": 48.773538,
-        "lon": 5.179132
+        "lat": 44.792057,
+        "lon": -0.613802,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 46,
@@ -733,7 +868,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.188078,
-        "lon": 5.769394
+        "lon": 5.769394,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 47,
@@ -749,7 +887,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.183036,
-        "lon": 5.731093
+        "lon": 5.731093,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 48,
@@ -765,7 +906,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.20254,
-        "lon": 5.703284
+        "lon": 5.703284,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 49,
@@ -781,7 +925,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.644064,
-        "lon": 5.874614
+        "lon": 5.874614,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 50,
@@ -797,7 +944,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.206135,
-        "lon": 5.752382
+        "lon": 5.752382,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 51,
@@ -813,7 +963,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.191889,
-        "lon": 5.76901
+        "lon": 5.76901,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 52,
@@ -829,7 +982,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.191778,
-        "lon": 5.767253
+        "lon": 5.767253,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 53,
@@ -845,7 +1001,10 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.194606,
-        "lon": 5.710152
+        "lon": 5.710152,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     },
     {
         "id": 54,
@@ -861,6 +1020,9 @@
         "meals": [],
         "crous_id": 2,
         "lat": 45.195301,
-        "lon": 5.774198
+        "lon": 5.774198,
+        "last_scraping_at": null,
+        "last_scraping_status": null,
+        "last_scraping_error": null
     }
 ]

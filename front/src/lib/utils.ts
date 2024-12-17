@@ -1,6 +1,6 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { Restaurant } from "@prisma/client";
+import { Restaurant, ScrapingLog } from "@prisma/client";
 
 export type Favorite = {
   id: string;
@@ -19,6 +19,7 @@ export type Crous = {
   url: string;
   created_at: string;
   updated_at: string;
+  ScrapingLog: ScrapingLog[] | null;
 };
 
 export type Position = {
