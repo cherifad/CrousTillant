@@ -32,7 +32,7 @@ export default function Header() {
               size={isDesktop ? "default" : "icon"}
               asChild
               variant={pathname === "/" ? "default" : "outline"}
-              className={`select-none h-fit rounded-sm text-sm ${
+              className={`select-none snowy-button h-fit rounded-sm text-sm ${
                 isDesktop ? "px-3 py-1" : "p-2"
               }`}
             >

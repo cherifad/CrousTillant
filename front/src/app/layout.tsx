@@ -9,6 +9,7 @@ import Announcement from "@/components/announcement";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
 import SnowFall from "@/components/snow-fall";
+import { Analytics } from "@vercel/analytics/react"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary",
     title: "Crous'tillant",
     description: "Le menu du RU, plus simplement.",
-    images: "https://ru.servperso.me/icons/android-chrome-192x192.png",
+    images: "https://croustillant.vercel.app/icons/android-chrome-192x192.png",
     creator: "@cherifad",
   },
   openGraph: {
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
     title: "Crous'tillant",
     description: "Le menu du RU, plus simplement.",
     siteName: "Crous'tillant",
-    url: "https://ru.servperso.me",
-    images: [{ url: "https://ru.servperso.me/icons/apple-touch-icon.png" }],
+    url: "https://croustillant.vercel.app/",
+    images: [{ url: "https://croustillant.vercel.app/icons/apple-touch-icon.png" }],
   },
 };
 
@@ -67,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
+      <Analytics/>
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased relative",
@@ -87,11 +89,11 @@ export default function RootLayout({
           </main>
           <Footer />
           <Toaster />
-          <Script
+          {/* <Script
             defer
-            src="https://ru-stats.servperso.me/script.js"
+            src="#"
             data-website-id="c778fc13-9451-48b1-946a-aef37fa91256"
-          />
+          /> */}
         </ThemeProvider>
       </body>
     </html>

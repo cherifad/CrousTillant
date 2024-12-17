@@ -65,3 +65,57 @@
     @apply bg-background text-foreground;
   }
 }
+
+.snowy-button {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  text-align: center;
+  color: #fff;
+  background-image: 
+    linear-gradient(to bottom, #f12828, #a00332, #9f0f31),
+    linear-gradient(to bottom, #ae0034, #6f094c);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  box-shadow: 
+    inset 0 1px rgb(255 255 255 / .25),
+    inset 0 -1px rgb(0 0 0 / .1),
+    0 2px 4px rgb(0 0 0 / .25);
+  transition-property: transform, filter;
+  transition-duration: .2s;
+  will-change: transform;
+  resize: both;
+  
+  &:active {
+    transform: scale(.92);
+    filter: brightness(.8);
+  }
+}
+
+.snowy-button::after {
+  --overflow-x: 4px;
+  --snow-image: url('https://assets.codepen.io/4175254/snow-cap-test-2.png');
+  content: '';
+  position: absolute;
+  top: -6px;
+  left: calc(var(--overflow-x) * -1);
+  border-image-source: var(--snow-image);
+  border-image-slice: calc(6 * 56 / 20) fill;
+  border-image-width: calc(28px / 3);
+  border-image-repeat: round;
+  width: calc(100% + var(--overflow-x) * 2);
+  height: 28px;
+  filter: drop-shadow(0 2px 1px rgb(0 0 0 / .25));
+  opacity: 1;
+  animation: fade-in 2s;
+}
+
+@keyframes fade-in {
+  0%,
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

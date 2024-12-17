@@ -59,9 +59,9 @@ export default function Footer() {
               Signaler un bug
             </a>
           </li>
-          <li>
+          {/* <li>
             <a
-              href="https://ru-stats.servperso.me/share/8OPVBdWGT24WUCIw/ru.servperso.me"
+              href="#"
               className="hover:underline flex items-center"
               target="_blank"
               rel="noreferrer"
@@ -69,7 +69,7 @@ export default function Footer() {
               <BarChartBig className="h-4 w-4 mr-2" />
               Statistiques
             </a>
-          </li>
+          </li> */}
         </ul>
       </div>
     </footer>
