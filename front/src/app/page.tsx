@@ -15,18 +15,16 @@ import {
   toggleDisplayGrid,
   getDisplayGrid,
 } from "@/lib/utils";
-import { useSearchParams, redirect } from "next/navigation";
+import { useSearchParams, redirect, useRouter } from "next/navigation";
 import { getSelectedCrous, Crous, Position } from "@/lib/utils";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
 import Loading from "./loading";
 import UpdateBadge from "@/components/update-badge";
-import { useRouter } from "next/navigation";
+import useMarkerStore from '@/store/markerStore';
 
-const MapComponent = dynamic(() => import("@/components/map"), {
-  ssr: false,
-});
+const MapComponent = dynamic(() => import('@/components/map'), { ssr: false });
 
 const Filters = dynamic(() => import("@/components/home/filters"), {
   ssr: false,
@@ -44,21 +42,18 @@ export default function Home() {
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
   const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
   const [position, setPosition] = useState<Position | null>(null);
-  const [mapReady, setMapReady] = useState(false);
-  const [mapKey, setMapKey] = useState(0); // key to force remount of the map
 
-  const mapId = "restaurantMap"; // or any other ID you use
   const router = useRouter();
+  const { addMarker, clearMarkers } = useMarkerStore();
 
-  const handleMapReady = () => {
-    setMapReady(true);
-  };
-
-  // useEffect(() => {
-  //   if (mapReady) {
-  //     putRestaurantsOnMap(restaurantToDisplay);
-  //   }
-  // }, [mapReady, restaurantToDisplay]);
+  useEffect(() => {
+    clearMarkers();
+    restaurantToDisplay.forEach((restaurant) => {
+      if (restaurant.lat && restaurant.lng) {
+        addMarker([restaurant.lat, restaurant.lng], restaurant.name, `Voir la fiche de <a href="/restaurant/${slugify(restaurant.name)}-${restaurant.id}">${restaurant.name}</a>`);
+      }
+    });
+  }, [restaurantToDisplay]);
 
   useEffect(() => {
     setLoading(true);
@@ -91,45 +86,6 @@ export default function Home() {
     setFavorites(getFavorites(crous.id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   if (display === "map" && mapReady) {
-  //     putRestaurantsOnMap(restaurantToDisplay);
-  //   }
-  // }, [restaurantToDisplay, display]);
-
-  useEffect(() => {
-    if (display === "map" && mapReady) {
-      console.log("remounting map", mapKey);
-      setMapKey((prevKey) => prevKey + 1); // change key to force remount
-    }
-  }, [display]);
-
-  // const putRestaurantsOnMap = (restaurants: Restaurant[]) => {
-  //   const map = MapManager.getInstance(mapId);
-  //   if (map) {
-  //     map.getMapInstance()?.invalidateSize();
-  //     map.removeAllMarkers();
-  //     const restaurantsPositions: [number, number][] = [];
-  //     restaurants.forEach((restaurant: Restaurant) => {
-  //       if (restaurant.lat && restaurant.lng) {
-  //         map.setMarker(
-  //           [restaurant.lat, restaurant.lng],
-  //           restaurant.id.toString(),
-  //           false,
-  //           restaurant.name,
-  //           `<a href="/restaurant/${slugify(restaurant.name)}-${
-  //             restaurant.id
-  //           }">Voir la fiche</a>`
-  //         );
-  //         restaurantsPositions.push([restaurant.lat, restaurant.lng]);
-  //       }
-  //     });
-  //     if (restaurantsPositions.length > 0) {
-  //       map.setZoomOnPosition(restaurantsPositions);
-  //     }
-  //   }
-  // };
 
   const onFavoriteChange = (
     restaurantId: number,
@@ -182,10 +138,6 @@ export default function Home() {
             restaurants={restaurants}
             setLoading={setLoading}
             setPosition={setPosition}
-            display={display}
-            // putRestaurantsOnMap={putRestaurantsOnMap}
-            mapId={mapId}
-            displayedRestaurants={restaurantToDisplay}
           />
         </div>
         <div className="flex items-center gap-3 mt-4 md:mt-0">
@@ -212,12 +164,7 @@ export default function Home() {
       </div>
       {display === "map" ? (
         <div className="mt-4 flex-1 h-screen">
-          <MapComponent
-            key={mapKey} // this forces remount of the map
-            id={mapId}
-            initialPosition={[46.603354, 1.888334]}
-            onMapReady={handleMapReady}
-          />
+          <MapComponent />
         </div>
       ) : (
         <RestaurantsGrid
