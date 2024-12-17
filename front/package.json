@@ -24,6 +24,7 @@
     "@radix-ui/react-toggle-group": "^1.0.4",
     "@types/leaflet": "^1.9.12",
     "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "date-fns": "^3.6.0",
@@ -35,11 +36,13 @@
     "react": "^18",
     "react-day-picker": "^8.10.1",
     "react-dom": "^18",
+    "react-leaflet": "^4.2.1",
     "react-snowfall": "^2.2.0",
     "tailwind-merge": "^2.3.0",
     "tailwindcss-animate": "^1.0.7",
     "usehooks-ts": "^3.1.0",
-    "vaul": "^0.9.0"
+    "vaul": "^0.9.0",
+    "zustand": "^5.0.2"
   },
   "devDependencies": {
     "@types/node": "^20",

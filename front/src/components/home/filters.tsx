@@ -9,9 +9,7 @@ import {
   getGeoLocation,
   findRestaurantsAroundPosition,
   Position,
-  slugify,
 } from "@/lib/utils";
-import MapManager from "@/lib/map";
 
 interface FiltersProps {
   loading: boolean;
@@ -20,10 +18,6 @@ interface FiltersProps {
   restaurants: Restaurant[];
   setLoading: (loading: boolean) => void;
   setPosition: (position: Position | null) => void;
-  display: "list" | "map";
-  // putRestaurantsOnMap: (restaurants: Restaurant[]) => void;
-  mapId: string;
-  displayedRestaurants: Restaurant[];
 }
 
 export default function Filters({
@@ -33,9 +27,6 @@ export default function Filters({
   restaurants,
   setLoading,
   setPosition,
-  display,
-  mapId,
-  displayedRestaurants,
 }: FiltersProps) {
 
   const handleSearch = (search: string) => {
@@ -66,9 +57,6 @@ export default function Filters({
 
       if (nearbyRestaurant.length > 0) {
         setRestaurantToDisplay(nearbyRestaurant);
-        if (display === "map") {
-          putRestaurantsOnMap(nearbyRestaurant);
-        }
       }
     }
 
@@ -79,45 +67,6 @@ export default function Filters({
     setSearch("");
     setRestaurantToDisplay(restaurants);
   };
-
-  const putRestaurantsOnMap = (restaurants: Restaurant[]) => {
-    const map = MapManager.getInstance(mapId);
-    if (map) {
-      map.getMapInstance()?.invalidateSize();
-      map.removeAllMarkers();
-      const restaurantsPositions: [number, number][] = [];
-      restaurants.forEach((restaurant: Restaurant) => {
-        if (restaurant.lat && restaurant.lng) {
-          map.setMarker(
-            [restaurant.lat, restaurant.lng],
-            restaurant.id.toString(),
-            false,
-            restaurant.name,
-            `<a href="/restaurant/${slugify(restaurant.name)}-${
-              restaurant.id
-            }">Voir la fiche</a>`
-          );
-          restaurantsPositions.push([restaurant.lat, restaurant.lng]);
-        }
-      });
-      if (restaurantsPositions.length > 0) {
-        map.setZoomOnPosition(restaurantsPositions);
-      }
-    }
-  };
-
-  useEffect(() => {
-    console.log("display", display);
-    if (display === "map") {
-      putRestaurantsOnMap(displayedRestaurants);
-    }
-  }, [display]);
-
-  useEffect(() => {
-    if (display === "map") {
-      putRestaurantsOnMap(displayedRestaurants);
-    }
-  }, [displayedRestaurants]);
 
   return (
     <div className="flex gap-2 mt-4 md:mt-8 items-center flex-wrap md:flex-nowrap">
