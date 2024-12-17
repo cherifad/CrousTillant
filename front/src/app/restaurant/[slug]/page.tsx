@@ -34,7 +34,7 @@ export default function SingleRestaurant() {
   const [selectedDateDinner, setSelectedDateDinner] = useState<Meal[]>([]);
   const [maxAvailableDate, setMaxAvailableDate] = useState<Date | undefined>();
   const [availableDates, setAvailableDates] = useState<Date[]>([]);
-  const [emptyMeals, setEmptyMeals] = useState<boolean>(true);
+  const [emptyMeals, setEmptyMeals] = useState<boolean>(false);
 
   const params = useParams();
   const restaurantId = params?.slug.toString().split("-").pop();
