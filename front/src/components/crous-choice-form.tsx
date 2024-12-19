@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getSelectedCrous, setSelectedCrous, Crous } from "@/lib/utils";
 import {
   Card,
   CardHeader,
@@ -10,6 +9,8 @@ import {
 } from "@/components/ui/card";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { useUserPreferences, Crous } from "@/store/userPreferencesStore";
+import Loading from "@/app/loading";
 
 interface CrousChoiceFormProps {
   callBackUrl?: string | null;
@@ -21,51 +22,62 @@ export default function CrousChoiceForm({ callBackUrl }: CrousChoiceFormProps) {
     null
   );
   const [loading, setLoading] = useState(true);
+  const { selectedCrous, setSelectedCrous } = useUserPreferences();
 
   const router = useRouter();
 
-  const handleSelectCrous = (crous: Crous) => {
-    setSelectedCrous(crous);
-    router.push(callBackUrl || "/");
-  };
-
   useEffect(() => {
-    setSelectedCrousLocal(getSelectedCrous());
+    setSelectedCrousLocal(selectedCrous);
     fetch("/api/crous")
       .then((res) => res.json())
       .then((data) => {
         setCrousList(data);
-        setLoading(false);
-      });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   return (
     <div className="mt-4">
-      <ul className="flex flex-wrap gap-2 justify-center">
-        {crousList.map((crous) => (
-          <li key={crous.id}>
-            <Card
-              className={`bg-primary cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-full md:min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${
-                selectedCrousLocal?.id === crous.id && " scale-105"
-              }`}
-              onClick={() => setSelectedCrousLocal(crous)}
-              onDoubleClick={() => handleSelectCrous(crous)}
-            >
-              <CardHeader>
-                <CardTitle className="text-center font-bold text-5xl select-none">
-                  {crous.name.split("Crous de ")[1].charAt(0)}
-                </CardTitle>
-                <CardDescription className="text-white dark:text-black text-center">
-                  {crous.name}
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </li>
-        ))}
-      </ul>
+      {
+        loading ? (
+          <Loading message="Chargement des Crous..." />
+        ) : (
+          <ul className="flex flex-wrap gap-2 justify-center">
+            {crousList.length ? (crousList.map((crous) => (
+              <li key={crous.id}>
+                <Card
+                  className={`bg-primary cursor-pointer hover:bg-[#ff1d25] text-white dark:text-black min-h-full md:min-h-96 w-44 items-center justify-center flex flex-col transition-transform ${selectedCrousLocal?.id === crous.id && " scale-105"
+                    }`}
+                  onClick={() => setSelectedCrousLocal(crous)}
+                  onDoubleClick={() => {
+                    setSelectedCrous(crous);
+                    router.push(callBackUrl || "/");
+                  }}
+                >
+                  <CardHeader>
+                    <CardTitle className="text-center font-bold text-5xl select-none">
+                      {crous.name.split("Crous de ")[1].charAt(0)}
+                    </CardTitle>
+                    <CardDescription className="text-white dark:text-black text-center">
+                      {crous.name}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              </li>
+            ))) : (
+              <div className="text-center text-lg text-gray-500 dark:text-gray-400">
+                Aucun Crous trouvé
+              </div>
+            )}
+          </ul>
+        )}
       <div className="flex justify-center mt-4">
         <Button
-          onClick={() => handleSelectCrous(selectedCrousLocal!)}
+          onClick={() => {
+            if (!selectedCrousLocal) return;
+            setSelectedCrous(selectedCrousLocal);
+            router.push(callBackUrl || "/");
+          }}
           disabled={!selectedCrousLocal || loading}
         >
           {selectedCrousLocal

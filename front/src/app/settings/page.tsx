@@ -15,18 +15,6 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  clearUserPreferences,
-  Favorite,
-  getFavorites,
-  getStarredFav,
-  setStarredFav,
-  deleteFavAsHomePage,
-  getFavAsHomePage,
-  setFavAsHomePage,
-  getSelectedCrous,
-  Crous,
-} from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 import { useTheme } from "next-themes";
@@ -34,22 +22,29 @@ import { usePathname, redirect } from "next/navigation";
 import Link from "next/link";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { TriangleAlert } from "lucide-react";
+import { useUserPreferences, Favorite } from "@/store/userPreferencesStore";
 
 export default function Settings() {
   const [popoverOpen, setPopoverOpen] = useState(false);
-  const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [localStarredFav, setLocalStarredFav] = useState<Favorite | null>(null);
   const [localFavAsHomePage, setLocalFavAsHomePage] = useState<boolean>(false);
-  const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
 
   const { toast } = useToast();
   const { setTheme, theme, systemTheme } = useTheme();
   const pathname = usePathname();
+  const {
+    clearUserPreferences,
+    getFavorites,
+    selectedCrous,
+    getStarredFav,
+    setStarredFav,
+    setFavAsHomePage,
+    favAsHomePage,
+  } = useUserPreferences();
 
   const handleClearFavorites = () => {
     clearUserPreferences();
     setPopoverOpen(false);
-    setFavorites([]);
     setLocalStarredFav(null);
     setLocalFavAsHomePage(false);
     toast({
@@ -68,20 +63,20 @@ export default function Settings() {
     });
   };
 
-  const handleStarredFavChange = (value: string) => {
-    const favorite = favorites.find((f) => f.id === value);
-    if (favorite && localStarredFav?.id === favorite.id) {
-      return;
-    }
-    if (favorite) {
-      setStarredFav(favorite);
-      setLocalStarredFav(favorite);
-      toast({
-        title: "Favori modifié",
-        description: `Le favori a été changé avec succès.`,
-      });
-    }
-  };
+  // const handleStarredFavChange = (value: string) => {
+  //   const favorite = getFavorites().find((f) => f.id === value);
+  //   if (favorite && localStarredFav?.id === favorite.id) {
+  //     return;
+  //   }
+  //   if (favorite) {
+  //     setStarredFav(favorite);
+  //     setLocalStarredFav(favorite);
+  //     toast({
+  //       title: "Favori modifié",
+  //       description: `Le favori a été changé avec succès.`,
+  //     });
+  //   }
+  // };
 
   const handleFavAsHomePageChange = (checked: boolean) => {
     if (checked) {
@@ -91,7 +86,7 @@ export default function Settings() {
         description: `Le favori a été défini comme page d'accueil avec succès.`,
       });
     } else {
-      deleteFavAsHomePage();
+      setFavAsHomePage(false);
       toast({
         title: "Favori comme page d'accueil",
         description: `Le favori n'est plus défini comme page d'accueil.`,
@@ -101,17 +96,13 @@ export default function Settings() {
   };
 
   useEffect(() => {
-    const crous = getSelectedCrous();
-    setSelectedCrous(crous);
-
-    if (!crous) {
+    if (!selectedCrous) {
       redirect("/crous?clbk=" + pathname);
     }
 
     try {
-      setFavorites(getFavorites(crous.id));
-      setLocalStarredFav(getStarredFav(crous.id));
-      setLocalFavAsHomePage(getFavAsHomePage());
+      setLocalStarredFav(getStarredFav() ?? null);
+      setLocalFavAsHomePage(favAsHomePage);
     } catch {
       clearUserPreferences();
     }
@@ -137,7 +128,7 @@ export default function Settings() {
         </div>
       </SettingCard>
       <SettingCard title="Comportement">
-        {favorites.length === 0 && (
+        {getFavorites().length === 0 && (
           <Alert variant="destructive">
             <TriangleAlert className="h-4 w-4" />
             <AlertTitle>Attention</AlertTitle>
@@ -161,7 +152,7 @@ export default function Settings() {
             </p>
           </div>
           <Switch
-            disabled={favorites.length === 0}
+            disabled={getFavorites().length === 0}
             checked={localFavAsHomePage}
             onCheckedChange={handleFavAsHomePageChange}
           />
@@ -176,8 +167,8 @@ export default function Settings() {
             </p>
           </div>
           <Select
-            onValueChange={handleStarredFavChange}
-            disabled={favorites.length === 0}
+            onValueChange={setStarredFav}
+            disabled={getFavorites().length === 0}
           >
             <SelectTrigger className="min-w-[180px] w-fit">
               <SelectValue
@@ -185,7 +176,7 @@ export default function Settings() {
               />
             </SelectTrigger>
             <SelectContent>
-              {favorites.map((favorite) => (
+              {getFavorites().map((favorite) => (
                 <SelectItem key={favorite.id} value={favorite.id}>
                   {favorite.name.trim()}
                 </SelectItem>

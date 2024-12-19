@@ -6,109 +6,84 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Restaurant } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
-import {
-  getFavorites,
-  Favorite,
-  getStarredFav,
-  getFavAsHomePage,
-  slugify,
-  toggleDisplayGrid,
-  getDisplayGrid,
-} from "@/lib/utils";
+import { slugify } from "@/lib/utils";
 import { useSearchParams, redirect, useRouter } from "next/navigation";
-import { getSelectedCrous, Crous, Position } from "@/lib/utils";
+import { Position } from "@/lib/utils";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import RestaurantsGrid from "@/components/home/restaurants-grid";
 import Loading from "./loading";
 import UpdateBadge from "@/components/update-badge";
-import useMarkerStore from '@/store/markerStore';
+import useMarkerStore from "@/store/markerStore";
+import { useUserPreferences } from "@/store/userPreferencesStore";
 
-const MapComponent = dynamic(() => import('@/components/map'), { ssr: false });
+const MapComponent = dynamic(() => import("@/components/map"), { ssr: false });
 
 const Filters = dynamic(() => import("@/components/home/filters"), {
   ssr: false,
 });
 
 export default function Home() {
-  const [display, setDisplay] = useState<"list" | "map">("list");
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [restaurantToDisplay, setRestaurantToDisplay] = useState<Restaurant[]>(
     []
   );
-  const [favorites, setFavorites] = useState<Favorite[]>([]);
+  // const [favorites, setFavorites] = useState<Favorite[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [search, setSearch] = useState<string>("");
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
-  const [selectedCrous, setSelectedCrous] = useState<Crous | null>(null);
   const [position, setPosition] = useState<Position | null>(null);
 
   const router = useRouter();
   const { addMarker, clearMarkers } = useMarkerStore();
+  const {
+    getFavorites,
+    selectedCrous,
+    setSelectedCrous,
+    toggleDisplayGrid,
+    display,
+  } = useUserPreferences();
 
   useEffect(() => {
     clearMarkers();
     restaurantToDisplay.forEach((restaurant) => {
       if (restaurant.lat && restaurant.lng) {
-        addMarker([restaurant.lat, restaurant.lng], restaurant.name, `Voir la fiche de <a href="/restaurant/${slugify(restaurant.name)}-${restaurant.id}">${restaurant.name}</a>`);
+        addMarker(
+          [restaurant.lat, restaurant.lng],
+          restaurant.name,
+          `Voir la fiche de <a href="/restaurant/${slugify(restaurant.name)}-${
+            restaurant.id
+          }">${restaurant.name}</a>`
+        );
       }
     });
   }, [restaurantToDisplay]);
 
   useEffect(() => {
     setLoading(true);
-    // This is achieved by using the fetch method with the cache: 'no-store' option
-    const crous = getSelectedCrous();
-    setSelectedCrous(crous);
 
-    if (!crous) {
+    if (!selectedCrous) {
       router.push("/crous");
       return;
     }
 
-    fetch("/api/restaurant?crousId=" + crous.id)
+    fetch("/api/restaurant?crousId=" + selectedCrous.id)
       .then((res) => res.json())
       .then((data) => {
         setRestaurants(data);
         setRestaurantToDisplay(data);
-        const currentDisplay = getDisplayGrid();
-        setDisplay(currentDisplay);
       })
       .then(() => {
-        fetch("/api/crous/" + crous.id)
+        fetch("/api/crous/" + selectedCrous.id)
           .then((res) => res.json())
           .then((data) => {
             setSelectedCrous(data);
           });
       })
-      .finally(() => setLoading(false))
+      .finally(() => setLoading(false));
 
-    setFavorites(getFavorites(crous.id));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  const onFavoriteChange = (
-    restaurantId: number,
-    name: string,
-    isFavorite: boolean
-  ) => {
-    if (isFavorite) {
-      setFavorites([
-        ...favorites,
-        {
-          id: restaurantId.toString(),
-          name: name,
-          crousId: selectedCrous?.id!,
-        },
-      ]);
-    } else {
-      setFavorites(
-        favorites.filter(
-          (favorite: Favorite) => favorite.id !== restaurantId.toString()
-        )
-      );
-    }
-  };
 
   return (
     <>
@@ -127,9 +102,7 @@ export default function Home() {
             <UpdateBadge scrapingLog={selectedCrous?.ScrapingLog?.[0]} />
           </span>
           <p className="opacity-50">
-            {
-              loading ? <Loading /> : `Il y a ${restaurants.length} restaurants`
-            }
+            {loading ? <Loading /> : `Il y a ${restaurants.length} restaurants`}
           </p>
           <Filters
             loading={loading}
@@ -146,7 +119,7 @@ export default function Home() {
             <Button
               size="icon"
               className="rounded-r-none"
-              onClick={() => toggleDisplayGrid(display, setDisplay)}
+              onClick={() => toggleDisplayGrid()}
               variant={display === "list" ? "default" : "outline"}
             >
               <AlignLeft className="h-4 w-4" />
@@ -154,7 +127,7 @@ export default function Home() {
             <Button
               size="icon"
               className="rounded-l-none"
-              onClick={() => toggleDisplayGrid(display, setDisplay)}
+              onClick={() => toggleDisplayGrid()}
               variant={display === "map" ? "default" : "outline"}
             >
               <Map className="h-4 w-4" />
@@ -169,8 +142,7 @@ export default function Home() {
       ) : (
         <RestaurantsGrid
           restaurants={restaurants}
-          favorites={favorites}
-          onFavoriteChange={onFavoriteChange}
+          favorites={getFavorites()}
           loading={loading}
           restaurantToDisplay={restaurantToDisplay}
           hideFavorites={hideFavorites}
@@ -182,15 +154,16 @@ export default function Home() {
 }
 
 function CheckForRedirect() {
+  const { selectedCrous, favAsHomePage, getStarredFav } = useUserPreferences();
   const params = useSearchParams();
   useEffect(() => {
-    if (!getSelectedCrous()) {
+    if (!selectedCrous) {
       redirect("/crous");
     }
 
-    if (getFavAsHomePage()) {
+    if (favAsHomePage) {
       if (params && params.get("referer") != "me") {
-        const fav = getStarredFav(getSelectedCrous()?.id!);
+        const fav = getStarredFav();
         if (fav) {
           redirect(`/restaurant/${slugify(fav.name)}-${fav.id}`);
         }

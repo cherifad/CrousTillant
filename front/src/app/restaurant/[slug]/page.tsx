@@ -7,10 +7,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { useParams } from "next/navigation";
 import DatePicker from "@/components/date-picker";
 import { Navigation } from "lucide-react";
-import {
-  getDates,
-  isFavorite as isFavLocalStorage,
-} from "@/lib/utils";
+import { getDates } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import RestaurantInfo from "@/components/restaurant-info";
 import { notFound } from "next/navigation";
@@ -19,6 +16,7 @@ import MealsDisplay from "@/components/restaurant/meals-display";
 import NoMealMessage from "@/components/restaurant/no-meal-message";
 import RestaurantCalendar from "@/components/restaurant/calendar";
 import UpdateBadge from "@/components/update-badge";
+import { useUserPreferences } from "@/store/userPreferencesStore";
 
 export default function SingleRestaurant() {
   const [restaurant, setRestaurant] = useState<Restaurant>();
@@ -37,6 +35,7 @@ export default function SingleRestaurant() {
   const [emptyMeals, setEmptyMeals] = useState<boolean>(false);
 
   const params = useParams();
+  const { isFavorite: userFavorite } = useUserPreferences();
   const restaurantId = params?.slug.toString().split("-").pop();
 
   // Redirect to 404 if restaurantId is not a number or is not provided
@@ -59,16 +58,16 @@ export default function SingleRestaurant() {
           setEmptyMeals(true);
         }
         sortData(data.meals);
+        setIsFavorite(userFavorite(restaurantId));
       })
       .finally(() => setLoading(false));
 
-    setIsFavorite(isFavLocalStorage(restaurantId));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   /**
    * Sorts the given array of meals and performs additional operations based on the sorted data.
-   * 
+   *
    * @param meals - An array of meals to be sorted.
    */
   const sortData = (meals: Meal[] = []) => {
@@ -110,7 +109,7 @@ export default function SingleRestaurant() {
 
   /**
    * Retrieves meals for a specific date.
-   * 
+   *
    * @param meals - An array of meals.
    */
   const getMealsForDate = (meals: Meal[] = []) => {

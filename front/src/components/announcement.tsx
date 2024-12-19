@@ -1,29 +1,24 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Announcement } from "@prisma/client";
-import {
-  shouldShowAnnouncement,
-  hideAnnouncement,
-  showAnnouncement,
-} from "@/lib/utils";
 import { Plus } from "lucide-react";
 import { Button } from "./ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useUserPreferences } from "@/store/userPreferencesStore";
 
 export default function AnnouncementComponent() {
   const [announcements, setAnnouncements] = useState<Announcement[]>([]);
   const [show, setShow] = useState<boolean>(true);
+  const { announcement, hideAnnouncement, showAnnouncement } = useUserPreferences();
 
   useEffect(() => {
     fetch("/api/announcement")
       .then((res) => res.json())
       .then((data) => setAnnouncements(data));
 
-    const shouldShow = shouldShowAnnouncement();
-
-    if (!shouldShow.show) {
+    if (!announcement.show) {
       if (announcements.length > 0) {
-        if (shouldShow.date && announcements[0].created_at < shouldShow.date) {
+        if (announcement.date && announcements[0].created_at < announcement.date) {
           setShow(true);
           showAnnouncement();
         }

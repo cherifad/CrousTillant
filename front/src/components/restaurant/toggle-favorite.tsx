@@ -4,11 +4,8 @@
 import { Restaurant } from "@prisma/client";
 import { Heart, HeartOff } from "lucide-react";
 import { useToast } from "@/components/ui/use-toast";
-import {
-  removeFromFavorites,
-  addToFavorites,
-} from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { useUserPreferences } from "@/store/userPreferencesStore";
 
 interface ToggleFavoriteProps {
   isFavorite: boolean;
@@ -24,18 +21,23 @@ export default function ToggleFavorite({
   setIsFavorite,
 }: ToggleFavoriteProps) {
   const { toast } = useToast();
+  const { addOrRemoveFromFavorites } = useUserPreferences();
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      removeFromFavorites(restaurantId.toString(), restaurant?.crousId!);
+      addOrRemoveFromFavorites({
+        id: restaurantId.toString(),
+        name: restaurant?.name!,
+        crousId: restaurant?.crousId!,
+      });
       setIsFavorite(false);
       toast({
         description: "Lieu retiré des favoris 💔",
       });
     } else {
-      addToFavorites({
-        name: restaurant?.name!,
+      addOrRemoveFromFavorites({
         id: restaurantId.toString(),
+        name: restaurant?.name!,
         crousId: restaurant?.crousId!,
       });
       setIsFavorite(true);
