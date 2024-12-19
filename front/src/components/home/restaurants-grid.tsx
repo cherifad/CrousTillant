@@ -9,16 +9,11 @@ import {
 } from "@/components/ui/card";
 import { Restaurant } from "@prisma/client";
 import { Badge } from "@/components/ui/badge";
-import { Favorite } from "@/lib/utils";
+import { Favorite } from "@/store/userPreferencesStore";
 
 interface RestaurantsGridProps {
   restaurants: Restaurant[];
   favorites: Favorite[];
-  onFavoriteChange: (
-    restaurantId: number,
-    name: string,
-    isFavorite: boolean
-  ) => void;
   loading: boolean;
   restaurantToDisplay: Restaurant[];
   hideFavorites: boolean;
@@ -28,7 +23,6 @@ interface RestaurantsGridProps {
 export default function RestaurantsGrid({
   restaurants,
   favorites,
-  onFavoriteChange,
   loading,
   restaurantToDisplay,
   hideFavorites,
@@ -65,8 +59,6 @@ export default function RestaurantsGrid({
                   phone={restaurant.phone}
                   img={restaurant.img}
                   crousId={restaurant.crousId}
-                  favorites={favorites || []}
-                  onFavoriteChange={onFavoriteChange}
                 />
               );
             })}
@@ -112,8 +104,6 @@ export default function RestaurantsGrid({
               phone={restaurant.phone}
               img={restaurant.img}
               crousId={restaurant.crousId}
-              favorites={favorites || []}
-              onFavoriteChange={onFavoriteChange}
             />
           ))}
         </div>

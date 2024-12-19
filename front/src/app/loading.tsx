@@ -1,4 +1,8 @@
-export default function Loading() {
+interface LoadingProps {
+  message?: string;
+}
+
+export default function Loading({ message = "Chargement..." }: LoadingProps) {
   return (
     <div className="flex items-center justify-center w-full h-full">
       <div className="flex justify-center items-center space-x-1 text-sm">
@@ -16,7 +20,7 @@ export default function Loading() {
           />
         </svg>
 
-        <div>Chargement...</div>
+        <div>{message}</div>
       </div>
     </div>
   );

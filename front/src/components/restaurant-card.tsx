@@ -10,9 +10,8 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { Heart, HeartOff } from "lucide-react";
-import { useState } from "react";
 import { slugify } from "@/lib/utils";
-import { Favorite, addToFavorites, removeFromFavorites } from "@/lib/utils";
+import { useUserPreferences } from "@/store/userPreferencesStore";
 
 type Props = {
   id: number;
@@ -26,12 +25,6 @@ type Props = {
   phone: string;
   img: string;
   crousId: number;
-  favorites: Favorite[];
-  onFavoriteChange: (
-    restaurantId: number,
-    name: string,
-    isFavorite: boolean
-  ) => void;
 };
 
 export default function RestaurantCard({
@@ -46,40 +39,17 @@ export default function RestaurantCard({
   phone,
   img,
   crousId,
-  favorites,
-  onFavoriteChange,
 }: Props) {
-  const [isFavorite, setIsFavorite] = useState(
-    favorites.some((f) => f.id === id.toString())
-  );
-
-  const putToFavorites = () => {
-    if (isFavorite) {
-      removeFromFavorites(id.toString(), crousId);
-      setIsFavorite(false);
-      onFavoriteChange(id, name, false);
-    } else {
-      addToFavorites({ id: id.toString(), name: name, crousId: crousId });
-      setIsFavorite(true);
-      onFavoriteChange(id, name, true);
-    }
-  };
-
-  const imageLoader = ({ src, width, quality }: any) => {
-    if (src.length === 0) {
-      return "/img/default.jpeg";
-    }
-    return src;
-  };
+  const { isFavorite, addOrRemoveFromFavorites } = useUserPreferences();
 
   return (
     <Card className="relative">
       <Button
         size="icon"
         className="absolute top-2 right-2"
-        onClick={putToFavorites}
+        onClick={() => addOrRemoveFromFavorites({ id: id.toString(), name: name, crousId: crousId })}
       >
-        {isFavorite ? (
+        {isFavorite(id.toString()) ? (
           <HeartOff className="h-4 w-4" />
         ) : (
           <Heart className="h-4 w-4" />
