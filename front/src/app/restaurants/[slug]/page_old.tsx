@@ -2,15 +2,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Meal } from "@prisma/client";
-import { Restaurant } from "@/services/types";
+import { Restaurant, Meal } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useParams } from "next/navigation";
 import DatePicker from "@/components/date-picker";
 import { Navigation } from "lucide-react";
 import { getDates } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import RestaurantInfo from "./restaurant-info";
+import RestaurantInfo from "@/components/restaurant-info";
 import { notFound } from "next/navigation";
 import ToggleFavorite from "@/components/restaurant/toggle-favorite";
 import MealsDisplay from "@/components/restaurant/meals-display";
@@ -47,37 +46,21 @@ export default function SingleRestaurant() {
   // Fetch restaurant data and perform additional operations when the component mounts
   useEffect(() => {
     setLoading(true);
-    fetch(
-      `https://api-croustillant.bayfield.dev/v1/restaurants/${restaurantId}/menu`
-    )
-      .then(async (res) => {
-        if (!res.ok) {
-          return notFound();
+    fetch(`/api/restaurant/${restaurantId}`)
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data) {
+          return;
         }
-        const menus = res.json();
-        return menus;
-      })
-      .catch(() => {
-        // if the restaurant is not found, redirect to 404
-        notFound();
+        setRestaurant(data);
+        setMeals(data.meals);
+        if (data.meals.length === 0) {
+          setEmptyMeals(true);
+        }
+        sortData(data.meals);
+        setIsFavorite(userFavorite(restaurantId));
       })
       .finally(() => setLoading(false));
-
-    // fetch(`/api/restaurant/${restaurantId}`)
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     if (!data) {
-    //       return;
-    //     }
-    //     setRestaurant(data);
-    //     setMeals(data.meals);
-    //     if (data.meals.length === 0) {
-    //       setEmptyMeals(true);
-    //     }
-    //     sortData(data.meals);
-    //     setIsFavorite(userFavorite(restaurantId));
-    //   })
-    //   .finally(() => setLoading(false));
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -182,14 +165,14 @@ export default function SingleRestaurant() {
           <div className="w-full justify-between md:flex">
             <div>
               <span className="sm:flex items-center">
-                <h1 className="font-bold text-3xl">{restaurant?.nom}</h1>
-                {/* <ToggleFavorite
+                <h1 className="font-bold text-3xl">{restaurant?.name}</h1>
+                <ToggleFavorite
                   isFavorite={isFavorite}
                   restaurantId={parseInt(restaurantId)}
                   restaurant={restaurant}
                   setIsFavorite={setIsFavorite}
                 />
-                <UpdateBadge restaurant={restaurant} /> */}
+                <UpdateBadge restaurant={restaurant} />
               </span>
               <RestaurantInfo
                 restaurant={restaurant}
@@ -206,7 +189,7 @@ export default function SingleRestaurant() {
             <div className="flex items-center gap-3 mt-4 md:mt-0">
               <Button asChild>
                 <a
-                  href={`https://www.google.com/maps/dir//${restaurant?.adresse}`}
+                  href={`https://www.google.com/maps/dir//${restaurant?.address} ${restaurant?.cp} ${restaurant?.city}`}
                   target="_blank"
                   rel="noreferrer"
                 >
@@ -255,8 +238,7 @@ export default function SingleRestaurant() {
                 </fieldset>
               </div>
             ) : (
-              //   <NoMealMessage restaurant={restaurant} />
-              <></>
+              <NoMealMessage restaurant={restaurant} />
             )}
           </div>
         </div>

@@ -22,8 +22,8 @@ type Props = {
   cp: string;
   address: string;
   city: string;
-  phone: string;
-  img: string;
+  phone: string | null;
+  img: string | null;
   crousId: number;
 };
 
@@ -47,7 +47,13 @@ export default function RestaurantCard({
       <Button
         size="icon"
         className="absolute top-2 right-2"
-        onClick={() => addOrRemoveFromFavorites({ id: id.toString(), name: name, crousId: crousId })}
+        onClick={() =>
+          addOrRemoveFromFavorites({
+            id: id.toString(),
+            name: name,
+            crousId: crousId,
+          })
+        }
       >
         {isFavorite(id.toString()) ? (
           <HeartOff className="h-4 w-4" />
@@ -63,9 +69,18 @@ export default function RestaurantCard({
           {place.length > 0 ? place : <span>&nbsp;</span>}
         </CardDescription>
       </CardHeader>
+      {/* <CardContent>
+        <Image
+          src={img || "/img/default.jpeg"}
+          alt={name}
+          width={400}
+          height={400}
+          className="rounded-lg"
+        />
+      </CardContent> */}
       <CardFooter className="flex justify-between gap-3">
         <Button asChild className="flex-1">
-          <Link href={`/restaurant/${slugify(name)}-${id}`}>Voir le menu</Link>
+          <Link href={`/restaurants/${slugify(name)}-${id}`}>Voir le menu</Link>
         </Button>
         <Button asChild variant="secondary" className="flex-1">
           <a href={url} target="_blank" rel="noreferrer">

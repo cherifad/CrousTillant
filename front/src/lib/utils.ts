@@ -1,6 +1,7 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { Restaurant } from "@prisma/client";
+import { Restaurant as Resto } from "@/services/types";
 
 export type Position = {
   coords: {
@@ -67,9 +68,9 @@ function calculateDistance(
   const a =
     Math.sin(dLat / 2) * Math.sin(dLat / 2) +
     Math.cos((lat1 * Math.PI) / 180) *
-      Math.cos((lat2 * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
+    Math.cos((lat2 * Math.PI) / 180) *
+    Math.sin(dLon / 2) *
+    Math.sin(dLon / 2);
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
   const d = R * c; // Distance in km
   return d;
@@ -107,6 +108,44 @@ export function findRestaurantsAroundPosition(
       position.coords.longitude,
       b.lat!,
       b.lng!
+    );
+    return distanceA - distanceB;
+  });
+  return nearbyRestaurants;
+}
+
+export function findRestaurantsAroundPositionV2(
+  restaurants: Resto[],
+  position: Position,
+  maxDistance: number
+): Resto[] {
+  const nearbyRestaurants: Resto[] = [];
+  for (const restaurant of restaurants) {
+    if (restaurant.latitude !== undefined && restaurant.longitude !== undefined) {
+      const distance = calculateDistance(
+        position.coords.latitude,
+        position.coords.longitude,
+        restaurant.latitude!,
+        restaurant.longitude!
+      );
+      if (distance <= maxDistance) {
+        nearbyRestaurants.push(restaurant);
+      }
+    }
+  }
+  // Sort nearby restaurants based on distance
+  nearbyRestaurants.sort((a, b) => {
+    const distanceA = calculateDistance(
+      position.coords.latitude,
+      position.coords.longitude,
+      a.latitude!,
+      a.longitude!
+    );
+    const distanceB = calculateDistance(
+      position.coords.latitude,
+      position.coords.longitude,
+      b.latitude!,
+      b.longitude!
     );
     return distanceA - distanceB;
   });

@@ -4,24 +4,21 @@ import { Button } from "@/components/ui/button";
 import { AlignLeft, Map } from "lucide-react";
 import React, { Suspense, useEffect, useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
-import type { Restaurant } from "@prisma/client";
+import type { Restaurant } from "@/services/types";
 import { Badge } from "@/components/ui/badge";
 import { slugify } from "@/lib/utils";
 import { useSearchParams, redirect, useRouter } from "next/navigation";
 import { Position } from "@/lib/utils";
 import Link from "next/link";
 import dynamic from "next/dynamic";
-import RestaurantsGrid from "@/components/home/restaurants-grid";
+import RestaurantsGrid from "./restaurants-grid";
 import Loading from "../loading";
 import UpdateBadge from "@/components/update-badge";
 import useMarkerStore from "@/store/markerStore";
 import { useUserPreferences } from "@/store/userPreferencesStore";
+import Filters from "./filters";
 
 const MapComponent = dynamic(() => import("@/components/map"), { ssr: false });
-
-const Filters = dynamic(() => import("@/components/home/filters"), {
-  ssr: false,
-});
 
 export default function RestaurantsPage() {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
@@ -33,24 +30,48 @@ export default function RestaurantsPage() {
   const [search, setSearch] = useState<string>("");
   const [hideFavorites, setHideFavorites] = useState<boolean>(false);
   const [position, setPosition] = useState<Position | null>(null);
-  const [display, setDisplay] = useState<"list" | "map">("list");
 
   const router = useRouter();
   const { addMarker, clearMarkers } = useMarkerStore();
+  const {
+    getFavorites,
+    selectedCrous,
+    setSelectedCrous,
+    toggleDisplayGrid,
+    display,
+  } = useUserPreferences();
 
-  function toggleDisplayGrid(): void {
-    throw new Error("Function not implemented.");
-  }
+  useEffect(() => {
+    fetch("https://api-croustillant.bayfield.dev/v1/restaurants")
+      .then(async (response) => {
+        const data = await response.json();
+        setRestaurants(data.data);
+        setRestaurantToDisplay(data.data);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  useEffect(() => {
+    clearMarkers();
+    restaurantToDisplay.forEach((restaurant) => {
+      if (restaurant.latitude && restaurant.longitude) {
+        addMarker(
+          [restaurant.latitude, restaurant.longitude],
+          restaurant.nom,
+          `Voir la fiche de <a href="/restaurant/${slugify(restaurant.nom)}-${
+            restaurant.code
+          }">${restaurant.nom}</a>`
+        );
+      }
+    });
+  }, [restaurantToDisplay]);
 
   return (
     <>
       <div className="w-full justify-between md:flex">
         <div>
           <span className="flex items-center flex-wrap gap-2">
-            <h1 className="font-bold text-3xl">Restaurants du</h1>
-            <Link href="/crous">
-              <Badge>Choisir un autre Crous</Badge>
-            </Link>
+            <h1 className="font-bold text-3xl">Restaurants</h1>
           </span>
           <p className="opacity-50">
             {loading ? <Loading /> : `Il y a ${restaurants.length} restaurants`}
