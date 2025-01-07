@@ -11,6 +11,7 @@ import Script from "next/script";
 import SnowFall from "@/components/snow-fall";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { permanentRedirect } from "next/navigation";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -66,6 +67,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  return permanentRedirect("https://croustillant.bayfield.dev");
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
